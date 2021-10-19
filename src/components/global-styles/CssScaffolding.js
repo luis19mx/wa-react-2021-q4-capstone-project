@@ -7,7 +7,7 @@ export default function CssScaffolding() {
       --yellow: #fbcf4c;
       --orange: #e78b52;
       --grey: hsl(0, 0%, 66%);
-      --dark: hsl(0deg 47% 15%);
+      --dark: #363636;
       --w_yellow: hsl(45, 8%, 98%);
       --l_yellow: hsl(45, 96%, 78%);
       --l_orange: hsl(23deg 100% 85%);
@@ -76,6 +76,25 @@ export default function CssScaffolding() {
       cursor: pointer;
       background-color: var(--l_grey);
       transition: background-color 0.16s ease-in-out;
+    }
+    input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding: 0.2em 0.6em;
+      border-radius: 0.4em;
+      border: 1px solid transparent;
+      border-color: #dbdbdb;
+      vertical-align: top;
+      line-height: 1.5;
+      max-width: 100%;
+      width: 100%;
+      box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+      outline: 0;
+
+      &:focus {
+        border-color: #485fc7;
+        box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
+      }
     }
     img,
     svg {

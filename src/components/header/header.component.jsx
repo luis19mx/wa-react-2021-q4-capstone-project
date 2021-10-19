@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { ReactComponent as ShopppingIcon } from '../../assets/images/icon.shop.svg';
 
 export default function Header() {
   return (
@@ -19,10 +20,15 @@ export default function Header() {
           display: flex;
           align-items: center;
           gap: var(--gutter);
+
+          input {
+            width: 30vw;
+            min-width: 200px;
+          }
         `}
       >
         <input type='search' placeholder='search…' />
-        <p>icon</p>
+        <ShopppingIcon />
       </div>
     </header>
   );
