@@ -16,7 +16,18 @@ export default function CssScaffolding() {
       --d_orange: #d1743d;
       --d_grey: #363636;
 
+      --bg: var(--w_yellow);
+      --primary: #485fc7;
       --gutter: 2vw;
+      --header-height: 56px;
+    }
+    @font-face {
+      font-family: 'Pangram';
+      src: url('/fonts/Pangram-Bold.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Telegraf';
+      src: url('/fonts/Telegraf-Regular.woff2') format('woff2');
     }
     html,
     body {
@@ -35,19 +46,19 @@ export default function CssScaffolding() {
       margin: 0;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-        'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-family: 'Pangram', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
 
-      font-weight: 300;
+      font-weight: normal;
       min-height: 100vh;
       scroll-behavior: smooth;
       text-rendering: optimizeSpeed;
 
       line-height: 1.5;
 
-      background-color: var(--w_yellow);
+      background-color: var(--bg);
       color: var(--dark);
 
       -webkit-tap-highlight-color: transparent;
@@ -92,7 +103,7 @@ export default function CssScaffolding() {
       outline: 0;
 
       &:focus {
-        border-color: #485fc7;
+        border-color: var(--primary);
         box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
       }
     }
@@ -112,6 +123,24 @@ export default function CssScaffolding() {
     /* Useful for animations with gsap */
     [data-hidden] {
       visibility: hidden;
+    }
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      margin-top: 0;
+      font-family: 'Telegraf', sans-serif;
+    }
+    p, .p {
+      margin-top: 0;
     }
   `;
 }

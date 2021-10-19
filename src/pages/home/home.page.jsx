@@ -4,10 +4,10 @@ import FeaturedProducts from '../../components/featured-products/featured-produc
 
 export default function HomePage() {
   return (
-    <section>
+    <>
       <Slider />
       <Grid />
       <FeaturedProducts />
-    </section>
+    </>
   );
 }
