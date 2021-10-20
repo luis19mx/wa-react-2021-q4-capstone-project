@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import featuredProducts from '../../data/featured-products.json';
 import FeaturedProductsItem from '../featured-products-item/featured-products-item.component';
 
-export default function FeaturedProducts() {
-  const products = featuredProducts.results.map(({ id, data }) => ({ id, product: data }));
+export default function FeaturedProducts({ products: _products_ }) {
+  // console.log(_products_)
+  const products = _products_.results.map(({ id, data }) => ({ id, product: data }));
   return (
     <section
       css={css`
