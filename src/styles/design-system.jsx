@@ -16,3 +16,17 @@ export const Container = styled.div`
     margin-right: 2vh;
   }
 `
+
+export const Button = styled.a`
+  cursor: pointer;
+  background-color: var(--primary);
+  border-radius: 2em;
+  padding: 0.3em 1em;
+  color: white;
+  display: block;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`

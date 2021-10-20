@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import uniqueId from 'lodash/uniqueId';
 
 export default function SliderItem({ banner }) {
   const { description, main_image: img, title } = banner;
@@ -68,8 +69,8 @@ export default function SliderItem({ banner }) {
         >
           {title.toLowerCase()}
         </h2>
-        {description.map((p, index) => (
-          <p key={index}>{p.text}</p>
+        {description.map((p) => (
+          <p key={uniqueId()}>{p.text}</p>
         ))}
       </div>
     </div>

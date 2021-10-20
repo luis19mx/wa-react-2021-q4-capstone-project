@@ -4,7 +4,7 @@ import { ReactComponent as ShopppingIcon } from '../../assets/icons/shop.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
-export default function Header() {
+export default function Header({ setIsHomePageActive }) {
   return (
     <header
       css={css`
@@ -27,7 +27,7 @@ export default function Header() {
           margin-bottom: 0;
         `}
       >
-        <a href='/' onClick={(evt) => evt.preventDefault()}>
+        <a href='/' onClick={(evt) => evt.preventDefault() || setIsHomePageActive(true)}>
           <Logo />
         </a>
       </h1>
