@@ -49,6 +49,9 @@ export default function CssModernReset() {
     select {
       font: inherit;
     }
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
     /* Remove all animations and transitions for people that prefer not to see them */
     @media (prefers-reduced-motion: reduce) {
       * {

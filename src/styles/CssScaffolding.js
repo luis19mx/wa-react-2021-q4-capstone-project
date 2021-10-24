@@ -63,7 +63,6 @@ export default function CssScaffolding() {
 
       -webkit-tap-highlight-color: transparent;
     }
-
     ::-moz-selection {
       color: var(--dark);
       background: var(--l_yellow);
@@ -72,7 +71,6 @@ export default function CssScaffolding() {
       color: var(--dark);
       background: var(--l_yellow);
     }
-
     code {
       font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
@@ -89,22 +87,22 @@ export default function CssScaffolding() {
       transition: background-color 0.16s ease-in-out;
     }
     input {
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      padding: 0.2em 0.6em;
       border-radius: 0.4em;
       border: 1px solid transparent;
       border-color: #dbdbdb;
-      vertical-align: top;
-      line-height: 1.5;
-      max-width: 100%;
-      width: 100%;
       box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
       outline: 0;
 
       &:focus {
         border-color: var(--primary);
         box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
+      }
+      &[type='text'] {
+        vertical-align: top;
+        line-height: 1.5;
+        padding: 0.2em 0.6em;
+        max-width: 100%;
+        width: 100%;
       }
     }
     img,
@@ -139,7 +137,8 @@ export default function CssScaffolding() {
       margin-top: 0;
       font-family: 'Telegraf', sans-serif;
     }
-    p, .p {
+    p,
+    .p {
       margin-top: 0;
     }
   `;

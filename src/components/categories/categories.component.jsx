@@ -1,19 +1,33 @@
-import categories from '../../data/product-categories.json';
+import { Component } from 'react';
+import categoriesJSON from '../../data/product-categories.json';
 
-export default function Categories() {
-  console.log(categories);
-  return (
-    <form>
-      {categories.results?.map(({ data: { name } }) => (
+export default class Categories extends Component {
+  state = {
+    filters: categoriesJSON.results
+      // .map(({ data: { name } }) => name.toLowerCase().replace(/\s/g, '-'))
+      .map(({ data: { name } }) => name.toLowerCase())
+      .reduce(
+        (filters, filter) => ({
+          ...filters,
+          [filter]: false,
+        }),
+        {}
+      ),
+  };
+  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
+
+  render() {
+    return (
+      <form>
+        {/* {categories.results?.map(({ data: { name } }) => (
         <div key={name}>
-          <input type='checkbox' id='scales' name='scales' />
-          <label for='scales'>Scales</label>
-          {/* <label htmlFor={name}>
+          <label htmlFor={name}>
             <input name={name} type='checkbox' />
             {name}
-          </label> */}
+          </label>
         </div>
-      ))}
-    </form>
-  );
+      ))} */}
+      </form>
+    );
+  }
 }
