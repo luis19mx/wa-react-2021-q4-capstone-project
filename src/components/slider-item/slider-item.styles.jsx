@@ -23,6 +23,8 @@ export const SliderContentStyles = styled.div`
   padding: 2em;
   backdrop-filter: blur(4px);
   border-radius: 0.3em;
+  max-width: 540px;
+  overflow: hidden;
 
   h2 {
     text-transform: capitalize;
@@ -30,6 +32,10 @@ export const SliderContentStyles = styled.div`
   }
   p {
     margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   @media (max-width: 40em) {
     padding: 1em 1em 0;

@@ -1,18 +1,28 @@
-/** @jsxImportSource @emotion/react */
-// import { css } from "@emotion/react";
-import featuredBanners from '../../data/featured-banners.json';
-import { Container } from '../../styles/design-system';
-import SliderItem from '../slider-item/slider-item.component';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-export default function Slider() {
+import featuredBanners from '../../data/featured-banners.json';
+import SliderItem from '../slider-item/slider-item.component';
+import { SliderContainerStyles } from './slider.styles';
+
+const settings = {
+  dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+};
+
+export default function SliderContainer() {
   const banners = featuredBanners.results.map(({ id, data }) => ({ id, banner: { ...data } }));
   return (
-    <Container>
-      {banners
-        .slice(0, 1)
-        .map(({ id, banner }) => (
-        <SliderItem key={id} {...{ banner }} />
-      ))}
-    </Container>
+    <SliderContainerStyles>
+      <Slider {...settings}>
+        {banners.map(({ id, banner }) => (
+          <SliderItem key={id} {...{ banner }} />
+        ))}
+      </Slider>
+    </SliderContainerStyles>
   );
 }
