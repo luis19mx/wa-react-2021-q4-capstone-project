@@ -18,6 +18,7 @@ export default function CssScaffolding() {
 
       --bg: var(--w_yellow);
       --primary: #485fc7;
+      --primary_d: #283c96;
       --gutter: 2vw;
       --header-height: 56px;
     }
@@ -83,6 +84,7 @@ export default function CssScaffolding() {
       border: none;
       outline: 0;
       cursor: pointer;
+      font-weight: normal;
       background-color: var(--l_grey);
       transition: background-color 0.16s ease-in-out;
     }
