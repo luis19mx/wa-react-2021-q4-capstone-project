@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Filters from '../../components/filters/filters.component';
 import FeaturedProducts from '../../components/featured-products/featured-products.components';
 import categoriesJSON from '../../data/product-categories.json';
@@ -6,53 +6,35 @@ import productsJSON from '../../data/products.json';
 import { ContentStyles, FlexStyles, ProductListPageStyles } from './product-list.styles';
 import Spinner from '../../components/spinner/spinner.component';
 import Pagination from '../../components/pagination/pagination.component';
+import Hooks from '../../hooks';
 
-export default class ProductListPage extends Component {
-  state = {
-    filters: {},
-    categories: categoriesJSON.results.map(({ data: { name } }) => name),
-    products: productsJSON.results.map(({ id, data }) => ({ id, product: data })),
-    isLoading: true,
-  };
+export default function ProductListPage() {
+  const [filters, setFilters] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [categories] = useState(useMemo(() => categoriesJSON.results.map(({ data: { name } }) => name), []));
+  const [products] = useState(
+    useMemo(() => productsJSON.results.map(({ id, data }) => ({ id, product: data })), [])
+  );
 
-  componentDidMount() {
-    this.setState({
-      filters: this.state.categories.reduce(
-        (acum, curr) => ({
-          ...acum,
-          [curr]: false,
-        }),
-        {}
-      ),
-    });
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 1000 * 2);
-  }
+  useEffect(
+    () => setFilters(categories.reduce((categories, category) => ({ ...categories, [category]: false }), {})),
+    [categories]
+  );
 
-  handleChange = ({ target: { name } }) =>
-    this.setState((prevState) => ({
-      filters: {
-        ...prevState.filters,
-        [name]: !prevState.filters[name],
-      },
+  Hooks.useDocumentTitle('Products');
+
+  useEffect(() => setTimeout(() => setIsLoading(false), 1000 * 2));
+
+  const handleChange = ({ target: { name: filter } }) =>
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [filter]: !prevFilters[filter],
     }));
 
-  setAllFiltersToFalse = () => {
-    this.setState({
-      filters: this.state.categories.reduce(
-        (acum, curr) => ({
-          ...acum,
-          [curr]: false,
-        }),
-        {}
-      ),
-    });
-  };
+  const setAllFiltersToFalse = () =>
+    setFilters(Object.keys(filters).reduce((filters, filter) => ({ ...filters, [filter]: false }), {}));
 
-  filterProducts = () => {
-    const { categories, filters, products } = this.state;
-
+  const filterProducts = () => {
     if (categories.some((category) => filters[category] === true)) {
       return categories
         .filter((category) => filters[category])
@@ -70,27 +52,20 @@ export default class ProductListPage extends Component {
     return products;
   };
 
-  render() {
-    const { isLoading, filters } = this.state;
-    const products = this.filterProducts();
+  const filteredProducts = filterProducts();
 
-    return isLoading ? (
-      <Spinner />
-    ) : (
-      <ProductListPageStyles>
-        <h1>This is the Product List Page</h1>
-        <FlexStyles>
-          <Filters
-            filters={filters}
-            handleChange={this.handleChange}
-            setAllFiltersToFalse={this.setAllFiltersToFalse}
-          />
-          <ContentStyles>
-            <FeaturedProducts {...{ products }} />
-            <Pagination resultPages={5} activePage={1} />
-          </ContentStyles>
-        </FlexStyles>
-      </ProductListPageStyles>
-    );
-  }
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <ProductListPageStyles>
+      <h1>This is the Product List Page</h1>
+      <FlexStyles>
+        <Filters {...{ filters }} {...{ handleChange }} {...{ setAllFiltersToFalse }} />
+        <ContentStyles>
+          <FeaturedProducts products={filteredProducts} />
+          <Pagination resultPages={5} activePage={1} />
+        </ContentStyles>
+      </FlexStyles>
+    </ProductListPageStyles>
+  );
 }

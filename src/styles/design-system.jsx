@@ -25,7 +25,7 @@ export const Button = styled.a`
   display: block;
   opacity: 1;
 
-  ${({cta})=> cta && `
+  ${({ctaStyles})=> ctaStyles && `
     margin: auto;
     width: 90%;
     max-width: 200px;
