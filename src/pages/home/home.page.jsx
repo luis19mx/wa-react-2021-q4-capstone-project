@@ -11,7 +11,7 @@ export default function HomePage({ setIsHomePageActive }) {
     <>
       <SliderContainer />
       <Grid />
-      <FeaturedProducts {...{ products }} paddingTop={true} />
+      <FeaturedProducts {...{ products }} paddingTop />
       <Button cta onClick={() => setIsHomePageActive(false)}>
         View all products
       </Button>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import FeaturedProductsItem from '../featured-products-item/featured-products-item.component';
 import {
   FeaturedProductsGrid,
@@ -5,9 +6,9 @@ import {
   FeaturedProductsTitle,
 } from './featured-products.styles';
 
-export default function FeaturedProducts({ products, showTitle = false, nextToSidebarStyles }) {
+function FeaturedProducts({ products, showTitle = false, paddingTop }) {
   return (
-    <FeaturedProductsStyles nextToSidebarStyles>
+    <FeaturedProductsStyles {...{ paddingTop }}>
       {showTitle && <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>}
       <FeaturedProductsGrid>
         {products.slice(0, 20).map(({ id, product }) => (
@@ -17,3 +18,11 @@ export default function FeaturedProducts({ products, showTitle = false, nextToSi
     </FeaturedProductsStyles>
   );
 }
+
+FeaturedProducts.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  showTitle: PropTypes.bool,
+  paddingTop: PropTypes.bool,
+};
+
+export default FeaturedProducts;

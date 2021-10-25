@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { FilterButton, FiltersStyles } from './filters.styles';
 
-export default function Filters({ filters, handleChange, setAllFiltersToFalse }) {
+function Filters({ filters, handleChange, setAllFiltersToFalse }) {
   return (
     <FiltersStyles>
       <h3>Filters</h3>
@@ -29,3 +30,11 @@ export default function Filters({ filters, handleChange, setAllFiltersToFalse })
     </FiltersStyles>
   );
 }
+
+Filters.propTypes = {
+  filters: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  setAllFiltersToFalse: PropTypes.func.isRequired,
+};
+
+export default Filters;

@@ -1,7 +1,8 @@
 import { uniqueId } from 'lodash';
+import PropTypes from 'prop-types';
 import { PaginationArrowStyles, PaginationStyles, PaginatorStyles } from './pagination.styles';
 
-export default function Pagination({ resultPages, activePage }) {
+function Pagination({ resultPages, activePage }) {
   return (
     <PaginationStyles>
       <PaginationArrowStyles>&lsaquo;</PaginationArrowStyles>
@@ -19,3 +20,10 @@ export default function Pagination({ resultPages, activePage }) {
     </PaginationStyles>
   );
 }
+
+Pagination.propTypes = {
+  resultPages: PropTypes.number.isRequired,
+  activePage: PropTypes.number.isRequired,
+};
+
+export default Pagination;

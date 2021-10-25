@@ -1,9 +1,10 @@
-import productCategories from '../../data/product-categories.json';
+import productCategoriesJSON from '../../data/product-categories.json';
 import GridItem from '../grid-item/grid-item.component';
 import { GridStyles } from './grid.styles';
 
+const categories = productCategoriesJSON.results.map(({ id, data }) => ({ id, category: data }));
+
 export default function Grid() {
-  const categories = productCategories.results.map(({ id, data }) => ({ id, category: data }));
   return (
     <GridStyles>
       {categories.map(({ id, category }) => (

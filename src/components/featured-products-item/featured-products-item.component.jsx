@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   CategoryStyles,
   ContentStyles,
@@ -7,7 +8,7 @@ import {
   TitleStyles,
 } from './featured-products-item.styles';
 
-export default function FeaturedProductsItem({ product }) {
+function FeaturedProductsItem({ product }) {
   const {
     mainimage: img,
     name,
@@ -26,3 +27,19 @@ export default function FeaturedProductsItem({ product }) {
     </FeaturedProductsItemStyles>
   );
 }
+
+FeaturedProductsItem.propTypes = {
+  product: PropTypes.shape({
+    mainimage: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      alt: PropTypes.string,
+    }),
+    name: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }),
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
+export default FeaturedProductsItem;

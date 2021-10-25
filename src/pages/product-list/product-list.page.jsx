@@ -86,7 +86,7 @@ export default class ProductListPage extends Component {
             setAllFiltersToFalse={this.setAllFiltersToFalse}
           />
           <ContentStyles>
-            <FeaturedProducts nextToSidebarStyles products={products} />
+            <FeaturedProducts {...{ products }} />
             <Pagination resultPages={5} activePage={1} />
           </ContentStyles>
         </FlexStyles>
