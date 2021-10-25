@@ -9,7 +9,7 @@ import Content from './components/content/content.component';
 import GlobalStyles from './components/global-styles/global-styles.component';
 
 function App() {
-  const [isHomePageActive, setIsHomePageActive] = useState(false);
+  const [isHomePageActive, setIsHomePageActive] = useState(true);
 
   return (
     <>
