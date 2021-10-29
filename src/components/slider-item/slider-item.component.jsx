@@ -9,7 +9,10 @@ function SliderItem({ banner }) {
       <img src={img.url} alt={img.alt || ''} />
       <SliderContentStyles>
         <h2>{title.toLowerCase()}</h2>
-        {!!description.length && description.map((p) => <p key={uniqueId()}>{p.text}</p>)}
+        {!!description.length &&
+          description.map(({ text }) =>
+            text ? <p key={uniqueId()}>{text}</p> : null
+          )}
       </SliderContentStyles>
     </SliderItemStyles>
   );

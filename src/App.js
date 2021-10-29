@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import HomePage from './pages/home/home.page';
 import ProductListPage from './pages/product-list/product-list.page';
+import NotFoundPage from './pages/not-found/not-found.page';
 
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
@@ -8,19 +10,30 @@ import Content from './components/content/content.component';
 
 import GlobalStyles from './components/global-styles/global-styles.component';
 
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
-
 function App() {
-  const [isHomePageActive, setIsHomePageActive] = useState(true);
-  const { data, isLoading } = useFeaturedBanners();
-  console.log(data, isLoading);
-
   return (
     <>
       <GlobalStyles />
-      <Header {...{ setIsHomePageActive }} />
-      <Content>{isHomePageActive ? <HomePage {...{ setIsHomePageActive }} /> : <ProductListPage />}</Content>
-      <Footer />
+      <Router>
+        <Header />
+        <Content>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/home">
+              <HomePage />
+            </Route>
+            <Route path="/products">
+              <ProductListPage />
+            </Route>
+            <Route path="*">
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </Content>
+        <Footer />
+      </Router>
     </>
   );
 }

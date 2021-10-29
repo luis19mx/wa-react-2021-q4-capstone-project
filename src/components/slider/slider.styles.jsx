@@ -6,7 +6,8 @@ export const SliderContainerStyles = styled(Container)`
   .slick-prev:before,
   .slick-next:before {
     color: var(--grey);
-    /* color: var(--primary); */
-    /* opacity: 0.5; */
+  }
+  .slick-list {
+    border-radius: 1em;
   }
 `;

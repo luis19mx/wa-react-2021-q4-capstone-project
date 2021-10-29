@@ -4,18 +4,27 @@ import FeaturedProducts from '../../components/featured-products/featured-produc
 import productsJSON from '../../data/featured-products.json';
 import { Button } from '../../styles/design-system';
 import Hooks from '../../hooks';
+import { useFeaturedBanners } from '../../utils/hooks/useFeaturedBanners';
+import { Link } from 'react-router-dom';
 
-const products = productsJSON.results.map(({ id, data }) => ({ id, product: data }));
-
-export default function HomePage({ setIsHomePageActive }) {
+export default function HomePage() {
   Hooks.useDocumentTitle();
+
+  const products = productsJSON.results.map(({ id, data }) => ({
+    id,
+    product: data,
+  }));
+
+  const { data, isLoading } = useFeaturedBanners();
+  // console.log(data, isLoading);
 
   return (
     <>
-      <SliderContainer />
+      {!isLoading ? <SliderContainer bannersJSON={data} /> : null}
       <Grid />
       <FeaturedProducts {...{ products }} paddingTop />
-      <Button ctaStyles onClick={() => setIsHomePageActive(false)}>
+      {/* <Link to='/products' component={Button} /> */}
+      <Button ctaStyles as={Link} to="/products">
         View all products
       </Button>
     </>
