@@ -1,11 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
-import Filters from '../../components/filters/filters.component';
-import FeaturedProducts from '../../components/featured-products/featured-products.components';
+
 import categoriesJSON from '../../data/product-categories.json';
 import productsJSON from '../../data/products.json';
+
 import { useDocumentTitle } from '../../utils/hooks';
+
+import Filters from '../../components/filters/filters.component';
+import FeaturedProducts from '../../components/featured-products/featured-products.components';
 import Spinner from '../../components/spinner/spinner.component';
 import Pagination from '../../components/pagination/pagination.component';
+
 import {
   ContentStyles,
   FlexStyles,
@@ -13,28 +17,20 @@ import {
 } from './product-list.styles';
 
 export default function ProductListPage() {
-  const [filters, setFilters] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [categories] = useState(
-    useMemo(() => categoriesJSON.results.map(({ data: { name } }) => name), [])
-  );
-  const [products] = useState(
-    useMemo(
-      () => productsJSON.results.map(({ id, data }) => ({ id, product: data })),
-      []
-    )
-  );
+  const categories = useMemo(() => {
+    return categoriesJSON.results.map(({ data: { name } }) => name);
+  }, []);
+  const products = useMemo(() => {
+    return productsJSON.results.map(({ id, data }) => ({ id, product: data }));
+  }, []);
 
-  useEffect(
-    () =>
-      setFilters(
-        categories.reduce(
-          (categories, category) => ({ ...categories, [category]: false }),
-          {}
-        )
-      ),
-    [categories]
+  const [filters, setFilters] = useState(
+    categories.reduce((categories, category) => {
+      return { ...categories, [category]: false };
+    }, {})
   );
+  const [isLoading, setIsLoading] = useState(true);
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   useDocumentTitle('Products');
 
@@ -54,31 +50,28 @@ export default function ProductListPage() {
       )
     );
 
-  const filterProducts = () => {
-    if (categories.some((category) => filters[category] === true)) {
-      return categories
-        .filter((category) => filters[category])
-        .map((category) =>
-          products.filter(
-            ({
-              product: {
-                category: { slug },
-              },
-            }) => slug.toLowerCase() === category.toLowerCase()
-          )
-        )
-        .flat();
-    }
-    return products;
-  };
+  useEffect(() => {
+    const activeCategories = categories
+      .filter((category) => filters[category])
+      .map((category) => category.toLowerCase());
 
-  const filteredProducts = filterProducts();
+    if (activeCategories && !!activeCategories.length) {
+      const updatedProducts = products.filter(({ product }) => {
+        const { slug } = product.category;
+        return activeCategories.includes(slug.toLowerCase());
+      });
+
+      setFilteredProducts(updatedProducts);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [filters, products, categories]);
 
   return isLoading ? (
     <Spinner />
   ) : (
     <ProductListPageStyles>
-      <h1>This is the Product List Page</h1>
+      <h1>Our Products</h1>
       <FlexStyles>
         <Filters
           filters={filters}

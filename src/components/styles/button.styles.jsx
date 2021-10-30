@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 export const Button = styled.a`
   white-space: nowrap;
@@ -14,16 +13,8 @@ export const Button = styled.a`
   &:hover {
     opacity: 0.8;
   }
-
-  ${invokeButtonStyles}
 `;
-
-function invokeButtonStyles({ ctaStyles }) {
-  if (ctaStyles) return ctaRules;
-  return null;
-}
-
-const ctaRules = css`
+export const CTA = styled(Button)`
   margin: auto;
   width: 90%;
   max-width: 200px;

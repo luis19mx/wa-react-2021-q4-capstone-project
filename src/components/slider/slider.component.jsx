@@ -44,4 +44,10 @@ SliderContainer.propTypes = {
   }),
 };
 
+SliderContainer.defaultProps = {
+  bannersJSON: {
+    results: [],
+  },
+};
+
 export default SliderContainer;

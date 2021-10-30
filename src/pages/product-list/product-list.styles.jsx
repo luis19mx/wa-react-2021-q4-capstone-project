@@ -2,14 +2,9 @@ import styled from '@emotion/styled';
 
 export const ProductListPageStyles = styled.div`
   h1 {
-    text-align: center;
-    margin-top: 1.4em;
-    margin-bottom: 1.4em;
-
-    @media(max-width: 25em) {
-      padding-left: 2vw;
-      padding-right: 2vw;
-    }
+    margin: 1.4em 3vw 1.4em 1vw;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid var(--grey);
   }
 `;
 export const FlexStyles = styled.div`
