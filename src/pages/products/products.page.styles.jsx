@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const ProductListPageStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+
   h1 {
     margin: 1.4em 3vw 1.4em 1vw;
     padding-bottom: 0.2em;

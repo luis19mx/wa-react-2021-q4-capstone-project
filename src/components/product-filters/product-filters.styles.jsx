@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const FiltersStyles = styled.aside`
+export const ProductFiltersStyles = styled.aside`
   flex-basis: 240px;
   flex-grow: 1;
   padding-left: 1em;
@@ -15,7 +15,7 @@ export const FiltersStyles = styled.aside`
     top: auto;
   }
 `;
-export const FilterButton = styled.button`
+export const ProductFiltersButton = styled.button`
   padding: 0.1em 1.5em;
   display: flex;
   align-items: center;

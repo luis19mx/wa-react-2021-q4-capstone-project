@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const GridItemStyles = styled.div`
+export const ProductCategoriesItemStyles = styled.div`
   position: relative;
   border-radius: 0.3em;
   overflow: hidden;

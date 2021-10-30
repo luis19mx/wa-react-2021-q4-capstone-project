@@ -4,27 +4,33 @@ import {
   FeaturedProductsGrid,
   FeaturedProductsStyles,
   FeaturedProductsTitle,
-} from './featured-products.styles';
+} from './products.styles';
 
-function FeaturedProducts({ products, showTitle = false, paddingTopStyles = null }) {
+function Products({ products, showTitle, paddingTopStyles = null }) {
   return (
     <FeaturedProductsStyles paddingTopStyles={paddingTopStyles}>
       {showTitle && (
         <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>
       )}
       <FeaturedProductsGrid>
-        {products.slice(0, 20).map(({ id, product }) => (
-          <FeaturedProductsItem key={id} product={product} />
-        ))}
+        {products?.length
+          ? products.map(({ id, product }) => (
+              <FeaturedProductsItem key={id} product={product} />
+            ))
+          : null}
       </FeaturedProductsGrid>
     </FeaturedProductsStyles>
   );
 }
 
-FeaturedProducts.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+Products.propTypes = {
+  productsData: PropTypes.arrayOf(PropTypes.object).isRequired,
   showTitle: PropTypes.bool,
-  paddingTopStyles: PropTypes.bool,
+  ptStyles: PropTypes.bool,
 };
 
-export default FeaturedProducts;
+Products.defaultProps = {
+  productsData: [],
+};
+
+export default Products;

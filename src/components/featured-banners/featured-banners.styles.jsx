@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Container } from '../styles/container.styles';
 
-export const SliderContainerStyles = styled(Container)`
+export const FeaturedBannersStyles = styled(Container)`
   /* react slick carousel */
   .slick-prev:before,
   .slick-next:before {

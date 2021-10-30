@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const GridStyles = styled.section`
+export const ProductCategoriesStyles = styled.section`
   background-color: #fff;
   padding-top: 5vh;
   padding-bottom: 5vh;

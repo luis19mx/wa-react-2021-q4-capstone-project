@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
-import { GridItemStyles, ImageStyles, TitleStyles } from './grid-item.styles';
+import {
+  ProductCategoriesItemStyles,
+  ImageStyles,
+  TitleStyles,
+} from './product-categories-item.styles';
 
-function GridItem({ category }) {
+function ProductCategoriesItem({ category }) {
   const { main_image: img, name } = category;
   return (
-    <GridItemStyles>
+    <ProductCategoriesItemStyles>
       <ImageStyles src={img.url} alt={img.alt || ''} />
       <TitleStyles>{name}</TitleStyles>
-    </GridItemStyles>
+    </ProductCategoriesItemStyles>
   );
 }
 
-GridItem.propTypes = {
+ProductCategoriesItem.propTypes = {
   category: PropTypes.shape({
     main_image: PropTypes.shape({
       url: PropTypes.string.isRequired,
@@ -21,4 +25,4 @@ GridItem.propTypes = {
   }),
 };
 
-export default GridItem;
+export default ProductCategoriesItem;

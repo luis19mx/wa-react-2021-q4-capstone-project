@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { FilterButton, FiltersStyles } from './filters.styles';
+import { ProductFiltersButton, ProductFiltersStyles } from './product-filters.styles';
 
-function Filters({ filters, handleChange, setAllFiltersToFalse }) {
+function ProductFilters({ filters, handleChange, setAllFiltersToFalse }) {
   const [isFilterActive, setIsFilterActive] = useState(false);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function Filters({ filters, handleChange, setAllFiltersToFalse }) {
   }, [filters]);
 
   return (
-    <FiltersStyles>
+    <ProductFiltersStyles>
       <h3>Filters</h3>
       <form>
         {Object.keys(filters).map((filter) => (
@@ -30,18 +30,18 @@ function Filters({ filters, handleChange, setAllFiltersToFalse }) {
         ))}
       </form>
       {isFilterActive && (
-        <FilterButton onClick={setAllFiltersToFalse}>
+        <ProductFiltersButton onClick={setAllFiltersToFalse}>
           <span>&times;</span>&emsp;Removed all filters
-        </FilterButton>
+        </ProductFiltersButton>
       )}
-    </FiltersStyles>
+    </ProductFiltersStyles>
   );
 }
 
-Filters.propTypes = {
+ProductFilters.propTypes = {
   filters: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   setAllFiltersToFalse: PropTypes.func.isRequired,
 };
 
-export default Filters;
+export default ProductFilters;

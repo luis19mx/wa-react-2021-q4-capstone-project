@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/home/home.page';
-import ProductListPage from './pages/product-list/product-list.page';
+import ProductstPage from './pages/products/products.page';
 import NotFoundPage from './pages/not-found/not-found.page';
 
 import Header from './components/header/header.component';
@@ -25,7 +25,7 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/products">
-              <ProductListPage />
+              <ProductstPage />
             </Route>
             <Route path="*">
               <NotFoundPage />
