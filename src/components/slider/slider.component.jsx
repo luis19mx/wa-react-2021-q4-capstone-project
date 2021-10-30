@@ -1,13 +1,13 @@
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// import bannersJSON from '../../data/featured-banners.json';
 import SliderItem from '../slider-item/slider-item.component';
 import { SliderContainerStyles } from './slider.styles';
 
-const settings = {
+const sliderSettings = {
   dots: true,
   infinite: true,
   autoplay: true,
@@ -16,16 +16,22 @@ const settings = {
 };
 
 function SliderContainer({ bannersJSON = { results: [] } }) {
-  const banners = bannersJSON.results.map(({ id, data }) => ({
-    id,
-    banner: { ...data },
-  }));
+  const [banners, setBanners] = useState([]);
 
-  return !!banners.length ? (
+  useEffect(() => {
+    setBanners(
+      bannersJSON.results?.map(({ id, data }) => ({
+        id,
+        banner: { ...data },
+      }))
+    );
+  }, [bannersJSON]);
+
+  return !!banners?.length ? (
     <SliderContainerStyles>
-      <Slider {...settings}>
+      <Slider {...sliderSettings}>
         {banners.map(({ id, banner }) => (
-          <SliderItem key={id} {...{ banner }} />
+          <SliderItem key={id} banner={banner} />
         ))}
       </Slider>
     </SliderContainerStyles>

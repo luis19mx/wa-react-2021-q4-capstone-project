@@ -1,6 +1,10 @@
 import { uniqueId } from 'lodash';
 import PropTypes from 'prop-types';
-import { PaginationArrowStyles, PaginationStyles, PaginatorStyles } from './pagination.styles';
+import {
+  PaginationArrowStyles,
+  PaginationStyles,
+  PaginatorStyles,
+} from './pagination.styles';
 
 function Pagination({ resultPages, activePage }) {
   return (
@@ -11,7 +15,10 @@ function Pagination({ resultPages, activePage }) {
         .map((_, index) => {
           const page = index + 1;
           return (
-            <PaginatorStyles activePage={activePage === page} key={uniqueId()}>
+            <PaginatorStyles
+              key={uniqueId()}
+              activePageStyles={activePage === page}
+            >
               {page}
             </PaginatorStyles>
           );

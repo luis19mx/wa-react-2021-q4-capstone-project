@@ -25,6 +25,10 @@ export const PaginationArrowStyles = styled.span`
 `;
 export const PaginatorStyles = styled.span`
   border: 1px solid;
-  border-color: ${({ activePage }) => (activePage ? 'var(--primary)' : 'transparent')};
-  text-decoration: ${({ activePage }) => activePage && 'underline'};
+  border-color: ${({ activePageStyles }) => {
+    return activePageStyles ? 'var(--primary)' : 'transparent';
+  }};
+  text-decoration: ${({ activePageStyles }) => {
+    return activePageStyles && 'underline';
+  }};
 `;

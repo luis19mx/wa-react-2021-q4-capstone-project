@@ -2,15 +2,18 @@ import styled from '@emotion/styled';
 
 export const FeaturedProductsStyles = styled.section`
   --padding: 5vh;
-  padding: ${({ paddingTop }) => (paddingTop ? 'var(--padding)' : '0')} var(--padding) var(--padding);
+  padding-top: ${({ paddingTopStyles }) => {
+    return paddingTopStyles ? 'var(--padding)' : '0';
+  }};
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  padding-bottom: var(--padding);
   max-width: 100rem;
   margin-left: auto;
   margin-right: auto;
 
   @media (max-width: 40em) {
     --padding: 2vh;
-    /* padding-left: 2vh;
-    padding-right: 2vh; */
   }
 `;
 export const FeaturedProductsTitle = styled.h1`

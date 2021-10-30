@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Container } from '../../styles/design-system';
+import { Container } from '../styles/container.styles';
 
 export const SliderContainerStyles = styled(Container)`
   /* react slick carousel */

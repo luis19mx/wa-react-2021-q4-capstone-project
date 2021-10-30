@@ -6,13 +6,15 @@ import {
   FeaturedProductsTitle,
 } from './featured-products.styles';
 
-function FeaturedProducts({ products, showTitle = false, paddingTop }) {
+function FeaturedProducts({ products, showTitle = false, paddingTopStyles = null }) {
   return (
-    <FeaturedProductsStyles {...{ paddingTop }}>
-      {showTitle && <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>}
+    <FeaturedProductsStyles paddingTopStyles={paddingTopStyles}>
+      {showTitle && (
+        <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>
+      )}
       <FeaturedProductsGrid>
         {products.slice(0, 20).map(({ id, product }) => (
-          <FeaturedProductsItem key={id} {...{ product }} />
+          <FeaturedProductsItem key={id} product={product} />
         ))}
       </FeaturedProductsGrid>
     </FeaturedProductsStyles>
@@ -22,7 +24,7 @@ function FeaturedProducts({ products, showTitle = false, paddingTop }) {
 FeaturedProducts.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object).isRequired,
   showTitle: PropTypes.bool,
-  paddingTop: PropTypes.bool,
+  paddingTopStyles: PropTypes.bool,
 };
 
 export default FeaturedProducts;

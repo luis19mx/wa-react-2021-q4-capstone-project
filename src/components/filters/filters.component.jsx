@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import { FilterButton, FiltersStyles } from './filters.styles';
 
 function Filters({ filters, handleChange, setAllFiltersToFalse }) {
+  const [isFilterActive, setIsFilterActive] = useState(false);
+
+  useEffect(() => {
+    setIsFilterActive(Object.keys(filters).some((filter) => filters[filter]));
+  }, [filters]);
+
   return (
     <FiltersStyles>
       <h3>Filters</h3>
@@ -10,7 +17,7 @@ function Filters({ filters, handleChange, setAllFiltersToFalse }) {
           <div key={filter}>
             <label htmlFor={filter}>
               <input
-                type='checkbox'
+                type="checkbox"
                 name={filter}
                 id={filter}
                 onChange={handleChange}
@@ -22,7 +29,7 @@ function Filters({ filters, handleChange, setAllFiltersToFalse }) {
           </div>
         ))}
       </form>
-      {Object.keys(filters).some((filter) => filters[filter] === true) && (
+      {isFilterActive && (
         <FilterButton onClick={setAllFiltersToFalse}>
           <span>&times;</span>&emsp;Removed all filters
         </FilterButton>
