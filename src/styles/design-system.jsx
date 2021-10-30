@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   margin-left: auto;
@@ -15,4 +15,24 @@ export const Container = styled.div`
     margin-left: 2vh;
     margin-right: 2vh;
   }
-`
+`;
+export const Button = styled.a`
+  cursor: pointer;
+  background-color: var(--primary);
+  border-radius: 2em;
+  padding: 0.3em 1em;
+  color: white;
+  display: block;
+  opacity: 1;
+
+  ${({ctaStyles})=> ctaStyles && `
+    margin: auto;
+    width: 90%;
+    max-width: 200px;
+    text-align: center;
+  `}
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;

@@ -1,42 +1,24 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import PropTypes from 'prop-types';
+import { GridItemStyles, ImageStyles, TitleStyles } from './grid-item.styles';
 
-export default function GridItem({ category }) {
+function GridItem({ category }) {
   const { main_image: img, name } = category;
   return (
-    <div
-      css={css`
-        position: relative;
-        border-radius: .3em;
-        overflow: hidden;
-
-        &:hover {
-          opacity: 0.84;
-          cursor: pointer;
-        }
-      `}
-    >
-      <img
-        css={css`
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        `}
-        src={img.url}
-        alt={img.alt}
-      />
-      <h2
-        css={css`
-          position: absolute;
-          background-color: white;
-          padding: 0.3em 1em;
-          bottom: 0;
-          left: 0;
-          margin: 0;
-        `}
-      >
-        {name}
-      </h2>
-    </div>
+    <GridItemStyles>
+      <ImageStyles src={img.url} alt={img.alt || ''} />
+      <TitleStyles>{name}</TitleStyles>
+    </GridItemStyles>
   );
 }
+
+GridItem.propTypes = {
+  category: PropTypes.shape({
+    main_image: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      alt: PropTypes.string,
+    }),
+    name: PropTypes.string.isRequired,
+  }),
+};
+
+export default GridItem;
