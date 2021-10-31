@@ -4,7 +4,7 @@ import { PaginationArrowStyles, PaginationStyles } from './pagination.styles';
 
 function Pagination({ pagination }) {
   const { activePage, totalPages, nextPage, prevPage } = pagination;
-  const {pathname, search } = useLocation();
+  const { pathname, search } = useLocation();
 
   return (
     <PaginationStyles>
@@ -38,12 +38,12 @@ function Pagination({ pagination }) {
 }
 
 Pagination.propTypes = {
-  // activePage: PropTypes.number.isRequired,
-  // totalPages: PropTypes.number.isRequired,
-  activePage: PropTypes.number,
-  totalPages: PropTypes.number,
-  nextPage: PropTypes.string,
-  prevPage: PropTypes.string,
+  pagination: PropTypes.shape({
+    activePage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    nextPage: PropTypes.string,
+    prevPage: PropTypes.string,
+  }),
 };
 
 export default Pagination;

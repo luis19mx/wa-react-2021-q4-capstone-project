@@ -34,7 +34,11 @@ export default function HomePage() {
   ) : (
     <>
       <FeaturedBanners banners={banners} />
-      <h2 style={{textAlign: 'center'}}><Link to='/search?q=armchair'>Armchair Search</Link></h2>
+      {/* TEMP */}
+      <h2 style={{ textAlign: 'center' }}>
+        <Link to="/search?q=armchair">Armchair Search</Link>
+      </h2>
+      {/* TEMP */}
       <ProductCategories categories={categories} />
       <Products products={products} paddingTopStyles />
       <CTA as={Link} to="/products">

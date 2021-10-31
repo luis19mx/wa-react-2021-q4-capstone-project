@@ -8,6 +8,7 @@ import {
 
 function ProductCategoriesItem({ category }) {
   const { main_image: img, name } = category;
+
   return (
     <ProductCategoriesItemStyles>
       <Link to={`/products?category=${encodeURIComponent(name)}`}>
