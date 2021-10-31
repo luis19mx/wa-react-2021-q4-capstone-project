@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { PaginationArrowStyles, PaginationStyles } from './pagination.styles';
 
 function Pagination({ pagination }) {
   const { activePage, totalPages, nextPage, prevPage } = pagination;
+  const {pathname, search } = useLocation();
 
   return (
     <PaginationStyles>
@@ -11,7 +12,8 @@ function Pagination({ pagination }) {
         <PaginationArrowStyles
           as={Link}
           to={{
-            pathname: '/products',
+            pathname,
+            search,
             state: { paginationLink: prevPage },
           }}
         >
@@ -23,7 +25,8 @@ function Pagination({ pagination }) {
         <PaginationArrowStyles
           as={Link}
           to={{
-            pathname: '/products',
+            pathname,
+            search,
             state: { paginationLink: nextPage },
           }}
         >

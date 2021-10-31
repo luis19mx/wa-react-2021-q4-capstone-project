@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from './useLatestAPI';
 
-export function useProducts(type, params) {
+export function useFetchProducts(type, params) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [products, setProducts] = useState(() => ({
     products: [],
@@ -34,6 +34,12 @@ export function useProducts(type, params) {
             url += `&q=${encodeURIComponent(
               `[[at(document.data.category.slug, [${params}])]]`
             )}`;
+          } else if (type === 'fullsearch') {
+            pageSize = 4;
+
+            url += `&q=${encodeURIComponent(
+              `[[fulltext(document, "${params}")]]`
+            )}`;
           } else if (type === 'featured') {
             pageSize = 16;
 
@@ -58,6 +64,7 @@ export function useProducts(type, params) {
           totalPages: data.total_pages,
           nextPage: data.next_page,
           prevPage: data.prev_page,
+          totalResults: data.total_results_size,
         };
 
         const products = data.results?.map(({ id, data: product }) => {

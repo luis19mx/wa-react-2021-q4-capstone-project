@@ -5,7 +5,7 @@ import { useLatestAPI } from './useLatestAPI';
 export function useFeaturedBanners() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [featuredBanners, setFeaturedBanners] = useState(() => ({
-    data: {},
+    banners: [],
     isLoading: true,
   }));
 

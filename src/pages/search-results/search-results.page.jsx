@@ -1,53 +1,33 @@
-import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSearchProduct } from '../../utils/hooks';
+import { useFetchProducts } from '../../utils/hooks';
 import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
+import Pagination from '../../components/pagination/pagination.component';
 
 export default function SearchResultsPage() {
-  const { search } = useLocation();
+  const { search, state } = useLocation();
   const searchParams = new URLSearchParams(search);
-  const { data, isLoading } = useSearchProduct(searchParams.get('q'));
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    if (!isLoading) {
-      setProducts(
-        data.results?.map(({ id, data: product }) => {
-          return { id, product };
-        })
-      );
-    }
-  }, [data, isLoading]);
+  let fetchArgs = ['fullsearch', searchParams.get('q')];
+  if (state?.paginationLink) {
+    fetchArgs = ['pagination', state.paginationLink];
+  }
+  const { products, pagination, isLoading } = useFetchProducts(...fetchArgs);
 
-  return isLoading && !products?.length ? (
+  return isLoading ? (
     <Spinner />
   ) : products?.length ? (
     <>
       <h1>Search results</h1>
       <p>
-        Found {products?.length}&nbsp;
-        item{products?.length > 1 ? 's' : ''}&nbsp;
+        Found {pagination.totalResults}{' '}
+        result{products?.length > 1 ? 's' : ''}{' '}
         for {searchParams.get('q')}
       </p>
       <Products products={products} />
+      <Pagination pagination={pagination} />
     </>
   ) : (
     <p>No product found!!</p>
   );
 }
-
-// const [data, setData] = useState({});
-// const handleChange = debounce(async ({ target: { value } }) => {
-//   if (value === '') return setData({});
-//   try {
-//     const result = await fetch(
-//       `https://api.github.com/search/users?q=${value}`
-//     );
-//     const d = await result.json();
-//     setData(d);
-//   } catch (error) {
-//     console.error(error);
-//     setData({});
-//   }
-// }, 500);

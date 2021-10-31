@@ -7,7 +7,7 @@ import { CTA } from '../../components/styles/button.styles';
 import {
   useDocumentTitle,
   useFeaturedBanners,
-  useProducts,
+  useFetchProducts,
   useProductCategories,
   useIsPageLoading,
 } from '../../utils/hooks';
@@ -21,7 +21,7 @@ export default function HomePage() {
     useProductCategories();
 
   const { products, isLoading: isFeaturedProductsLoading } =
-    useProducts('featured');
+    useFetchProducts('featured');
 
   const isPageLoading = useIsPageLoading(
     isFeaturedBannersLoading,
@@ -34,6 +34,7 @@ export default function HomePage() {
   ) : (
     <>
       <FeaturedBanners banners={banners} />
+      <h2 style={{textAlign: 'center'}}><Link to='/search?q=armchair'>Armchair Search</Link></h2>
       <ProductCategories categories={categories} />
       <Products products={products} paddingTopStyles />
       <CTA as={Link} to="/products">

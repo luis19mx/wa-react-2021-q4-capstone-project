@@ -5,7 +5,7 @@ import { useLatestAPI } from './useLatestAPI';
 export function useProductCategories() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [productCategories, setProductCategories] = useState(() => ({
-    data: {},
+    categories: [],
     isLoading: true,
   }));
 

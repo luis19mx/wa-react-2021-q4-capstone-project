@@ -15,7 +15,7 @@ import {
 import {
   useDocumentTitle,
   useProductCategories,
-  useProducts,
+  useFetchProducts,
 } from '../../utils/hooks';
 
 export default function ProductsPage() {
@@ -42,7 +42,7 @@ export default function ProductsPage() {
     products,
     pagination,
     isLoading: isProductsLoading,
-  } = useProducts(...fetchArgs);
+  } = useFetchProducts(...fetchArgs);
 
   // set categories after fetching categories
   useEffect(() => {
