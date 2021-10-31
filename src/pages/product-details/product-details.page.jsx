@@ -5,7 +5,7 @@ import Spinner from '../../components/spinner/spinner.component';
 
 export default function ProductDetailsPage() {
   const { productId } = useParams();
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState(null);
 
   const { product: productData, isLoading } = useProductDetails(productId);
 
@@ -14,17 +14,6 @@ export default function ProductDetailsPage() {
       setProduct(productData);
     }
   }, [isLoading, productData]);
-
-  // if (!isLoading && product) {
-  //   const {
-  //     name,
-  //     price,
-  //     sku,
-  //     category: { slug, tags },
-  //     short_description: description,
-  //     specs,
-  //   } = product;
-  // }
 
   return isLoading || !product ? (
     <Spinner />
