@@ -9,12 +9,11 @@ import {
 function ProductCategoriesItem({ category }) {
   const { main_image: img, name } = category;
   return (
-    <ProductCategoriesItemStyles
-      as={Link}
-      to={`/products?category=${encodeURIComponent(name)}`}
-    >
-      <ImageStyles src={img.url} alt={img.alt || ''} />
-      <TitleStyles>{name}</TitleStyles>
+    <ProductCategoriesItemStyles>
+      <Link to={`/products?category=${encodeURIComponent(name)}`}>
+        <ImageStyles src={img.url} alt={img.alt || ''} />
+        <TitleStyles>{name}</TitleStyles>
+      </Link>
     </ProductCategoriesItemStyles>
   );
 }

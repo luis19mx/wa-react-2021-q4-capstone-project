@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from './useLatestAPI';
 
-export function useProducts(type) {
-  const featured = type !== undefined ? type.featured : false;
-
+export function useProducts(type, params) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [products, setProducts] = useState(() => ({
-    data: {},
+    products: [],
     isLoading: true,
   }));
 
@@ -22,27 +20,51 @@ export function useProducts(type) {
       try {
         setProducts({ products: [], isLoading: true });
 
-        const tag = featured
-          ? `&q=${encodeURIComponent('[[at(document.tags, ["Featured"])]]')}`
-          : '';
-        const pageSize = featured ? 16 : 12;
+        let url;
 
-        const url = `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-          '[[at(document.type, "product")]]'
-        )}${tag}&lang=en-us&pageSize=${pageSize}`;
+        if (type === 'pagination') {
+          url = `${params}`;
+        } else {
+          url = `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
+            '[[at(document.type, "product")]]'
+          )}`;
+          let pageSize = 12;
 
-        // console.log(url);
+          if (type === 'search') {
+            url += `&q=${encodeURIComponent(
+              `[[at(document.data.category.slug, [${params}])]]`
+            )}`;
+          } else if (type === 'featured') {
+            pageSize = 16;
+
+            url += `&q=${encodeURIComponent(
+              '[[at(document.tags, ["Featured"])]]'
+            )}`;
+          }
+
+          url += `&lang=en-us&pageSize=${pageSize}`;
+        }
+
+        // console.log(url)
 
         const response = await fetch(url, {
           signal: controller.signal,
         });
+
         const data = await response.json();
+
+        const pagination = {
+          activePage: data.page,
+          totalPages: data.total_pages,
+          nextPage: data.next_page,
+          prevPage: data.prev_page,
+        };
 
         const products = data.results?.map(({ id, data: product }) => {
           return { id, product };
         });
 
-        setProducts({ products, isLoading: false });
+        setProducts({ products, pagination, isLoading: false });
       } catch (err) {
         setProducts({ products: [], isLoading: false });
         console.error(err);
@@ -54,7 +76,7 @@ export function useProducts(type) {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading, featured]);
+  }, [apiRef, isApiMetadataLoading, type, params]);
 
   return products;
 }

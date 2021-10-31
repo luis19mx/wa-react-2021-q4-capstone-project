@@ -20,9 +20,8 @@ export default function HomePage() {
   const { categories, isLoading: isProductCategoriesLoading } =
     useProductCategories();
 
-  const { products, isLoading: isFeaturedProductsLoading } = useProducts({
-    featured: true,
-  });
+  const { products, isLoading: isFeaturedProductsLoading } =
+    useProducts('featured');
 
   const isPageLoading = useIsPageLoading(
     isFeaturedBannersLoading,

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 
 import ProductFilters from '../../components/product-filters/product-filters.component';
 import Products from '../../components/products/products.components';
@@ -18,23 +19,39 @@ import {
 } from '../../utils/hooks';
 
 export default function ProductsPage() {
-  const { categories: categoriesData, isLoading: isCategoriesLoading } =
-    useProductCategories();
-
-  const { products, isLoading: isProductsLoading } = useProducts();
+  useDocumentTitle('Products');
 
   const [filters, setFilters] = useState({});
   const [categories, setCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [activeCategories, setActiveCategories] = useState([]);
 
-  useDocumentTitle('Products');
+  const history = useHistory();
+  const { search, state } = useLocation();
+  const searchParams = useMemo(() => new URLSearchParams(search), [search]);
 
+  const { categories: categoriesData, isLoading: isCategoriesLoading } =
+    useProductCategories();
+
+  let fetchArgs = [];
+  if (state?.paginationLink) {
+    fetchArgs = ['pagination', state.paginationLink];
+  }
+
+  const {
+    products,
+    pagination,
+    isLoading: isProductsLoading,
+  } = useProducts(...fetchArgs);
+
+  // set categories after fetching categories
   useEffect(() => {
     if (!isCategoriesLoading) {
       setCategories(categoriesData.map(({ category: { name } }) => name));
     }
   }, [categoriesData, isCategoriesLoading]);
 
+  // set filters after setting categories
   useEffect(() => {
     setFilters(
       categories.reduce((categories, category) => {
@@ -43,36 +60,77 @@ export default function ProductsPage() {
     );
   }, [categories]);
 
+  // set active categories after setting filters
   useEffect(() => {
-    const activeCategories = categories
-      .filter((category) => filters[category])
-      .map((category) => category.toLowerCase());
+    setActiveCategories(() =>
+      categories.filter((category) => filters[category])
+    );
+  }, [categories, filters, searchParams]);
 
-    if (activeCategories && !!activeCategories.length) {
-      const updatedProducts = products.filter(({ product }) => {
-        const { slug } = product.category;
-        return activeCategories.includes(slug.toLowerCase());
+  // set filters, if route has query params
+  useEffect(() => {
+    const categoriesSearch = searchParams.get('category');
+    if (categoriesSearch) {
+      setFilters({
+        ...categories.reduce((categories, category) => {
+          return { ...categories, [category]: false };
+        }, {}),
+        ...categoriesSearch?.split(',').reduce((categories, category) => {
+          return { ...categories, [category]: true };
+        }, {}),
       });
+    }
+  }, [searchParams, categories]);
 
+  // update filtered products
+  // SHOULD call to API with filters,
+  // instead of filtering products
+  useEffect(() => {
+    if (activeCategories.length) {
+      const updatedProducts = products?.filter(({ product }) => {
+        const { slug } = product.category;
+        return activeCategories
+          .map((category) => category.toLowerCase())
+          .includes(slug.toLowerCase());
+      });
       setFilteredProducts(updatedProducts);
     } else {
       setFilteredProducts(products);
     }
-  }, [filters, products, categories]);
+  }, [products, activeCategories, history, state]);
 
-  const handleChange = ({ target: { name: filter } }) =>
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [filter]: !prevFilters[filter],
-    }));
+  useEffect(() => {
+    const search = activeCategories.length
+      ? `?category=${encodeURIComponent(activeCategories.join(','))}`
+      : '';
 
-  const setAllFiltersToFalse = () =>
+    history.replace({
+      search,
+      state,
+    });
+  }, [activeCategories, history, state]);
+
+  const setAllFiltersToFalse = () => {
+    history.replace({
+      search: '',
+      state,
+    });
+
     setFilters(
-      Object.keys(filters).reduce(
-        (filters, filter) => ({ ...filters, [filter]: false }),
-        {}
-      )
+      categories.reduce((categories, category) => {
+        return { ...categories, [category]: false };
+      }, {})
     );
+  };
+
+  const handleChange = ({ target: { name, checked } }) => {
+    setFilters((prevFilters) => {
+      return {
+        ...prevFilters,
+        [name]: !prevFilters[name],
+      };
+    });
+  };
 
   return isCategoriesLoading || isProductsLoading ? (
     <Spinner />
@@ -88,7 +146,7 @@ export default function ProductsPage() {
         <ContentStyles>
           <Products products={filteredProducts} />
           {filteredProducts.length ? (
-            <Pagination resultPages={5} activePage={1} />
+            <Pagination pagination={pagination} />
           ) : null}
         </ContentStyles>
       </FlexStyles>

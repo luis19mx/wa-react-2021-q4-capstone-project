@@ -24,7 +24,8 @@ export function useSearchProduct(searchTerm) {
           '[[at(document.type, "product")]]'
         )}&q=${encodeURIComponent(
           `[[fulltext(document, "${searchTerm}")]]`
-        )}&lang=en-us&pageSize=20`;
+        )}&lang=en-us&pageSize=3`;
+        // )}&lang=en-us&pageSize=20`;
 
         console.log(url)
 
@@ -33,6 +34,8 @@ export function useSearchProduct(searchTerm) {
         });
 
         const data = await response.json();
+
+        console.log(data)
 
         setProducts({ data, isLoading: false });
       } catch (err) {
