@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import SliderItem from '../slider-item/slider-item.component';
+import FeaturedBannersItem from '../featured-banners-item/featured-banners-item.component';
 import { FeaturedBannersStyles } from './featured-banners.styles';
 
 const sliderSettings = {
@@ -19,7 +19,7 @@ function FeaturedBanners({ banners }) {
     <FeaturedBannersStyles>
       <Slider {...sliderSettings}>
         {banners.map(({ id, banner }) => (
-          <SliderItem key={id} banner={banner} />
+          <FeaturedBannersItem key={id} banner={banner} />
         ))}
       </Slider>
     </FeaturedBannersStyles>
@@ -27,11 +27,11 @@ function FeaturedBanners({ banners }) {
 }
 
 FeaturedBanners.propTypes = {
-  bannersData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  banners: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 FeaturedBanners.defaultProps = {
-  bannersData: [],
+  banners: [],
 };
 
 export default FeaturedBanners;

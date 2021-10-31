@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const SliderItemStyles = styled.div`
+export const FeaturedBannersItemStyles = styled.div`
   position: relative;
   border-radius: 1em;
   overflow: hidden;
@@ -15,7 +15,7 @@ export const SliderItemStyles = styled.div`
     }
   }
 `;
-export const SliderContentStyles = styled.div`
+export const FeaturedBannersContentStyles = styled.div`
   position: absolute;
   right: 2%;
   bottom: 5%;

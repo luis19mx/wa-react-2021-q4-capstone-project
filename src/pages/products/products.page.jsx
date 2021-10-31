@@ -25,7 +25,6 @@ export default function ProductsPage() {
 
   const [filters, setFilters] = useState({});
   const [categories, setCategories] = useState([]);
-
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useDocumentTitle('Products');

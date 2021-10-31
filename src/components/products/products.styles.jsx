@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const FeaturedProductsStyles = styled.section`
+export const ProductsStyles = styled.section`
   --padding: 5vh;
   padding-top: ${({ paddingTopStyles }) => {
     return paddingTopStyles ? 'var(--padding)' : '0';
@@ -16,14 +16,14 @@ export const FeaturedProductsStyles = styled.section`
     --padding: 2vh;
   }
 `;
-export const FeaturedProductsTitle = styled.h1`
+export const ProductsTitle = styled.h1`
   font-size: 3rem;
 
   @media (max-width: 50em) {
     font-size: 7vw;
   }
 `;
-export const FeaturedProductsGrid = styled.div`
+export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2em;

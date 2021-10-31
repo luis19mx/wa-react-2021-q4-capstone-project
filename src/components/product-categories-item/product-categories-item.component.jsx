@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   ProductCategoriesItemStyles,
   ImageStyles,
@@ -8,7 +9,10 @@ import {
 function ProductCategoriesItem({ category }) {
   const { main_image: img, name } = category;
   return (
-    <ProductCategoriesItemStyles>
+    <ProductCategoriesItemStyles
+      as={Link}
+      to={`/products?category=${encodeURIComponent(name)}`}
+    >
       <ImageStyles src={img.url} alt={img.alt || ''} />
       <TitleStyles>{name}</TitleStyles>
     </ProductCategoriesItemStyles>

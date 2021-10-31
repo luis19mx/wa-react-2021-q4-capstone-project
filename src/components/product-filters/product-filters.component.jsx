@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ProductFiltersButton, ProductFiltersStyles } from './product-filters.styles';
 
 function ProductFilters({ filters, handleChange, setAllFiltersToFalse }) {
+  console.log(filters)
   const [isFilterActive, setIsFilterActive] = useState(false);
 
   useEffect(() => {

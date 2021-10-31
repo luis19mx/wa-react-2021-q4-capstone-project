@@ -1,36 +1,30 @@
 import PropTypes from 'prop-types';
-import FeaturedProductsItem from '../featured-products-item/featured-products-item.component';
-import {
-  FeaturedProductsGrid,
-  FeaturedProductsStyles,
-  FeaturedProductsTitle,
-} from './products.styles';
+import ProductsItem from '../products-item/products-item.component';
+import { ProductsGrid, ProductsStyles, ProductsTitle } from './products.styles';
 
 function Products({ products, showTitle, paddingTopStyles = null }) {
   return (
-    <FeaturedProductsStyles paddingTopStyles={paddingTopStyles}>
-      {showTitle && (
-        <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>
-      )}
-      <FeaturedProductsGrid>
+    <ProductsStyles paddingTopStyles={paddingTopStyles}>
+      {showTitle && <ProductsTitle>Featured Products</ProductsTitle>}
+      <ProductsGrid>
         {products?.length
           ? products.map(({ id, product }) => (
-              <FeaturedProductsItem key={id} product={product} />
+              <ProductsItem key={id} product={{ ...product, id }} />
             ))
           : null}
-      </FeaturedProductsGrid>
-    </FeaturedProductsStyles>
+      </ProductsGrid>
+    </ProductsStyles>
   );
 }
 
 Products.propTypes = {
-  productsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
   showTitle: PropTypes.bool,
   ptStyles: PropTypes.bool,
 };
 
 Products.defaultProps = {
-  productsData: [],
+  products: [],
 };
 
 export default Products;

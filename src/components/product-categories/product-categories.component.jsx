@@ -14,11 +14,11 @@ function ProductCategories({ categories }) {
 }
 
 ProductCategories.propTypes = {
-  categoriesData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 ProductCategories.defaultProps = {
-  categoriesData: [],
+  categories: [],
 };
 
 export default ProductCategories;

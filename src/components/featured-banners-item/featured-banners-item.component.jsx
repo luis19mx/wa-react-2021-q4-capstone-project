@@ -1,24 +1,27 @@
 import uniqueId from 'lodash/uniqueId';
 import PropTypes from 'prop-types';
-import { SliderContentStyles, SliderItemStyles } from './slider-item.styles';
+import {
+  FeaturedBannersContentStyles,
+  FeaturedBannersItemStyles,
+} from './featured-banners-item.styles';
 
-function SliderItem({ banner }) {
+function FeaturedBannersItem({ banner }) {
   const { description, main_image: img, title } = banner;
   return (
-    <SliderItemStyles>
+    <FeaturedBannersItemStyles>
       <img src={img.url} alt={img.alt || ''} />
-      <SliderContentStyles>
+      <FeaturedBannersContentStyles>
         <h2>{title.toLowerCase()}</h2>
         {!!description.length &&
           description.map(({ text }) =>
             text ? <p key={uniqueId()}>{text}</p> : null
           )}
-      </SliderContentStyles>
-    </SliderItemStyles>
+      </FeaturedBannersContentStyles>
+    </FeaturedBannersItemStyles>
   );
 }
 
-SliderItem.propTypes = {
+FeaturedBannersItem.propTypes = {
   banner: PropTypes.shape({
     description: PropTypes.array,
     main_image: PropTypes.shape({
@@ -29,4 +32,4 @@ SliderItem.propTypes = {
   }),
 };
 
-export default SliderItem;
+export default FeaturedBannersItem;

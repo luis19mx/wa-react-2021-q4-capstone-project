@@ -1,34 +1,36 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
+  ProductsItemStyles,
   CategoryStyles,
   ContentStyles,
-  FeaturedProductsItemStyles,
   ImageStyles,
   PriceStyles,
   TitleStyles,
-} from './featured-products-item.styles';
+} from './products-item.styles';
 
-function FeaturedProductsItem({ product }) {
+function ProductsItem({ product }) {
   const {
     mainimage: img,
     name,
     category: { slug: category },
     price,
+    id: productId,
   } = product;
 
   return (
-    <FeaturedProductsItemStyles>
+    <ProductsItemStyles as={Link} to={`/product/${productId}`}>
       <ImageStyles src={img.url} alt={img.alt} />
       <ContentStyles>
         <TitleStyles>{name}</TitleStyles>
         <PriceStyles>${price}</PriceStyles>
         <CategoryStyles>{category}</CategoryStyles>
       </ContentStyles>
-    </FeaturedProductsItemStyles>
+    </ProductsItemStyles>
   );
 }
 
-FeaturedProductsItem.propTypes = {
+ProductsItem.propTypes = {
   product: PropTypes.shape({
     mainimage: PropTypes.shape({
       url: PropTypes.string.isRequired,
@@ -42,4 +44,4 @@ FeaturedProductsItem.propTypes = {
   }).isRequired,
 };
 
-export default FeaturedProductsItem;
+export default ProductsItem;

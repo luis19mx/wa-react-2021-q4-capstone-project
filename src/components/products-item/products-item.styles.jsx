@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const FeaturedProductsItemStyles = styled.div`
+export const ProductsItemStyles = styled.div`
   background-color: white;
   border-radius: 0.3em;
   overflow: hidden;
