@@ -55,8 +55,7 @@ export default function HomePage() {
       <CTA as={Link} to="/products">
         View all products
       </CTA>
-      <ProductDetails product={product} />
-      {/* <Products products={products} paddingTopStyles /> */}
+      <ProductDetails product={product} featured={true} />
     </>
   );
 }

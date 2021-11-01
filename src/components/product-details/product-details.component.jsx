@@ -18,14 +18,17 @@ import {
   FooterPadding,
   ColumnLeftStyles,
   ColumnRightStyles,
+  FeaturedTitleStyles,
 } from './product-details.styles';
 
-function ProductDetails({ product }) {
-  console.log(product)
+function ProductDetails({ product, featured }) {
   return product ? (
     <>
       <FooterPadding />
-      <ProductDetailsStyles>
+      <ProductDetailsStyles featuredStyles={featured}>
+        {featured
+        ? <FeaturedTitleStyles>Featured product</FeaturedTitleStyles>
+        : null}
         <ColumnLeftStyles>
           <h1>{product.name}</h1>
           <GalleryWrapper>
@@ -71,16 +74,27 @@ function ProductDetails({ product }) {
 ProductDetails.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    gallery: PropTypes.string.isRequired,
+    gallery: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        alt: PropTypes.string,
+      })
+    ).isRequired,
     category: PropTypes.shape({
       slug: PropTypes.string,
     }),
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     sku: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string),
     short_description: PropTypes.string,
-    specs: PropTypes.string,
-  }),
+    specs: PropTypes.arrayOf(
+      PropTypes.shape({
+        spec_name: PropTypes.string,
+        spec_value: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+  featured: PropTypes.bool,
 };
 
 export default ProductDetails;

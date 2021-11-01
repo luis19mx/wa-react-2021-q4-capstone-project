@@ -6,6 +6,7 @@ import { PriceStyles as _PriceStyles_ } from '../products-item/products-item.sty
 export const ProductDetailsStyles = styled.div`
   --gutter: 2vh;
   margin: var(--gutter);
+  padding-top: ${({ featuredStyles }) => (featuredStyles ? '6em' : 0)};
 
   h1 {
     margin-bottom: 0.3em;
@@ -23,9 +24,10 @@ export const ProductDetailsStyles = styled.div`
     display: flex;
     position: relative;
     background-color: var(--l_grey);
-    margin: 0;
-    padding: var(--gutter);
     justify-content: center;
+    margin: 0;
+    padding: ${({ featuredStyles }) => (featuredStyles ? '6em' : 'var(--gutter)')}
+      var(--gutter) var(--gutter);
 
     h1 {
       text-align: center;
@@ -187,3 +189,12 @@ export const FooterPadding = () => (
     `}
   />
 );
+export const FeaturedTitleStyles = styled.h2`
+  position: absolute;
+  top: 2vh;
+  text-align: left;
+  width: calc(100% - 5vw);
+  border-bottom: 1px solid;
+  font-size: 1.5rem;
+  opacity: 0.5;
+`;
