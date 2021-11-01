@@ -3,7 +3,8 @@ import { useFetchProducts } from '../../utils/hooks';
 import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
 import Pagination from '../../components/pagination/pagination.component';
-import { SearchTop } from './search-results.styles';
+import { SearchTop, NotFoundStyles } from './search-results.styles';
+import noProductFoundGif from '../../assets/pulp-fiction-john-travolta.gif';
 
 export default function SearchResultsPage() {
   const { search, state } = useLocation();
@@ -20,16 +21,24 @@ export default function SearchResultsPage() {
   ) : products?.length ? (
     <>
       <SearchTop>
-        <h1>Search results for <span>{searchParams.get('q')}</span></h1>
-      <p>
-        {pagination.totalResults}{' '}
-        item{products?.length > 1 ? 's' : ''} founded.
-      </p>
+        <h1>
+          Search results for <span>{searchParams.get('q')}</span>
+        </h1>
+        <p>
+          {pagination.totalResults} item{products?.length > 1 ? 's' : ''}{' '}
+          founded.
+        </p>
       </SearchTop>
       <Products products={products} />
       <Pagination pagination={pagination} />
     </>
   ) : (
-    <p>No product found!!</p>
+    <NotFoundStyles>
+      <p>
+        No product found.
+        <span>Try again using a different keyword</span>
+      </p>
+      <img src={noProductFoundGif} alt="" />
+    </NotFoundStyles>
   );
 }

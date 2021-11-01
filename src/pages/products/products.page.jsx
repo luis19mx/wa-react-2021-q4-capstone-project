@@ -21,14 +21,14 @@ import {
 export default function ProductsPage() {
   useDocumentTitle('Products');
 
-  const [filters, setFilters] = useState({});
-  const [categories, setCategories] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategories, setActiveCategories] = useState([]);
-
   const history = useHistory();
   const { search, state } = useLocation();
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
+
+  const [filters, setFilters] = useState({});
+  const [categories, setCategories] = useState([]);
+  const [activeCategories, setActiveCategories] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const { categories: categoriesData, isLoading: isCategoriesLoading } =
     useProductCategories();

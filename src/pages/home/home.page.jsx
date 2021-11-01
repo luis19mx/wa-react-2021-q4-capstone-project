@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import FeaturedBanners from '../../components/featured-banners/featured-banners.component';
 import ProductCategories from '../../components/product-categories/product-categories.component';
 import ProductDetails from '../../components/product-details/product-details.component';
-import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
 import { CTA } from '../../components/styles/button.styles';
 import {
