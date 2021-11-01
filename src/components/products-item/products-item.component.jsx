@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { formatMoney } from '../../utils';
 import {
   ProductsItemStyles,
   CategoryStyles,
@@ -23,7 +24,7 @@ function ProductsItem({ product }) {
       <ImageStyles src={img.url} alt={img.alt} />
       <ContentStyles>
         <TitleStyles>{name}</TitleStyles>
-        <PriceStyles>${price}</PriceStyles>
+        <PriceStyles>{formatMoney(price)}</PriceStyles>
         <CategoryStyles>{category}</CategoryStyles>
       </ContentStyles>
     </ProductsItemStyles>

@@ -29,8 +29,17 @@ export function useProductDetails(productId) {
         });
         const data = await response.json();
 
-        const [product] = data.results?.map(({ id, data }) => {
-          return { ...data, id };
+        const [product] = data.results?.map(({ id, data, tags }) => {
+          return {
+            id,
+            ...data,
+            gallery: [
+              ...data.images.map(({ image }) => ({
+                ...image,
+              })),
+            ],
+            tags,
+          };
         });
 
         setProduct({ product, isLoading: false });

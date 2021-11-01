@@ -15,8 +15,25 @@ export const Button = styled.a`
   }
 `;
 export const CTA = styled(Button)`
-  margin: auto;
-  width: 90%;
-  max-width: 200px;
+  margin: 3vh auto 6vh;
+  max-width: 600px;
   text-align: center;
+  width: 80%;
+
+  background-color: var(--primary);
+  color: white;
+  font-size: 3vh;
+  font-size: min(3vh, 32px);
+  padding: 0.2em 0;
+  border-radius: 0.33em;
+  letter-spacing: 1px;
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--primary_d);
+  }
+
+  @media (max-width: 28em) {
+    width: calc(100% - 3vw);
+  }
 `;

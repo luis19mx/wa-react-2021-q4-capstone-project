@@ -3,6 +3,7 @@ import { useFetchProducts } from '../../utils/hooks';
 import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
 import Pagination from '../../components/pagination/pagination.component';
+import { SearchTop } from './search-results.styles';
 
 export default function SearchResultsPage() {
   const { search, state } = useLocation();
@@ -18,12 +19,13 @@ export default function SearchResultsPage() {
     <Spinner />
   ) : products?.length ? (
     <>
-      <h1>Search results</h1>
+      <SearchTop>
+        <h1>Search results for <span>{searchParams.get('q')}</span></h1>
       <p>
-        Found {pagination.totalResults}{' '}
-        result{products?.length > 1 ? 's' : ''}{' '}
-        for {searchParams.get('q')}
+        {pagination.totalResults}{' '}
+        item{products?.length > 1 ? 's' : ''} founded.
       </p>
+      </SearchTop>
       <Products products={products} />
       <Pagination pagination={pagination} />
     </>

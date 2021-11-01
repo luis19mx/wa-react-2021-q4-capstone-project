@@ -21,6 +21,9 @@ export default function CssScaffolding() {
       --primary_d: #283c96;
       --gutter: 2vw;
       --header-height: 56px;
+
+      --shadow_d: 0.0625em;
+      --shadow_b: 0.125em;
     }
     @font-face {
       font-family: 'Pangram';
@@ -92,12 +95,12 @@ export default function CssScaffolding() {
       border-radius: 0.4em;
       border: 1px solid transparent;
       border-color: #dbdbdb;
-      box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+      box-shadow: inset 0 var(--shadow_d) var(--shadow_b) rgb(10 10 10 / 5%);
       outline: 0;
 
       &:focus {
         border-color: var(--primary);
-        box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
+        box-shadow: 0 0 0 var(--shadow_b) rgb(72 95 199 / 25%);
       }
       &[type='text'] {
         vertical-align: top;

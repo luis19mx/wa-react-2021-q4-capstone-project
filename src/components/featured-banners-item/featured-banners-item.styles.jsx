@@ -5,9 +5,10 @@ export const FeaturedBannersItemStyles = styled.div`
   border-radius: 1em;
   overflow: hidden;
   cursor: pointer;
+  background-color: #fff;
 
   @media (max-width: 32em) {
-    border: 1px solid var(--grey);
+    border: 1px solid var(--lgrey);
     padding: 0.66em;
 
     img {

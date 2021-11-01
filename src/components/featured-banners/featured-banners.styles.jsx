@@ -6,6 +6,10 @@ export const FeaturedBannersStyles = styled(Container)`
   .slick-prev:before,
   .slick-next:before {
     color: var(--grey);
+
+    @media (max-width: 32em) {
+      display: none;
+    }
   }
   .slick-list {
     border-radius: 1em;

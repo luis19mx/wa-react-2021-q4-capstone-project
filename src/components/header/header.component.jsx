@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { FlexStyles, HeaderStyles, LogoStyles, SearchStyles, ShopppingIconStyles } from './header.styles';
+import SearchProducts from '../search-products/search-products.component';
+import { FlexStyles, HeaderStyles, LogoStyles, ShopppingIconStyles } from './header.styles';
 import { ReactComponent as ShopppingIcon } from '../../assets/icons/shop.svg';
-import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 export default function Header() {
@@ -14,10 +14,7 @@ export default function Header() {
         </Link>
       </LogoStyles>
       <FlexStyles className='right'>
-        <SearchStyles>
-          <SearchIcon />
-          <input type='search' placeholder='search…' />
-        </SearchStyles>
+        <SearchProducts />
         <ShopppingIconStyles as={ShopppingIcon} />
       </FlexStyles>
     </HeaderStyles>

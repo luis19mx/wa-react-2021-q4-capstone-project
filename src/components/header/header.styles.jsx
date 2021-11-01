@@ -22,36 +22,6 @@ export const FlexStyles = styled.div`
   align-items: center;
   gap: var(--gutter);
 `;
-export const SearchStyles = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  svg {
-    position: absolute;
-    height: 80%;
-    left: 0.4em;
-    opacity: 0.3;
-  }
-  input {
-    width: 30vw;
-    min-width: 200px;
-    padding-left: 2.2em;
-    border-radius: 4em;
-  }
-
-  @media (max-width: 40em) {
-    width: 32px;
-    overflow: hidden;
-
-    input {
-      border-color: transparent;
-    }
-    svg {
-      opacity: 1;
-    }
-  }
-`;
 export const ShopppingIconStyles = styled.svg`
   height: 32px;
   cursor: pointer;
