@@ -15,7 +15,12 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategories());
+    const controller = new AbortController();
+    dispatch(fetchCategories(controller));
+
+    return () => {
+      controller.abort();
+    }
   }, [dispatch]);
 
   return (
