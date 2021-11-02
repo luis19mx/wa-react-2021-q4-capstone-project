@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import FeaturedBanners from '../../components/featured-banners/featured-banners.component';
 import ProductCategories from '../../components/product-categories/product-categories.component';
@@ -7,19 +8,20 @@ import Spinner from '../../components/spinner/spinner.component';
 import { CTA } from '../../components/styles/button.styles';
 import {
   useDocumentTitle,
-  useFeaturedBanners,
+  useFetchFeaturedBanners,
   useFetchProducts,
-  useProductCategories,
   useIsPageLoading,
 } from '../../utils/hooks';
 
 export default function HomePage() {
   useDocumentTitle();
 
-  const { banners, isLoading: isFeaturedBannersLoading } = useFeaturedBanners();
+  const { banners, isLoading: isFeaturedBannersLoading } =
+    useFetchFeaturedBanners();
 
-  const { categories, isLoading: isProductCategoriesLoading } =
-    useProductCategories();
+  const { categories, isLoading: isProductCategoriesLoading } = useSelector(
+    (state) => state.categories
+  );
 
   const { products, isLoading: isFeaturedProductsLoading } =
     useFetchProducts('featured');

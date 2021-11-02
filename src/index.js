@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+
+import store from './redux';
+
+import App from './App';
+import GlobalStyles from './components/styles/global-styles/global-styles.component';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <GlobalStyles />
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

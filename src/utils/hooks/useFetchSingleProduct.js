@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from './useLatestAPI';
 
-export function useProductDetails(productId) {
+export function useFetchSingleProduct(productId) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [product, setProduct] = useState(() => ({
     product: {},

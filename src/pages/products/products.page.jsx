@@ -14,9 +14,9 @@ import {
 
 import {
   useDocumentTitle,
-  useProductCategories,
   useFetchProducts,
 } from '../../utils/hooks';
+import { useSelector } from 'react-redux';
 
 export default function ProductsPage() {
   useDocumentTitle('Products');
@@ -30,8 +30,9 @@ export default function ProductsPage() {
   const [activeCategories, setActiveCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const { categories: categoriesData, isLoading: isCategoriesLoading } =
-    useProductCategories();
+  const { categories: categoriesData, isLoading: isCategoriesLoading } = useSelector(
+    (state) => state.categories
+  );
 
   let fetchArgs = [];
   if (state?.paginationLink) {

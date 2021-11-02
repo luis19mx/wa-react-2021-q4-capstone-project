@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProductDetails } from '../../utils/hooks';
+import { useFetchSingleProduct } from '../../utils/hooks';
 import Spinner from '../../components/spinner/spinner.component';
 import ProductDetails from '../../components/product-details/product-details.component';
 
@@ -8,7 +8,7 @@ export default function ProductDetailsPage() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
-  const { product: productData, isLoading } = useProductDetails(productId);
+  const { product: productData, isLoading } = useFetchSingleProduct(productId);
 
   useEffect(() => {
     if (!isLoading) {

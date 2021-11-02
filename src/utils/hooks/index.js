@@ -1,6 +1,6 @@
 export { default as useDocumentTitle } from './useDocumentTitle';
-export { useFeaturedBanners } from './useFeaturedBanners';
-export { useProductCategories } from './useProductCategories';
+export { useFetchFeaturedBanners } from './useFetchFeaturedBanners';
+export { useFetchProductCategories } from './useFetchProductCategories';
 export { useFetchProducts } from './useFetchProducts';
-export { useProductDetails } from './useProductDetails';
+export { useFetchSingleProduct } from './useFetchSingleProduct';
 export { useIsPageLoading } from './useIsPageLoading';
