@@ -15,11 +15,6 @@ export const Button = styled.a`
   }
 `;
 export const CTA = styled(Button)`
-  margin: 3vh auto 6vh;
-  max-width: 600px;
-  text-align: center;
-  width: 80%;
-
   background-color: var(--primary);
   color: white;
   font-size: 3vh;
@@ -27,9 +22,13 @@ export const CTA = styled(Button)`
   padding: 0.2em 0;
   border-radius: 0.33em;
   letter-spacing: 1px;
+  text-align: center;
+
+  margin: 3vh auto 6vh;
+  max-width: 600px;
+  width: 80%;
 
   &:hover {
-    opacity: 1;
     background-color: var(--primary_d);
   }
 

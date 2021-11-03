@@ -4,3 +4,4 @@ export { useFetchProductCategories } from './useFetchProductCategories';
 export { useFetchProducts } from './useFetchProducts';
 export { useFetchSingleProduct } from './useFetchSingleProduct';
 export { useIsPageLoading } from './useIsPageLoading';
+export { useSetSingleProduct } from './useSetSingleProduct';

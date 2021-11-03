@@ -11,6 +11,7 @@ export const ProductDetailsStyles = styled.div`
   h1 {
     margin-bottom: 0.3em;
   }
+
   p {
     max-width: 400px;
     margin-left: auto;
@@ -26,7 +27,8 @@ export const ProductDetailsStyles = styled.div`
     background-color: var(--l_grey);
     justify-content: center;
     margin: 0;
-    padding: ${({ featuredStyles }) => (featuredStyles ? '6em' : 'var(--gutter)')}
+    padding: ${({ featuredStyles }) =>
+        featuredStyles ? '6em' : 'var(--gutter)'}
       var(--gutter) var(--gutter);
 
     h1 {
@@ -87,13 +89,7 @@ export const GalleryStyles = styled.div`
 export const PriceStyles = styled(_PriceStyles_)`
   margin-bottom: 0;
   align-self: center;
-  /* background-color: var(--l_grey); */
   padding: 0.3em;
-
-  /* position: absolute; */
-  /*
-  bottom: 1vh;
-  left: 3vw; */
 `;
 export const SkuStyles = styled.p`
   text-align: center;
@@ -134,34 +130,28 @@ export const ButtonWrapperStyles = styled.div`
 
   @media (max-width: 49.9375em) {
     background-color: var(--bg);
-    box-shadow: 0 0 0.66em rgba(10 10 10 / 40%);
-    position: fixed;
     bottom: 0;
     left: 0;
+
+    ${({ featured }) =>
+      featured
+        ? `
+          max-width: 420px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0;
+      `
+        : `
+          box-shadow: 0 0 0.66em rgba(10 10 10 / 40%);
+          position: fixed;
+    `}
   }
   @media (min-width: 50em) {
     margin-top: 0;
     position: sticky;
     top: var(--header-height);
     box-shadow: 0 0.6em 0.2em var(--l_grey);
-  }
-`;
-export const AddToCartStyles = styled.button`
-  background-color: var(--primary);
-  color: white;
-  width: 100%;
-  font-size: 3vh;
-  font-size: min(3vh, 32px);
-  padding: 0.2em 0;
-  border-radius: 0.33em;
-  letter-spacing: 1px;
-
-  &:hover {
-    background-color: var(--primary_d);
-  }
-
-  @media (min-width: 50em) and (max-width: 66em) {
-    font-size: 2vw;
   }
 `;
 export const SpecsStyles = styled.div`
@@ -197,4 +187,13 @@ export const FeaturedTitleStyles = styled.h2`
   border-bottom: 1px solid;
   font-size: 1.5rem;
   opacity: 0.5;
+`;
+export const addToCartStyles = css`
+  margin: initial;
+  max-width: none;
+  width: 100%;
+
+  @media (min-width: 50em) and (max-width: 66em) {
+    font-size: 2vw;
+  }
 `;
