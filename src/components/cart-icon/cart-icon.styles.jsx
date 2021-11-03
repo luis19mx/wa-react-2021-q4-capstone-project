@@ -11,4 +11,7 @@ export const CartIconStyles = styled.div`
     position: absolute;
     margin-bottom: -8px;
   }
+  svg {
+    height: 32px;
+  }
 `;

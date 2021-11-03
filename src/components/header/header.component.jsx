@@ -22,7 +22,7 @@ export default function Header() {
           <Logo />
         </Link>
       </LogoStyles>
-      <FlexStyles className="right">
+      <FlexStyles>
         <SearchProducts />
         <CartIcon />
       </FlexStyles>

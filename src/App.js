@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 
 import { fetchCategories } from './redux/categories';
 
-import Layout from './components/layout/layout.component';
-import HomePage from './pages/home/home.page';
-import ProductListPage from './pages/products/products.page';
-import NotFoundPage from './pages/not-found/not-found.page';
-import ProductDetailsPage from './pages/product-details/product-details.page';
-import SearchResultsPage from './pages/search-results/search-results.page';
+import Layout from './components/Layout';
+import HomePage from './pages/home';
+import ProductListPage from './pages/products';
+import ProductDetailsPage from './pages/product';
+import CheckoutPage from './pages/checkout';
+import SearchResultsPage from './pages/search';
+import NotFoundPage from './pages/404';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ export default function App() {
         </Route>
         <Route path={`/product/:productId`}>
           <ProductDetailsPage />
+        </Route>
+        <Route path={`/checkout`}>
+          <CheckoutPage />
         </Route>
         <Route path={`/search`}>
           <SearchResultsPage />
