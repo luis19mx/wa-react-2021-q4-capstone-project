@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 
 import categoriesReducer from './categories';
 import cartReducer from './cart';
+import productsReducer from './products'
 
 const middleware = [thunk];
 
@@ -15,6 +16,7 @@ export default configureStore({
   reducer: {
     categories: categoriesReducer,
     cart: cartReducer,
+    products: productsReducer,
   },
   middleware,
 });

@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { fetchProducts } from '../../redux/products';
+import { useDocumentTitle, useIsPageLoading } from '../../utils/hooks';
 import ProductFilters from '../../components/product-filters/product-filters.component';
 import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
@@ -11,12 +14,6 @@ import {
   FlexStyles,
   ProductListPageStyles,
 } from './products.page.styles';
-
-import {
-  useDocumentTitle,
-  useFetchProducts,
-} from '../../utils/hooks';
-import { useSelector } from 'react-redux';
 
 export default function ProductsPage() {
   useDocumentTitle('Products');
@@ -29,21 +26,32 @@ export default function ProductsPage() {
   const [categories, setCategories] = useState([]);
   const [activeCategories, setActiveCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [fetchArgs, setFetchArgs] = useState([]);
 
-  const { categories: categoriesData, isLoading: isCategoriesLoading } = useSelector(
-    (state) => state.categories
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const controller = new AbortController();
+    dispatch(fetchProducts(controller, ...fetchArgs));
 
-  let fetchArgs = [];
-  if (state?.paginationLink) {
-    fetchArgs = ['pagination', state.paginationLink];
-  }
+    return () => {
+      controller.abort();
+    };
+  }, [dispatch, fetchArgs]);
 
   const {
     products,
     pagination,
     isLoading: isProductsLoading,
-  } = useFetchProducts(...fetchArgs);
+  } = useSelector((state) => state.products);
+
+  const { categories: categoriesData, isLoading: isCategoriesLoading } =
+    useSelector((state) => state.categories);
+
+  useEffect(() => {
+    if (state?.paginationLink) {
+      setFetchArgs(['pagination', state.paginationLink]);
+    }
+  }, [state]);
 
   // set categories after fetching categories
   useEffect(() => {
@@ -133,7 +141,12 @@ export default function ProductsPage() {
     });
   };
 
-  return isCategoriesLoading || isProductsLoading ? (
+  const isPageLoading = useIsPageLoading(
+    isCategoriesLoading,
+    isProductsLoading
+  );
+
+  return isPageLoading ? (
     <Spinner />
   ) : (
     <ProductListPageStyles>
@@ -146,7 +159,7 @@ export default function ProductsPage() {
         />
         <ContentStyles>
           <Products products={filteredProducts} />
-          {filteredProducts.length ? (
+          {filteredProducts?.length ? (
             <Pagination pagination={pagination} />
           ) : null}
         </ContentStyles>
