@@ -13,7 +13,7 @@ export default function CartDropdown() {
           {cartItems.map(({ id, name, price, img }) => (
             <div key={id}>{name}</div>
           ))}
-          <Link to="/checkout">Go to checkout</Link>
+          <Link to="/cart">Go to cart</Link>
         </>
       ) : (
         <p>You don't have any items yet. Go buy some!</p>

@@ -1,9 +1,15 @@
 import { useLocation } from 'react-router-dom';
+import { Global } from '@emotion/react';
 import { useFetchProducts } from '../../utils/hooks';
 import Products from '../../components/products/products.components';
 import Spinner from '../../components/spinner/spinner.component';
 import Pagination from '../../components/pagination/pagination.component';
-import { SearchTop, NotFoundStyles } from './search-results.styles';
+
+import {
+  SearchTop,
+  NotFoundStyles,
+  NotFoundBody,
+} from './search-results.styles';
 import noProductFoundGif from '../../assets/pulp-fiction-john-travolta.gif';
 
 export default function SearchResultsPage() {
@@ -33,12 +39,15 @@ export default function SearchResultsPage() {
       <Pagination pagination={pagination} />
     </>
   ) : (
-    <NotFoundStyles>
-      <p>
-        No product found.
-        <span>Try again using a different keyword</span>
-      </p>
-      <img src={noProductFoundGif} alt="" />
-    </NotFoundStyles>
+    <>
+      <Global styles={NotFoundBody} />
+      <NotFoundStyles>
+        <p>
+          No product found.
+          <span>Try again using a different keyword</span>
+        </p>
+        <img src={noProductFoundGif} alt="" />
+      </NotFoundStyles>
+    </>
   );
 }

@@ -4,10 +4,11 @@ import { useDispatch } from 'react-redux';
 
 import { fetchCategories } from './redux/categories';
 
-import Layout from './components/Layout';
+import Layout from './components/Layout/';
 import HomePage from './pages/home';
 import ProductListPage from './pages/products';
 import ProductDetailsPage from './pages/product';
+import CartPage from './pages/cart';
 import CheckoutPage from './pages/checkout';
 import SearchResultsPage from './pages/search';
 import NotFoundPage from './pages/404';
@@ -38,6 +39,9 @@ export default function App() {
         </Route>
         <Route path={`/product/:productId`}>
           <ProductDetailsPage />
+        </Route>
+        <Route path={`/cart`}>
+          <CartPage />
         </Route>
         <Route path={`/checkout`}>
           <CheckoutPage />

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export const SearchTop = styled.div`
   --gutter: 10vh;
@@ -37,3 +38,8 @@ export const NotFoundStyles = styled.div`
     width: 60vh;
   }
 `;
+export const NotFoundBody = css`
+  body {
+    background-color: #fcfefc;
+  }
+`

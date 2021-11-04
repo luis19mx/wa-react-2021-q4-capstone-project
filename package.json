@@ -29,8 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build",
-    "deploy": "surge build"
+    "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build && mv build/index.html build/202.html",
+    "deploy": "surge build",
+    "postdeploy": "surge --domain https://wizeline-q4-luis-lasso-deliver-4.surge.sh build && mv build/202.html build/index.html"
   },
   "devDependencies": {
     "surge": "^0.23.0"
