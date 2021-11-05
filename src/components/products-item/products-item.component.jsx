@@ -9,6 +9,8 @@ import {
   ImageStyles,
   PriceStyles,
   TitleStyles,
+  AddToCartWrapper,
+  addToCartStyles,
 } from './products-item.styles';
 
 function ProductsItem({ product }) {
@@ -20,6 +22,7 @@ function ProductsItem({ product }) {
     price,
     mainimage: img,
     category: { slug: category },
+    stock,
   } = product;
 
   const handleNavigation = () => {
@@ -35,7 +38,15 @@ function ProductsItem({ product }) {
         <TitleStyles>{name}</TitleStyles>
         <PriceStyles>{formatMoney(price)}</PriceStyles>
         <CategoryStyles>{category}</CategoryStyles>
-        <AddToCart product={{ id, name, price, img }} bubbles={false} />
+        <AddToCartWrapper data-cart>
+          {stock ? (
+            <AddToCart
+              ctaStyles={addToCartStyles}
+              product={{ id, name, price, img }}
+              bubbles={false}
+            />
+          ) : <p>Out of Stock</p>}
+        </AddToCartWrapper>
       </ContentStyles>
     </ProductsItemStyles>
   );
@@ -53,6 +64,7 @@ ProductsItem.propTypes = {
       url: PropTypes.string.isRequired,
       alt: PropTypes.string,
     }),
+    stock: PropTypes.number.isRequired,
   }).isRequired,
 };
 

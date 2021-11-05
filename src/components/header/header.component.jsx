@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import SearchProducts from '../search-products/search-products.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import CartIcon from '../cart-icon/cart-icon.component';
+import SearchProducts from '../SearchProducts';
+import CartDropdown from '../CartDropdown';
+import CartIcon from '../CartIcon';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import {

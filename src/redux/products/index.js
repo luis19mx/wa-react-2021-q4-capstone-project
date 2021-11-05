@@ -31,6 +31,10 @@ export const categoriesSlice = createSlice({
           return { id, product };
         });
 
+        products[0].product.stock = 0;
+        products[4].product.stock = 0;
+        console.log(products.map(({product}) => product.stock))
+
         state.products = products;
         state.pagination = pagination;
         state.isLoading = false;

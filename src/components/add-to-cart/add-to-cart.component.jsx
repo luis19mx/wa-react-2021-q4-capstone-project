@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/react';
+
 import { addItemToCart } from '../../redux/cart';
 
 import { CTA } from '../styles/button.styles';
@@ -21,7 +21,7 @@ function AddToCart({ product, bubbles = true, ctaStyles = null }) {
   })();
 
   return (
-    <CTA css={css`${ctaStyles}`} onClick={handleAddToCart}>
+    <CTA css={ctaStyles} onClick={handleAddToCart}>
       Add to cart
     </CTA>
   );
