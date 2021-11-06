@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { formatMoney } from '../../utils/helpers';
-import CartItem from '../../components/CartItem';
-import FormInput from '../../components/FormatInput';
-import { Button } from '../../components/styles/button.styles';
-import { selectCartTotal } from '../../store/cart';
+import { formatMoney } from 'utils/helpers';
+import CartItem from 'components/CartItem';
+import FormInput from 'components/FormatInput';
+import { Button } from 'components/styles/button.styles';
+import { selectCartTotal } from 'store/cart';
 import { Total } from '../cart/cart.styles';
 import {
   useDocumentTitle,
   useHideCartDropdownOnPageLoad,
-} from '../../utils/hooks';
+} from 'utils/hooks';
 
 export default function CheckoutPage() {
   useHideCartDropdownOnPageLoad();

@@ -2,12 +2,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchProducts } from '../../store/products';
-import { useDocumentTitle, useIsPageLoading } from '../../utils/hooks';
-import ProductFilters from '../../components/product-filters/product-filters.component';
-import Products from '../../components/products/products.components';
-import Spinner from '../../components/spinner/spinner.component';
-import Pagination from '../../components/pagination/pagination.component';
+import { fetchProducts } from 'store/products';
+import { useDocumentTitle, useIsPageLoading } from 'utils/hooks';
+import ProductFilters from 'components/product-filters/product-filters.component';
+import Products from 'components/products/products.components';
+import Spinner from 'components/spinner/spinner.component';
+import Pagination from 'components/pagination/pagination.component';
 
 import {
   ContentStyles,

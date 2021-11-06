@@ -1,17 +1,16 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Global } from '@emotion/react';
-import { useFetchProducts } from '../../utils/hooks';
-import Products from '../../components/products/products.components';
-import Spinner from '../../components/spinner/spinner.component';
-import Pagination from '../../components/pagination/pagination.component';
-
+import { useFetchProducts } from 'utils/hooks';
+import Products from 'components/products/products.components';
+import Spinner from 'components/spinner/spinner.component';
+import Pagination from 'components/pagination/pagination.component';
+import noProductFoundGif from 'assets/pulp-fiction-john-travolta.gif';
 import {
   SearchTop,
   NotFoundStyles,
   NotFoundBody,
 } from './search-results.styles';
-import noProductFoundGif from '../../assets/pulp-fiction-john-travolta.gif';
 
 function SearchResultsPage() {
   const { search, state } = useLocation();
