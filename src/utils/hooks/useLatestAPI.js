@@ -22,7 +22,7 @@ export function useLatestAPI() {
 
         setApiMetadata(ref);
       } catch (error) {
-        setError(error.stack);
+        setError(error);
         console.error(error);
       } finally {
         setIsLoading(false);

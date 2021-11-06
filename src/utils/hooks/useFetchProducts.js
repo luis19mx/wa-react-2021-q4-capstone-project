@@ -3,11 +3,7 @@ import { concatenateApiUrl } from '../helpers';
 import { useLatestAPI } from './useLatestAPI';
 
 export function useFetchProducts(type, params) {
-  const {
-    ref: apiRef,
-    isLoading: isApiMetadataLoading,
-    error: ApiMetadataError,
-  } = useLatestAPI();
+  const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
 
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState({});
@@ -15,10 +11,6 @@ export function useFetchProducts(type, params) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (ApiMetadataError) {
-      throw ApiMetadataError;
-    }
-
     if (!apiRef || isApiMetadataLoading) {
       return () => {};
     }
@@ -80,7 +72,7 @@ export function useFetchProducts(type, params) {
         setProducts(products);
         setPagination(pagination);
       } catch (error) {
-        setError(error.stack);
+        setError(error);
         console.error(error);
       } finally {
         setIsLoading(false);
@@ -92,7 +84,7 @@ export function useFetchProducts(type, params) {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading, ApiMetadataError, type, params]);
+  }, [apiRef, isApiMetadataLoading, type, params]);
 
   return { products, pagination, isLoading, error };
 }

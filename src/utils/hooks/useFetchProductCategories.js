@@ -4,10 +4,9 @@ import { useLatestAPI } from './useLatestAPI';
 
 export function useFetchProductCategories() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [productCategories, setProductCategories] = useState(() => ({
-    categories: [],
-    isLoading: true,
-  }));
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
@@ -18,8 +17,6 @@ export function useFetchProductCategories() {
 
     async function getProductCategories() {
       try {
-        setProductCategories({ categories: [], isLoading: true });
-
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "category")]]'
@@ -34,10 +31,12 @@ export function useFetchProductCategories() {
           return { id, category };
         });
 
-        setProductCategories({ categories, isLoading: false });
-      } catch (err) {
-        setProductCategories({ categories: [], isLoading: false });
-        console.error(err);
+        setCategories(categories);
+      } catch (error) {
+        setError(error);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -48,5 +47,5 @@ export function useFetchProductCategories() {
     };
   }, [apiRef, isApiMetadataLoading]);
 
-  return productCategories;
+  return { categories, isLoading, error };
 }

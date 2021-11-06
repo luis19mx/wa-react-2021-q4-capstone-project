@@ -28,8 +28,8 @@ export const ProductsGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2em;
 
-  @media (max-width: 78em) {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  @media (max-width: 85em) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 
   @media (max-width: 40em) {
