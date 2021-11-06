@@ -8,7 +8,7 @@ import ProductFilters from 'components/product-filters/product-filters.component
 import Products from 'components/products/products.components';
 import Spinner from 'components/spinner/spinner.component';
 import Pagination from 'components/pagination/pagination.component';
-
+import ErrorBoundary from 'components/ErrorBoundary';
 import {
   ContentStyles,
   FlexStyles,
@@ -20,23 +20,25 @@ export default function ProductsPage() {
 
   const history = useHistory();
   const { search, state } = useLocation();
-  const searchParams = useMemo(() => new URLSearchParams(search), [search]);
+  const categoriesSearch = useMemo(() => {
+    const searchParams = new URLSearchParams(search);
+    return searchParams.get('category');
+  }, [search]);
 
   const [filters, setFilters] = useState({});
   const [categories, setCategories] = useState([]);
   const [activeCategories, setActiveCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [fetchArgs, setFetchArgs] = useState([]);
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    const controller = new AbortController();
-    dispatch(fetchProducts(controller, ...fetchArgs));
 
-    return () => {
-      controller.abort();
-    };
-  }, [dispatch, fetchArgs]);
+  useEffect(() => {
+    if (state?.paginationLink) {
+      dispatch(fetchProducts(state));
+    } else {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, state]);
 
   const {
     products,
@@ -46,12 +48,6 @@ export default function ProductsPage() {
 
   const { categories: categoriesData, isLoading: isCategoriesLoading } =
     useSelector((state) => state.categories);
-
-  useEffect(() => {
-    if (state?.paginationLink) {
-      setFetchArgs(['pagination', state.paginationLink]);
-    }
-  }, [state]);
 
   // set categories after fetching categories
   useEffect(() => {
@@ -74,11 +70,10 @@ export default function ProductsPage() {
     setActiveCategories(() =>
       categories.filter((category) => filters[category])
     );
-  }, [categories, filters, searchParams]);
+  }, [categories, filters]);
 
   // set filters, if route has query params
   useEffect(() => {
-    const categoriesSearch = searchParams.get('category');
     if (categoriesSearch) {
       setFilters({
         ...categories.reduce((categories, category) => {
@@ -89,7 +84,7 @@ export default function ProductsPage() {
         }, {}),
       });
     }
-  }, [searchParams, categories]);
+  }, [categoriesSearch, categories]);
 
   // update filtered products
   // SHOULD call to API with filters,
@@ -158,10 +153,12 @@ export default function ProductsPage() {
           setAllFiltersToFalse={setAllFiltersToFalse}
         />
         <ContentStyles>
-          <Products products={filteredProducts} />
-          {filteredProducts?.length ? (
-            <Pagination pagination={pagination} />
-          ) : null}
+          <ErrorBoundary>
+            <Products products={filteredProducts} />
+            {filteredProducts?.length ? (
+              <Pagination pagination={pagination} />
+            ) : null}
+          </ErrorBoundary>
         </ContentStyles>
       </FlexStyles>
     </ProductListPageStyles>

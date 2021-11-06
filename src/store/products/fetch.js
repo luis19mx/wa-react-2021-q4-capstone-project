@@ -4,23 +4,25 @@ import { getAPIMetadata } from '../../utils/helpers';
 
 const fetchProducts = createAsyncThunk(
   'products /fetchProducts',
-  async (controller, type, params) => {
-    try {
-      const apiRef = await getAPIMetadata();
-      let response;
+  async (data, thunkAPI) => {
+    const { signal } = thunkAPI;
 
-      if (type === 'pagination') {
-        response = params;
-      } else {
-        response = await fetch(
-          `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-            '[[at(document.type, "product")]]'
-          )}&lang=en-us&pageSize=12`,
-          {
-            signal: controller.signal,
-          }
-        );
-      }
+    let url;
+
+    if (data?.paginationLink) {
+      url = data.paginationLink;
+    } else {
+      const apiRef = await getAPIMetadata();
+
+      url = `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
+        '[[at(document.type, "product")]]'
+      )}&lang=en-us&pageSize=12`;
+    }
+
+    try {
+      const response = await fetch(url);
+
+      signal.addEventListener('abort', () => signal.abort());
 
       const data = await response.json();
 

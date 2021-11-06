@@ -6,7 +6,7 @@ const shrinkLabel = css`
   font-size: 12px;
   color: var(--dark);
 `;
-export const FormInputStyles = styled.div`
+export const TextareaStyles = styled.div`
   position: relative;
   margin: 45px 0;
 

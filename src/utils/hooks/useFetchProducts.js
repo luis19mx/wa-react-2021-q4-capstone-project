@@ -25,7 +25,7 @@ export function useFetchProducts(type, params) {
 
         switch (type) {
           case 'pagination':
-            url = `${params}`;
+            url = params;
             break;
           case 'categories':
             url = setUrl(

@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useDocumentTitle, useHideCartDropdownOnPageLoad } from 'utils/hooks';
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
-import FormInput from 'components/FormatInput';
+import { Input, Textarea } from 'components/forms';
 import { Button } from 'components/styles/button.styles';
 import { selectCartTotal } from 'store/cart';
 import { Total } from '../cart/cart.styles';
-import {
-  useDocumentTitle,
-  useHideCartDropdownOnPageLoad,
-} from 'utils/hooks';
 
 export default function CheckoutPage() {
   useHideCartDropdownOnPageLoad();
@@ -39,7 +36,7 @@ export default function CheckoutPage() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <FormInput
+        <Input
           onChange={handleChange}
           label="Name"
           type="text"
@@ -47,7 +44,7 @@ export default function CheckoutPage() {
           value={name}
           required
         />
-        <FormInput
+        <Input
           onChange={handleChange}
           label="Email"
           type="email"
@@ -55,7 +52,7 @@ export default function CheckoutPage() {
           value={email}
           required
         />
-        <FormInput
+        <Input
           onChange={handleChange}
           label="Postal Code"
           type="text"
@@ -63,10 +60,9 @@ export default function CheckoutPage() {
           value={postalCode}
           required
         />
-        <FormInput
+        <Textarea
           onChange={handleChange}
           label="Notes"
-          type="text"
           name="notes"
           value={notes}
           required
