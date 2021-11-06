@@ -2,7 +2,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { addItemToCart } from '../../redux/cart';
+import { addItemToCart } from '../../store/cart';
 
 import { CTA } from '../styles/button.styles';
 

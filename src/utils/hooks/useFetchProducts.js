@@ -1,15 +1,24 @@
 import { useState, useEffect } from 'react';
-import { API_BASE_URL } from '../constants';
+import { concatenateApiUrl } from '../helpers';
 import { useLatestAPI } from './useLatestAPI';
 
 export function useFetchProducts(type, params) {
-  const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [products, setProducts] = useState(() => ({
-    products: [],
-    isLoading: true,
-  }));
+  const {
+    ref: apiRef,
+    isLoading: isApiMetadataLoading,
+    error: ApiMetadataError,
+  } = useLatestAPI();
+
+  const [products, setProducts] = useState([]);
+  const [pagination, setPagination] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (ApiMetadataError) {
+      throw ApiMetadataError;
+    }
+
     if (!apiRef || isApiMetadataLoading) {
       return () => {};
     }
@@ -18,40 +27,37 @@ export function useFetchProducts(type, params) {
 
     async function getProducts() {
       try {
-        setProducts({ products: [], isLoading: true });
-
         let url;
 
-        if (type === 'pagination') {
-          url = `${params}`;
-        } else {
-          url = `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-            '[[at(document.type, "product")]]'
-          )}`;
-          let pageSize = 12;
+        const setUrl = concatenateApiUrl(apiRef);
 
-          if (type === 'search') {
-            url += `&q=${encodeURIComponent(
-              `[[at(document.data.category.slug, [${params}])]]`
-            )}`;
-          } else if (type === 'fullsearch') {
-            pageSize = 4;
-
-            url += `&q=${encodeURIComponent(
-              `[[fulltext(document, "${params}")]]`
-            )}`;
-          } else if (type === 'featured') {
-            pageSize = 16;
-
-            url += `&q=${encodeURIComponent(
-              '[[at(document.tags, ["Featured"])]]'
-            )}`;
-          }
-
-          url += `&lang=en-us&pageSize=${pageSize}`;
+        switch (type) {
+          case 'pagination':
+            url = `${params}`;
+            break;
+          case 'categories':
+            url = setUrl(
+              `&q=${encodeURIComponent(
+                `[[at(document.data.category.slug, [${params}])]]`
+              )}`
+            );
+            break;
+          case 'fullsearch':
+            url = setUrl(
+              `&q=${encodeURIComponent(`[[fulltext(document, "${params}")]]`)}`,
+              4
+            );
+            break;
+          case 'featured':
+            url = setUrl(
+              `&q=${encodeURIComponent('[[at(document.tags, ["Featured"])]]')}`,
+              16
+            );
+            break;
+          default:
+            url = setUrl();
+            break;
         }
-
-        // console.log(url)
 
         const response = await fetch(url, {
           signal: controller.signal,
@@ -71,10 +77,13 @@ export function useFetchProducts(type, params) {
           return { id, product };
         });
 
-        setProducts({ products, pagination, isLoading: false });
-      } catch (err) {
-        setProducts({ products: [], isLoading: false });
-        console.error(err);
+        setProducts(products);
+        setPagination(pagination);
+      } catch (error) {
+        setError(error.stack);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -83,7 +92,7 @@ export function useFetchProducts(type, params) {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading, type, params]);
+  }, [apiRef, isApiMetadataLoading, ApiMetadataError, type, params]);
 
-  return products;
+  return { products, pagination, isLoading, error };
 }

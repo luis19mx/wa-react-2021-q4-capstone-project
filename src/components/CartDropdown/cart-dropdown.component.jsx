@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import CartItem from '../CartItem';
+import CartDropDownItem from '../CartDropDownItem';
 import { CartDropdownStyles } from './cart-dropdown.styles';
 
 export default function CartDropdown() {
@@ -11,7 +11,7 @@ export default function CartDropdown() {
       {cartItems.length ? (
         <>
           {cartItems.map(({ id, name, price, img, quantity }) => (
-            <CartItem key={id} cartItem={{ id, name, price, img, quantity }} />
+            <CartDropDownItem key={id} cartItem={{ id, name, price, img, quantity }} />
           ))}
           <Link to="/cart">Go to cart</Link>
         </>

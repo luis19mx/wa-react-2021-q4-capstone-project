@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { ProductFiltersButton, ProductFiltersStyles } from './product-filters.styles';
 
 function ProductFilters({ filters, handleChange, setAllFiltersToFalse }) {

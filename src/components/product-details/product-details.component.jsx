@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { formatMoney } from '../../utils';
+import { formatMoney } from '../../utils/helpers';
 import ProductGallery from '../product-gallery/product-gallery.component';
 import AddToCart from '../add-to-cart/add-to-cart.component';
 import { CategoryStyles } from '../products-item/products-item.styles';
@@ -63,7 +63,7 @@ function ProductDetails({ product, featured = false }) {
           <ButtonWrapperStyles featured={featured}>
             <AddToCart
               ctaStyles={addToCartStyles}
-              product={{ id, name, price, img: gallery[0] }}
+              product={{ id, name, price, img: gallery && gallery[0] }}
             />
           </ButtonWrapperStyles>
           {specs?.length ? (

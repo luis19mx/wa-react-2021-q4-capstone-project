@@ -4,16 +4,14 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
-import store from './redux';
+import store from './store';
 
 import App from './App';
-import GlobalStyles from './components/styles/global-styles/global-styles.component';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <GlobalStyles />
         <App />
       </Router>
     </Provider>

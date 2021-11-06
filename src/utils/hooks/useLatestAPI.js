@@ -4,7 +4,9 @@ import { API_BASE_URL } from '../constants';
 const INITIAL_API_METADATA = { ref: null, isLoading: true };
 
 export function useLatestAPI() {
-  const [apiMetadata, setApiMetadata] = useState(() => INITIAL_API_METADATA);
+  const [apiMetadata, setApiMetadata] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -18,10 +20,12 @@ export function useLatestAPI() {
         });
         const { refs: [{ ref } = {}] = [] } = await response.json();
 
-        setApiMetadata({ ref, isLoading: false });
-      } catch (err) {
-        setApiMetadata({ ref: null, isLoading: false });
-        console.error(err);
+        setApiMetadata(ref);
+      } catch (error) {
+        setError(error.stack);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -32,5 +36,5 @@ export function useLatestAPI() {
     };
   }, []);
 
-  return apiMetadata;
+  return { ref: apiMetadata, isLoading, error };
 }

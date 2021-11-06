@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { formatMoney } from '../../utils';
+import { formatMoney } from '../../utils/helpers';
 import AddToCart from '../add-to-cart/add-to-cart.component';
 import {
   ProductsItemStyles,
