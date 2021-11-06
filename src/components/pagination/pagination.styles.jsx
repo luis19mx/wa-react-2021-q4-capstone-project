@@ -7,7 +7,7 @@ export const PaginationStyles = styled.div`
   justify-content: center;
   overflow: hidden;
 
-  span {
+  a {
     padding: 0.4em 0.8em;
     cursor: pointer;
     background-color: transparent;
@@ -18,13 +18,17 @@ export const PaginationStyles = styled.div`
     }
   }
 `;
-export const PaginationArrowStyles = styled.span`
+export const PaginationArrowStyles = styled.a`
   margin-left: 0.3em;
   margin-right: 0.3em;
   transform: scale(1.4) translateY(-1px);
 `;
-export const PaginatorStyles = styled.span`
+export const PaginatorStyles = styled.a`
   border: 1px solid;
-  border-color: ${({ activePage }) => (activePage ? 'var(--primary)' : 'transparent')};
-  text-decoration: ${({ activePage }) => activePage && 'underline'};
+  border-color: ${({ activePageStyles }) => {
+    return activePageStyles ? 'var(--primary)' : 'transparent';
+  }};
+  text-decoration: ${({ activePageStyles }) => {
+    return activePageStyles && 'underline';
+  }};
 `;

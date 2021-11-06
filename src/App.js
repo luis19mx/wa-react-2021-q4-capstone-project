@@ -1,24 +1,50 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { fetchCategories } from './redux/categories';
+
+import Layout from './components/layout/layout.component';
 import HomePage from './pages/home/home.page';
-import ProductListPage from './pages/product-list/product-list.page';
+import ProductListPage from './pages/products/products.page';
+import NotFoundPage from './pages/not-found/not-found.page';
+import ProductDetailsPage from './pages/product-details/product-details.page';
+import SearchResultsPage from './pages/search-results/search-results.page';
 
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
-import Content from './components/content/content.component';
+export default function App() {
+  const dispatch = useDispatch();
 
-import GlobalStyles from './components/global-styles/global-styles.component';
+  useEffect(() => {
+    const controller = new AbortController();
+    dispatch(fetchCategories(controller));
 
-function App() {
-  const [isHomePageActive, setIsHomePageActive] = useState(true);
+    return () => {
+      controller.abort();
+    }
+  }, [dispatch]);
 
   return (
-    <>
-      <GlobalStyles />
-      <Header {...{ setIsHomePageActive }} />
-      <Content>{isHomePageActive ? <HomePage {...{ setIsHomePageActive }} /> : <ProductListPage />}</Content>
-      <Footer />
-    </>
+    <Layout>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/home">
+          <HomePage />
+        </Route>
+        <Route path="/products">
+          <ProductListPage />
+        </Route>
+        <Route path={`/product/:productId`}>
+          <ProductDetailsPage />
+        </Route>
+        <Route path={`/search`}>
+          <SearchResultsPage />
+        </Route>
+        <Route path="*">
+          <NotFoundPage />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
-
-export default App;
