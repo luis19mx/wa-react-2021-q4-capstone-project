@@ -1,4 +1,4 @@
-import { FormInputStyles, Label } from './format-input.styles';
+import { FormInputStyles, Label } from './form-input.styles';
 
 export default function FormInput({ handleChange, label, ...inputProps }) {
   return (

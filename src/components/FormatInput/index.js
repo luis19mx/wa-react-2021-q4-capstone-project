@@ -1,1 +1,1 @@
-export { default } from './format-input.component';
+export { default } from './form-input.component';

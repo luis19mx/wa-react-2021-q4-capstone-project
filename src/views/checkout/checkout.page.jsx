@@ -1,46 +1,86 @@
-import { useHideCartDropdownOnPageLoad } from "../../utils/hooks";
-import FormInput from '../../components/FormatInput'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { formatMoney } from '../../utils/helpers';
+import CartItem from '../../components/CartItem';
+import FormInput from '../../components/FormatInput';
+import { Button } from '../../components/styles/button.styles';
+import { selectCartTotal } from '../../store/cart';
+import { Total } from '../cart/cart.styles';
+import {
+  useDocumentTitle,
+  useHideCartDropdownOnPageLoad,
+} from '../../utils/hooks';
 
 export default function CheckoutPage() {
   useHideCartDropdownOnPageLoad();
+  useDocumentTitle('Checkout');
 
-  function formHandler(evt) {
+  const { cartItems } = useSelector((state) => state.cart);
+  const cartTotal = useSelector(selectCartTotal);
+
+  const [orderInfo, setOrderInfo] = useState({
+    name: '',
+    email: '',
+    postalCode: '',
+    notes: '',
+  });
+
+  function handleSubmit(evt) {
     evt.preventDefault();
   }
 
-  function handleChange (evt) {
+  function handleChange(evt) {
     const { name, value } = evt.target;
-    this.setState({ [name]: value, authError: '' });
-  };
+    setOrderInfo({ [name]: value });
+  }
+
+  const { name, email, postalCode, notes } = orderInfo;
 
   return (
     <div>
-      <form onSubmit={formHandler}>
+      <form onSubmit={handleSubmit}>
         <FormInput
           onChange={handleChange}
-          label="name"
+          label="Name"
           type="text"
           name="name"
-          value="email"
+          value={name}
           required
-          />
-        <label htmlFor="email">
-          Email:
-          <input type="email" id="email" />
-        </label>
-        <label htmlFor="postal_code">
-          Postal Code:
-          <input type="text" id="postal_code" />
-        </label>
-        <label htmlFor="notes">
-          Notes:
-          <textarea name="notes" id="notes"></textarea>
-        </label>
-        <button type="submit">Place order</button>
+        />
+        <FormInput
+          onChange={handleChange}
+          label="Email"
+          type="email"
+          name="email"
+          value={email}
+          required
+        />
+        <FormInput
+          onChange={handleChange}
+          label="Postal Code"
+          type="text"
+          name="postalCode"
+          value={postalCode}
+          required
+        />
+        <FormInput
+          onChange={handleChange}
+          label="Notes"
+          type="text"
+          name="notes"
+          value={notes}
+          required
+        />
+        <Button type="submit">Place order</Button>
       </form>
       <div>
         <h1>Summary:</h1>
-        <p>"Cart items go here"</p>
+        {cartItems.map(({ id, name, price, img, quantity }) => (
+          <CartItem key={id} cartItem={{ id, name, price, img, quantity }} />
+        ))}
+        <Total>
+          <span>TOTAL: {formatMoney(cartTotal)}</span>
+        </Total>
       </div>
     </div>
   );
