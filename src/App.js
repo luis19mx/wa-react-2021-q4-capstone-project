@@ -1,31 +1,25 @@
-import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { fetchCategories } from './store/categories';
+import { fetchMetaData } from 'store/apiMetaData';
+import { fetchCategories } from 'store/categories';
 
-import GlobalStyles from './components/GlobalStyles';
-import Layout from './components/Layout';
+import GlobalStyles from 'components/GlobalStyles';
+import Layout from 'components/Layout';
 
-import HomePage from './views/home';
-import ProductListPage from './views/products';
-import ProductDetailsPage from './views/product';
-import CartPage from './views/cart';
-import CheckoutPage from './views/checkout';
-import SearchResultsPage from './views/search';
-import NotFoundPage from './views/404';
+import HomePage from 'views/home';
+import ProductListPage from 'views/products';
+import ProductDetailsPage from 'views/product';
+import CartPage from 'views/cart';
+import CheckoutPage from 'views/checkout';
+import SearchResultsPage from 'views/search';
+import NotFoundPage from 'views/404';
 
 export default function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const controller = new AbortController();
-    dispatch(fetchCategories(controller));
-
-    return () => {
-      controller.abort();
-    };
-  }, [dispatch]);
+  dispatch(fetchMetaData());
+  dispatch(fetchCategories());
 
   return (
     <>

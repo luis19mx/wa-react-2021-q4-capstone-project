@@ -16,7 +16,7 @@ import {
 export default function HomePage() {
   useDocumentTitle();
 
-  const { banners, isLoading: isFeaturedBannersLoading } =
+  const { featuredBanners: banners, isLoading: isFeaturedBannersLoading } =
     useFetchFeaturedBanners();
 
   const { categories, isLoading: isProductCategoriesLoading } = useSelector(
