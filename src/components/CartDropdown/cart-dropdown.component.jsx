@@ -8,7 +8,7 @@ export default function CartDropdown() {
 
   return (
     <CartDropdownStyles>
-      {cartItems.length ? (
+      {cartItems?.length ? (
         <>
           <div>
             {cartItems.map(({ id, name, price, img, quantity }) => (
@@ -23,7 +23,10 @@ export default function CartDropdown() {
           </CartDropdownButton>
         </>
       ) : (
-        <p>You don't have any items yet. Go buy some!</p>
+        <p>
+          You don't have any items yet. <br />
+          Go buy some!
+        </p>
       )}
     </CartDropdownStyles>
   );

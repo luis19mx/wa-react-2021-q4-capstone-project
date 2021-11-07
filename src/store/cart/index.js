@@ -60,11 +60,10 @@ export const cartSlice = createSlice({
     },
     addItemToCart: (state, action) => {
       const cartItemToAdd = action.payload;
+
       const existingCartItem = state.cartItems.find(
         (cartItem) => cartItem.id === cartItemToAdd.id
       );
-      console.log(existingCartItem);
-      console.log('indexOf');
 
       if (existingCartItem) {
         state.cartItems = state.cartItems.map((cartItem) =>
@@ -76,10 +75,47 @@ export const cartSlice = createSlice({
         state.cartItems.push({ ...cartItemToAdd, quantity: 1 });
       }
     },
+    decreaseItemQuantity: (state, action) => {
+      const cartItem = action.payload;
+
+      if (cartItem.quantity <= 1) {
+        state.cartItems = state.cartItems.filter(
+          (item) => item.id !== cartItem.id
+        );
+      } else {
+        state.cartItems = state.cartItems.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        );
+      }
+    },
+    increaseItemQuantity: (state, action) => {
+      const cartItem = action.payload;
+
+      state.cartItems = state.cartItems.map((item) =>
+        item.id === cartItem.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    },
+    removeItem: (state, action) => {
+      const cartItem = action.payload;
+
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== cartItem.id
+      );
+    },
   },
 });
 
-export const { toggleCartVisibility, addItemToCart } = cartSlice.actions;
+export const {
+  toggleCartVisibility,
+  addItemToCart,
+  decreaseItemQuantity,
+  increaseItemQuantity,
+  removeItem,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
 

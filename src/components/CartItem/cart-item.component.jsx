@@ -1,18 +1,48 @@
 import PropTypes from 'prop-types';
-import { CartItemStyles, CartItemNameStyles } from './cart-item.styles';
+import { useDispatch } from 'react-redux';
+import {
+  decreaseItemQuantity,
+  increaseItemQuantity,
+  removeItem,
+} from 'store/cart';
+import {
+  CartItemStyles,
+  ImageStyles,
+  NameStyles,
+  QuantityWrapperStyles,
+  QuantityStyles,
+  ArrowStyles,
+  PriceStyles,
+  RemoveStyles,
+} from './cart-item.styles';
 
-function CartItem({ cartItem }) {
+function CartItem({ cartItem, disableRemove = false }) {
   const { name, price, img, quantity } = cartItem;
+  const dispatch = useDispatch();
 
   return cartItem ? (
     <CartItemStyles>
-      <img src={img.url} alt={img.alt ? img.alt : ''} />
-      <div>
-        <CartItemNameStyles>{name}</CartItemNameStyles>
-        <span>
-          {quantity} &times; ${price}
-        </span>
-      </div>
+      <ImageStyles>
+        <img src={img.url} alt={img.alt ? img.alt : ''} />
+      </ImageStyles>
+      <NameStyles>
+        <span>{name}</span>
+      </NameStyles>
+      <QuantityWrapperStyles>
+        <ArrowStyles onClick={() => dispatch(decreaseItemQuantity(cartItem))}>
+          &#10094;
+        </ArrowStyles>
+        <QuantityStyles className="quantity__value">{quantity}</QuantityStyles>
+        <ArrowStyles onClick={() => dispatch(increaseItemQuantity(cartItem))}>
+          &#10095;
+        </ArrowStyles>
+      </QuantityWrapperStyles>
+      <PriceStyles className="price">$ {price}</PriceStyles>
+      {!disableRemove ? (
+        <RemoveStyles onClick={() => dispatch(removeItem(cartItem))}>
+          &#10005;
+        </RemoveStyles>
+      ) : null}
     </CartItemStyles>
   ) : null;
 }

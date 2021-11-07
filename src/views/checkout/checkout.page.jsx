@@ -72,7 +72,11 @@ export default function CheckoutPage() {
       <div>
         <h1>Summary:</h1>
         {cartItems.map(({ id, name, price, img, quantity }) => (
-          <CartItem key={id} cartItem={{ id, name, price, img, quantity }} />
+          <CartItem
+            key={id}
+            cartItem={{ id, name, price, img, quantity }}
+            disableRemove={true}
+          />
         ))}
         <Total>
           <span>TOTAL: {formatMoney(cartTotal)}</span>

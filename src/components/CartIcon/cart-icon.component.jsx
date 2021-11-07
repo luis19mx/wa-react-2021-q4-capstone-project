@@ -1,7 +1,6 @@
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { ReactComponent as ShopppingIcon } from '../../assets/icons/shop.svg';
-import { toggleCartVisibility, selectCartItemsCount } from '../../store/cart';
+import { useSelector, useDispatch } from 'react-redux';
+import { ReactComponent as ShopppingIcon } from 'assets/icons/shop.svg';
+import { toggleCartVisibility, selectCartItemsCount } from 'store/cart';
 import { CartIconStyles } from './cart-icon.styles';
 
 export default function CartIcon() {

@@ -1,24 +1,59 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CartItemStyles = styled.div`
+  --width: 23%;
+
   width: 100%;
-  height: 80px;
+  background-color: #fff;
   display: flex;
-  margin-bottom: 1em;
+  min-height: 100px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+export const ImageStyles = styled.div`
+  width: 23%;
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
 
   img {
-    width: 30%;
-  }
-
-  > div {
     width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 10px 20px;
+    height: 100%;
+    object-fit: contain;
   }
 `;
-export const CartItemNameStyles = styled.span`
-  font-size: 1rem;
+export const NameStyles = styled.div`
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+`;
+export const QuantityWrapperStyles = styled.div`
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+`;
+export const QuantityStyles = styled.span`
+  margin: 0 10px;
+`;
+export const ArrowStyles = styled.span`
+  cursor: pointer;
+`;
+export const PriceStyles = styled.span`
+  width: var(--width);
+  text-align: center;
+`;
+export const RemoveStyles = styled.div`
+  padding-left: 12px;
+  cursor: pointer;
+  will-change: transform;
+  transform: scale(1);
+  transform-origin: right;
+  transition: transform 0.25s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

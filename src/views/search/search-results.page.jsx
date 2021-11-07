@@ -28,8 +28,6 @@ function SearchResultsPage() {
 
   const { products, pagination, isLoading } = useFetchProducts(...fetchArgs);
 
-  // console.log('isLoading', isLoading);
-  // console.log('products', products);
 
   return isLoading ? (
     <Spinner />
