@@ -1,10 +1,27 @@
-import { TextareaStyles, Label } from './textarea.styles';
+import PropTypes from 'prop-types';
+import { Label } from 'components/styles/label.styles';
+import { TextareaStyles } from './textarea.styles';
 
-export default function Textarea({ handleChange, label, ...textareaProps }) {
+function Textarea({ handleChange, value, name, label, required = false }) {
   return (
     <TextareaStyles>
-      <Label shrink={textareaProps.value.length}>{label}</Label>
-      <textarea onChange={handleChange} {...textareaProps}></textarea>
+      <textarea
+        onChange={handleChange}
+        name={name}
+        value={value}
+        required={required}
+      ></textarea>
+      <Label shrink={value.length}>{label}</Label>
     </TextareaStyles>
   );
 }
+
+Textarea.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+};
+
+export default Textarea;

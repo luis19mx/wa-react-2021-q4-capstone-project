@@ -1,31 +1,23 @@
-import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectCartTotal } from 'store/cart';
-import { useDocumentTitle, useHideCartDropdownOnPageLoad } from 'utils/hooks';
+import { useCartEmptyRedirect, useDocumentTitle, useHideCartDropdownOnPageLoad } from 'utils/hooks';
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { CTA } from 'components/styles';
-import { CartPageStyles, Total, CartHeader, FlexRow } from './cart.styles';
-import { useEffect } from 'react';
+import { CartPageStyles, Total, CartHeader, TopRow } from './cart.styles';
 
 export default function CartPage() {
-  useHideCartDropdownOnPageLoad();
   useDocumentTitle('Your cart');
+  useHideCartDropdownOnPageLoad();
+  useCartEmptyRedirect();
 
   const { cartItems } = useSelector((state) => state.cart);
   const cartTotal = useSelector(selectCartTotal);
-  const history = useHistory();
-
-  useEffect(() => {
-    if (!cartItems?.length) {
-      history.push('/products');
-    }
-  }, [cartItems, history]);
 
   return (
     <CartPageStyles>
-      <FlexRow>
+      <TopRow>
         {!!cartTotal ? (
           <CTA as={Link} to="/checkout">
             Go to checkout
@@ -34,7 +26,7 @@ export default function CartPage() {
         <Total>
           <span>TOTAL: {formatMoney(cartTotal)}</span>
         </Total>
-      </FlexRow>
+      </TopRow>
       <CartHeader>
         <div>
           <span>Product</span>
@@ -53,7 +45,10 @@ export default function CartPage() {
         </div>
       </CartHeader>
       {cartItems.map(({ id, name, price, img, quantity }) => (
-        <CartItem key={id} cartItem={{ id, name, price, img, quantity }} />
+        <CartItem
+          key={id}
+          enableEdition={true}
+          cartItem={{ id, name, price, img, quantity }} />
       ))}
     </CartPageStyles>
   );

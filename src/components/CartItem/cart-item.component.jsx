@@ -5,6 +5,7 @@ import {
   increaseItemQuantity,
   removeItem,
 } from 'store/cart';
+import { formatMoney } from 'utils/helpers';
 import {
   CartItemStyles,
   ImageStyles,
@@ -16,7 +17,7 @@ import {
   RemoveStyles,
 } from './cart-item.styles';
 
-function CartItem({ cartItem, disableRemove = false }) {
+function CartItem({ cartItem, enableEdition = false }) {
   const { name, price, img, quantity } = cartItem;
   const dispatch = useDispatch();
 
@@ -28,17 +29,21 @@ function CartItem({ cartItem, disableRemove = false }) {
       <NameStyles>
         <span>{name}</span>
       </NameStyles>
-      <QuantityWrapperStyles>
-        <ArrowStyles onClick={() => dispatch(decreaseItemQuantity(cartItem))}>
-          &#10094;
-        </ArrowStyles>
-        <QuantityStyles className="quantity__value">{quantity}</QuantityStyles>
-        <ArrowStyles onClick={() => dispatch(increaseItemQuantity(cartItem))}>
-          &#10095;
-        </ArrowStyles>
-      </QuantityWrapperStyles>
-      <PriceStyles className="price">$ {price}</PriceStyles>
-      {!disableRemove ? (
+      {enableEdition ? (
+        <QuantityWrapperStyles>
+          <ArrowStyles onClick={() => dispatch(decreaseItemQuantity(cartItem))}>
+            &#10094;
+          </ArrowStyles>
+          <QuantityStyles>{quantity}</QuantityStyles>
+          <ArrowStyles onClick={() => dispatch(increaseItemQuantity(cartItem))}>
+            &#10095;
+          </ArrowStyles>
+        </QuantityWrapperStyles>
+      ) : (
+        <QuantityStyles>{quantity}</QuantityStyles>
+      )}
+      <PriceStyles>{formatMoney(price)}</PriceStyles>
+      {enableEdition ? (
         <RemoveStyles onClick={() => dispatch(removeItem(cartItem))}>
           &#10005;
         </RemoveStyles>

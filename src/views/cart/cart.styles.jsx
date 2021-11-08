@@ -7,7 +7,7 @@ export const CartPageStyles = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
-  padding: 3vh;
+  /* padding: 3vh; */
 
   button {
     margin-left: auto;
@@ -22,31 +22,33 @@ export const CartHeader = styled.div`
   border-bottom: 1px solid darkgrey;
 
   > div {
+    width: 22%;
     text-transform: capitalize;
-    width: 23%;
     display: flex;
     justify-content: center;
 
     :last-child {
-      width: 8%;
+      width: auto;
+      flex-grow: 1;
     }
   }
 `;
 export const Total = styled.div`
   font-size: 36px;
 `;
-export const FlexRow = styled.div`
+export const TopRow = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 4vh;
-  /* background: salmon; */
   width: 100%;
   padding: 1vh 0;
-  top: 0;
+  position: sticky;
+  top: var(--header-height);
+  background-color: var(--bg);
 
   a {
     width: 40%;
     margin: 0;
   }
-`
+`;

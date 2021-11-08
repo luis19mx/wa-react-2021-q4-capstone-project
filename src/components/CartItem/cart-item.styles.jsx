@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const CartItemStyles = styled.div`
-  --width: 23%;
+  --width: 22%;
 
   width: 100%;
   background-color: #fff;
@@ -11,11 +11,11 @@ export const CartItemStyles = styled.div`
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 export const ImageStyles = styled.div`
-  width: 23%;
-  padding-right: 15px;
+  width: var(--width);
+  height: 96px;
   display: flex;
   justify-content: center;
 
@@ -46,7 +46,10 @@ export const PriceStyles = styled.span`
   text-align: center;
 `;
 export const RemoveStyles = styled.div`
-  padding-left: 12px;
+  width: auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   will-change: transform;
   transform: scale(1);
