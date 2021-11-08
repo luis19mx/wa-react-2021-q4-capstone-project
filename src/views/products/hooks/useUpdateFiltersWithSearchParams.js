@@ -1,15 +1,13 @@
 import { useMemo } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSetCategories } from './useSetCategories';
 
-export function useUpdateFiltersWithSearchParams() {
-  const [filters, setFilters] = useState({});
+export function useUpdateFiltersWithSearchParams(setFilters) {
   const { search } = useLocation();
   const categories = useSetCategories();
 
   const categoriesSearch = useMemo(() => {
-    console.log(search)
     const searchParams = new URLSearchParams(search);
     return searchParams.get('category');
   }, [search]);
@@ -25,7 +23,7 @@ export function useUpdateFiltersWithSearchParams() {
         }, {}),
       });
     }
-  }, [categoriesSearch, categories]);
+  }, [categoriesSearch, categories, setFilters]);
 
-  return filters;
+  // return filters;
 }

@@ -15,6 +15,7 @@ import {
   useUpdateUrlParamsWithActiveFilters,
   useFetchProductList,
   useSetFilters,
+  useUpdateFiltersWithSearchParams,
 } from './hooks';
 
 export default function ProductsPage() {
@@ -27,6 +28,7 @@ export default function ProductsPage() {
 
   const [filters, setFilters] = useSetFilters();
   const filteredProducts = useFilteredProducts(products, filters);
+  useUpdateFiltersWithSearchParams(setFilters);
   useUpdateUrlParamsWithActiveFilters(filters);
 
   return isLoading ? (
