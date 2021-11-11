@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { formatMoney } from '../../utils';
+import { useHistory } from 'react-router-dom';
+import { formatMoney } from '../../utils/helpers';
+import AddToCart from '../add-to-cart/add-to-cart.component';
 import {
   ProductsItemStyles,
   CategoryStyles,
@@ -8,24 +9,44 @@ import {
   ImageStyles,
   PriceStyles,
   TitleStyles,
+  AddToCartWrapper,
+  addToCartStyles,
 } from './products-item.styles';
 
 function ProductsItem({ product }) {
+  const history = useHistory();
+
   const {
-    mainimage: img,
+    id,
     name,
-    category: { slug: category },
     price,
-    id: productId,
+    mainimage: img,
+    category: { slug: category },
+    stock,
   } = product;
 
+  const handleNavigation = () => {
+    return history.push({
+      pathname: `/product/${id}`,
+    });
+  };
+
   return (
-    <ProductsItemStyles as={Link} to={`/product/${productId}`}>
+    <ProductsItemStyles onClick={handleNavigation}>
       <ImageStyles src={img.url} alt={img.alt} />
       <ContentStyles>
         <TitleStyles>{name}</TitleStyles>
         <PriceStyles>{formatMoney(price)}</PriceStyles>
         <CategoryStyles>{category}</CategoryStyles>
+        <AddToCartWrapper data-cart>
+          {stock ? (
+            <AddToCart
+              ctaStyles={addToCartStyles}
+              product={{ id, name, price, img }}
+              bubbles={false}
+            />
+          ) : <p>Out of Stock</p>}
+        </AddToCartWrapper>
       </ContentStyles>
     </ProductsItemStyles>
   );
@@ -33,15 +54,17 @@ function ProductsItem({ product }) {
 
 ProductsItem.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    category: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }),
     mainimage: PropTypes.shape({
       url: PropTypes.string.isRequired,
       alt: PropTypes.string,
     }),
-    name: PropTypes.string.isRequired,
-    category: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }),
-    price: PropTypes.number.isRequired,
+    stock: PropTypes.number.isRequired,
   }).isRequired,
 };
 

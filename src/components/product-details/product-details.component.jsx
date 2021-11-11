@@ -1,11 +1,13 @@
+/** @jsxImportSource @emotion/react */
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { formatMoney } from '../../utils';
+import { formatMoney } from 'utils/helpers';
 import ProductGallery from '../product-gallery/product-gallery.component';
+import AddToCart from '../add-to-cart/add-to-cart.component';
+import { CTA } from 'components/styles/button.styles';
 import { CategoryStyles } from '../products-item/products-item.styles';
-
 import {
-  AddToCartStyles,
+  addToCartStyles,
   ButtonWrapperStyles,
   GalleryWrapper,
   GalleryStyles,
@@ -21,42 +23,60 @@ import {
   FeaturedTitleStyles,
 } from './product-details.styles';
 
-function ProductDetails({ product, featured }) {
+function ProductDetails({ product, featured = false }) {
+  const {
+    id,
+    name,
+    price,
+    gallery,
+    category,
+    sku,
+    tags,
+    short_description,
+    specs,
+    stock,
+  } = product;
+
   return product ? (
     <>
       <FooterPadding />
       <ProductDetailsStyles featuredStyles={featured}>
-        {featured
-        ? <FeaturedTitleStyles>Featured product</FeaturedTitleStyles>
-        : null}
+        {featured ? (
+          <FeaturedTitleStyles>Featured product</FeaturedTitleStyles>
+        ) : null}
         <ColumnLeftStyles>
-          <h1>{product.name}</h1>
+          <h1>{name}</h1>
           <GalleryWrapper>
             <GalleryStyles>
-              <ProductGallery gallery={product.gallery} />
-              <CategoryStyles>{product.category?.slug}</CategoryStyles>
+              <ProductGallery gallery={gallery} />
+              <CategoryStyles>{category?.slug}</CategoryStyles>
             </GalleryStyles>
-            <PriceStyles>{formatMoney(product.price)}</PriceStyles>
+            <PriceStyles>{formatMoney(price)}</PriceStyles>
           </GalleryWrapper>
-          <SkuStyles>SKU: #{product.sku}</SkuStyles>
+          <SkuStyles>SKU: #{sku}</SkuStyles>
           <TagsWrapperStyles>
-            {product.tags?.length
-              ? product.tags.map((tag) => (
-                  <TagsStyles key={tag}>{tag}</TagsStyles>
-                ))
+            {tags?.length
+              ? tags.map((tag) => <TagsStyles key={tag}>{tag}</TagsStyles>)
               : null}
           </TagsWrapperStyles>
-          <p>{product.short_description}</p>
+          <p>{short_description}</p>
         </ColumnLeftStyles>
         <ColumnRightStyles>
-          <ButtonWrapperStyles>
-            <AddToCartStyles>Add to cart</AddToCartStyles>
+          <ButtonWrapperStyles featured={featured}>
+            {!!stock ? (
+              <AddToCart
+                ctaStyles={addToCartStyles}
+                product={{ id, name, price, img: gallery && gallery[0] }}
+              />
+            ) : (
+              <CTA css={addToCartStyles}>Out of stock</CTA>
+            )}
           </ButtonWrapperStyles>
-          {product.specs?.length ? (
+          {specs?.length ? (
             <SpecsStyles>
               <h3>Specs:</h3>
               <dl>
-                {product.specs.map(({ spec_name, spec_value }) => (
+                {specs.map(({ spec_name, spec_value }) => (
                   <Fragment key={spec_name}>
                     <dt>{spec_name}</dt>
                     <dd>{spec_value}</dd>
@@ -73,7 +93,9 @@ function ProductDetails({ product, featured }) {
 
 ProductDetails.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     gallery: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string.isRequired,
@@ -83,7 +105,6 @@ ProductDetails.propTypes = {
     category: PropTypes.shape({
       slug: PropTypes.string,
     }),
-    price: PropTypes.number.isRequired,
     sku: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string),
     short_description: PropTypes.string,

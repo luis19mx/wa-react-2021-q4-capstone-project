@@ -22,7 +22,3 @@ export const FlexStyles = styled.div`
   align-items: center;
   gap: var(--gutter);
 `;
-export const ShopppingIconStyles = styled.svg`
-  height: 32px;
-  cursor: pointer;
-`;

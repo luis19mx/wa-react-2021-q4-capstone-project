@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import FeaturedBannersItem from '../featured-banners-item/featured-banners-item.component';
 import { FeaturedBannersStyles } from './featured-banners.styles';
 
-const sliderSettings = {
+const SLIDER_SETTINGS = {
   dots: true,
   infinite: true,
   autoplay: true,
@@ -17,7 +17,7 @@ const sliderSettings = {
 function FeaturedBanners({ banners }) {
   return Array.isArray(banners) && banners.length ? (
     <FeaturedBannersStyles>
-      <Slider {...sliderSettings}>
+      <Slider {...SLIDER_SETTINGS}>
         {banners.map(({ id, banner }) => (
           <FeaturedBannersItem key={id} banner={banner} />
         ))}

@@ -1,9 +1,36 @@
-import PropTypes from 'prop-types';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ProductFiltersButton, ProductFiltersStyles } from './product-filters.styles';
+import PropTypes from 'prop-types';
+import {
+  ProductFiltersButton,
+  ProductFiltersStyles,
+} from './product-filters.styles';
 
-function ProductFilters({ filters, handleChange, setAllFiltersToFalse }) {
+function ProductFilters({ filters, setFilters }) {
   const [isFilterActive, setIsFilterActive] = useState(false);
+  const history = useHistory();
+  const { state } = useLocation();
+
+  const setAllFiltersToFalse = () => {
+    history.replace({ search: '', state });
+
+    setFilters(
+      Object.keys(filters).reduce(
+        (filters, filter) => ({
+          ...filters,
+          [filter]: false,
+        }),
+        {}
+      )
+    );
+  };
+
+  const handleChange = ({ target: { name } }) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: !prevFilters[name],
+    }));
+  };
 
   useEffect(() => {
     setIsFilterActive(Object.keys(filters).some((filter) => filters[filter]));
@@ -40,8 +67,7 @@ function ProductFilters({ filters, handleChange, setAllFiltersToFalse }) {
 
 ProductFilters.propTypes = {
   filters: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  setAllFiltersToFalse: PropTypes.func.isRequired,
+  setFilters: PropTypes.func.isRequired,
 };
 
 export default ProductFilters;

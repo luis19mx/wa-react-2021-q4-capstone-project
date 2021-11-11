@@ -21,7 +21,6 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "slick-carousel": "^1.8.1",
-    "swiper": "6.8.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -29,8 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build && cp ./CNAME build",
-    "deploy": "surge build"
+    "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build && mv build/index.html build/200.html",
+    "deploy": "surge build",
+    "postdeploy": "surge --domain https://wizeline-q4-luis-lasso-deliver-4.surge.sh/ build"
   },
   "devDependencies": {
     "surge": "^0.23.0"

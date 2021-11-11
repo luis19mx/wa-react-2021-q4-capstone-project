@@ -4,10 +4,10 @@ import { useLatestAPI } from './useLatestAPI';
 
 export function useFetchSingleProduct(productId) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [product, setProduct] = useState(() => ({
-    product: {},
-    isLoading: true,
-  }));
+
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
@@ -18,8 +18,6 @@ export function useFetchSingleProduct(productId) {
 
     async function getProduct() {
       try {
-        setProduct({ product: {}, isLoading: true });
-
         const url = `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
           `[[at(document.id, "${productId}")]]`
         )}`;
@@ -42,10 +40,20 @@ export function useFetchSingleProduct(productId) {
           };
         });
 
-        setProduct({ product, isLoading: false });
-      } catch (err) {
-        setProduct({ product: {}, isLoading: false });
-        console.error(err);
+        // out of stock functionality
+        if (
+          product.id === 'YWL8XBIAAC0AzuPZ' ||
+          product.id === 'YWL44xIAACoAztQQ'
+        ) {
+          product.stock = 0;
+        }
+
+        setProduct(product);
+      } catch (error) {
+        setError(error);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -56,5 +64,5 @@ export function useFetchSingleProduct(productId) {
     };
   }, [apiRef, isApiMetadataLoading, productId]);
 
-  return product;
+  return { product, isLoading, error };
 }

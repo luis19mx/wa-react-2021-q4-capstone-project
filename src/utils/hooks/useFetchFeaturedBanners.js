@@ -4,10 +4,10 @@ import { useLatestAPI } from './useLatestAPI';
 
 export function useFetchFeaturedBanners() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [featuredBanners, setFeaturedBanners] = useState(() => ({
-    banners: [],
-    isLoading: true,
-  }));
+
+  const [featuredBanners, setFeaturedBanners] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
@@ -18,8 +18,6 @@ export function useFetchFeaturedBanners() {
 
     async function getFeaturedBanners() {
       try {
-        setFeaturedBanners({ banners: [], isLoading: true });
-
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "banner")]]'
@@ -34,10 +32,12 @@ export function useFetchFeaturedBanners() {
           return { id, banner };
         });
 
-        setFeaturedBanners({ banners, isLoading: false });
-      } catch (err) {
-        setFeaturedBanners({ banners: [], isLoading: false });
-        console.error(err);
+        setFeaturedBanners(banners);
+      } catch (error) {
+        setError(error);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -48,5 +48,5 @@ export function useFetchFeaturedBanners() {
     };
   }, [apiRef, isApiMetadataLoading]);
 
-  return featuredBanners;
+  return { featuredBanners, isLoading, error };
 }
