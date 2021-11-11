@@ -1,24 +1,57 @@
-import { useState } from 'react';
-import HomePage from './pages/home/home.page';
-import ProductListPage from './pages/product-list/product-list.page';
+import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
-import Content from './components/content/content.component';
+import { fetchMetaData } from 'store/apiMetaData';
+import { fetchCategories } from 'store/categories';
 
-import GlobalStyles from './components/global-styles/global-styles.component';
+import GlobalStyles from 'components/GlobalStyles';
+import Layout from 'components/Layout';
 
-function App() {
-  const [isHomePageActive, setIsHomePageActive] = useState(true);
+import HomePage from 'views/home';
+import ProductListPage from 'views/products';
+import ProductDetailsPage from 'views/product';
+import CartPage from 'views/cart';
+import CheckoutPage from 'views/checkout';
+import SearchResultsPage from 'views/search';
+import NotFoundPage from 'views/404';
+
+export default function App() {
+  const dispatch = useDispatch();
+
+  dispatch(fetchMetaData());
+  dispatch(fetchCategories());
 
   return (
     <>
       <GlobalStyles />
-      <Header {...{ setIsHomePageActive }} />
-      <Content>{isHomePageActive ? <HomePage {...{ setIsHomePageActive }} /> : <ProductListPage />}</Content>
-      <Footer />
+      <Layout>
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/home">
+            <HomePage />
+          </Route>
+          <Route path="/products">
+            <ProductListPage />
+          </Route>
+          <Route path={`/product/:productId`}>
+            <ProductDetailsPage />
+          </Route>
+          <Route path={`/cart`}>
+            <CartPage />
+          </Route>
+          <Route path={`/checkout`}>
+            <CheckoutPage />
+          </Route>
+          <Route path={`/search`}>
+            <SearchResultsPage />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Layout>
     </>
   );
 }
-
-export default App;

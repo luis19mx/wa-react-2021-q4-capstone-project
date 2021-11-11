@@ -1,27 +1,34 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { API_BASE_URL } from '../constants';
 
-const INITIAL_API_METADATA = { ref: null, isLoading: true };
-
 export function useLatestAPI() {
-  const [apiMetadata, setApiMetadata] = useState(() => INITIAL_API_METADATA);
+  const [apiMetadata, setApiMetadata] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const { ref: apiRef } = useSelector((state) => state.apiMetaData);
 
   useEffect(() => {
     const controller = new AbortController();
 
     async function getAPIMetadata() {
       try {
-        setApiMetadata(INITIAL_API_METADATA);
+        if (apiRef) {
+          return setApiMetadata(apiRef);
+        }
 
         const response = await fetch(API_BASE_URL, {
           signal: controller.signal,
         });
         const { refs: [{ ref } = {}] = [] } = await response.json();
 
-        setApiMetadata({ ref, isLoading: false });
-      } catch (err) {
-        setApiMetadata({ ref: null, isLoading: false });
-        console.error(err);
+        setApiMetadata(ref);
+      } catch (error) {
+        setError(error);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -30,7 +37,7 @@ export function useLatestAPI() {
     return () => {
       controller.abort();
     };
-  }, []);
+  }, [apiRef]);
 
-  return apiMetadata;
+  return { ref: apiMetadata, isLoading, error };
 }

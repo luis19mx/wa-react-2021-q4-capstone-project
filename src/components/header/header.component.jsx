@@ -1,23 +1,32 @@
-import { FlexStyles, HeaderStyles, LogoStyles, SearchStyles, ShopppingIconStyles } from './header.styles';
-import { ReactComponent as ShopppingIcon } from '../../assets/icons/shop.svg';
-import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-export default function Header({ setIsHomePageActive }) {
+import SearchProducts from '../SearchProducts';
+import CartDropdown from '../CartDropdown';
+import CartIcon from '../CartIcon';
+
+import { ReactComponent as Logo } from '../../assets/logo.svg';
+import {
+  FlexStyles,
+  HeaderStyles,
+  LogoStyles,
+} from './header.styles';
+
+export default function Header() {
+  const { cartIsHidden } = useSelector((state) => state.cart);
+
   return (
     <HeaderStyles>
       <LogoStyles>
-        <a href='/' onClick={(evt) => evt.preventDefault() || setIsHomePageActive(true)}>
+        <Link to="/">
           <Logo />
-        </a>
+        </Link>
       </LogoStyles>
-      <FlexStyles className='right'>
-        <SearchStyles>
-          <SearchIcon />
-          <input type='search' placeholder='search…' />
-        </SearchStyles>
-        <ShopppingIconStyles as={ShopppingIcon} />
+      <FlexStyles>
+        <SearchProducts />
+        <CartIcon />
       </FlexStyles>
+      {!cartIsHidden ? <CartDropdown /> : null}
     </HeaderStyles>
   );
 }
