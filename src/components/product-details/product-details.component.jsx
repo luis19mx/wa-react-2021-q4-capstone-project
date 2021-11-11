@@ -1,10 +1,11 @@
+/** @jsxImportSource @emotion/react */
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { formatMoney } from '../../utils/helpers';
+import { formatMoney } from 'utils/helpers';
 import ProductGallery from '../product-gallery/product-gallery.component';
 import AddToCart from '../add-to-cart/add-to-cart.component';
+import { CTA } from 'components/styles/button.styles';
 import { CategoryStyles } from '../products-item/products-item.styles';
-
 import {
   addToCartStyles,
   ButtonWrapperStyles,
@@ -33,6 +34,7 @@ function ProductDetails({ product, featured = false }) {
     tags,
     short_description,
     specs,
+    stock,
   } = product;
 
   return product ? (
@@ -61,10 +63,14 @@ function ProductDetails({ product, featured = false }) {
         </ColumnLeftStyles>
         <ColumnRightStyles>
           <ButtonWrapperStyles featured={featured}>
-            <AddToCart
-              ctaStyles={addToCartStyles}
-              product={{ id, name, price, img: gallery && gallery[0] }}
-            />
+            {!!stock ? (
+              <AddToCart
+                ctaStyles={addToCartStyles}
+                product={{ id, name, price, img: gallery && gallery[0] }}
+              />
+            ) : (
+              <CTA css={addToCartStyles}>Out of stock</CTA>
+            )}
           </ButtonWrapperStyles>
           {specs?.length ? (
             <SpecsStyles>

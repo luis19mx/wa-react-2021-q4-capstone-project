@@ -2,21 +2,19 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { addItemToCart } from '../../store/cart';
+import { addItemToCart } from 'store/cart';
 
 import { CTA } from '../styles/button.styles';
 
 function AddToCart({ product, bubbles = true, ctaStyles = null }) {
   const dispatch = useDispatch();
 
-  const { id, name, price, img } = product;
-
   const handleAddToCart = (() => {
     return bubbles
-      ? () => dispatch(addItemToCart({ id, name, price, img }))
+      ? () => dispatch(addItemToCart(product))
       : (evt) => {
           evt.stopPropagation();
-          return dispatch(addItemToCart({ id, name, price, img }));
+          return dispatch(addItemToCart(product));
         };
   })();
 

@@ -40,6 +40,14 @@ export function useFetchSingleProduct(productId) {
           };
         });
 
+        // out of stock functionality
+        if (
+          product.id === 'YWL8XBIAAC0AzuPZ' ||
+          product.id === 'YWL44xIAACoAztQQ'
+        ) {
+          product.stock = 0;
+        }
+
         setProduct(product);
       } catch (error) {
         setError(error);
