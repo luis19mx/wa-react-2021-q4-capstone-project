@@ -45,7 +45,9 @@ function ProductsItem({ product }) {
               product={{ id, name, price, img }}
               bubbles={false}
             />
-          ) : <p>Out of Stock</p>}
+          ) : (
+            <p>Out of Stock</p>
+          )}
         </AddToCartWrapper>
       </ContentStyles>
     </ProductsItemStyles>

@@ -50,8 +50,9 @@ export default function CssScaffolding() {
       margin: 0;
     }
     body {
-      font-family: 'Pangram', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-family: 'Pangram', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
 
@@ -76,7 +77,8 @@ export default function CssScaffolding() {
       background: var(--l_yellow);
     }
     code {
-      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
     }
     a {
       color: inherit;

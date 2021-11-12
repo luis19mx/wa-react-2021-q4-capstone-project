@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import apiMetaDataReducer from './apiMetaData';
 import categoriesReducer from './categories';
 import cartReducer from './cart';
-import productsReducer from './products'
+import productsReducer from './products';
 
 const middleware = [thunk];
 

@@ -42,4 +42,4 @@ export const NotFoundBody = css`
   body {
     background-color: #fcfefc;
   }
-`
+`;

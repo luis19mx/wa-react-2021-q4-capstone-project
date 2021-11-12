@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useCartEmptyRedirect, useDocumentTitle, useHideCartDropdownOnPageLoad } from 'utils/hooks';
+import {
+  useCartEmptyRedirect,
+  useDocumentTitle,
+  useHideCartDropdownOnPageLoad,
+} from 'utils/hooks';
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { Input, Textarea } from 'components/forms';

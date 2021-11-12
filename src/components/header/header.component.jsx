@@ -6,11 +6,7 @@ import CartDropdown from '../CartDropdown';
 import CartIcon from '../CartIcon';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-import {
-  FlexStyles,
-  HeaderStyles,
-  LogoStyles,
-} from './header.styles';
+import { FlexStyles, HeaderStyles, LogoStyles } from './header.styles';
 
 export default function Header() {
   const { cartIsHidden } = useSelector((state) => state.cart);

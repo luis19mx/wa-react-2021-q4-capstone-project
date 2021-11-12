@@ -21,8 +21,8 @@ function CartItem({ cartItem, enableEdition = false }) {
   const { name, price, img, quantity } = cartItem;
   const dispatch = useDispatch();
 
-  const handleItemDecrease = () => dispatch(decreaseItemQuantity(cartItem))
-  const handleItemIncrease = () => dispatch(increaseItemQuantity(cartItem))
+  const handleItemDecrease = () => dispatch(decreaseItemQuantity(cartItem));
+  const handleItemIncrease = () => dispatch(increaseItemQuantity(cartItem));
 
   return cartItem ? (
     <CartItemStyles>
@@ -34,13 +34,9 @@ function CartItem({ cartItem, enableEdition = false }) {
       </NameStyles>
       {enableEdition ? (
         <QuantityWrapperStyles>
-          <ArrowStyles onClick={handleItemDecrease}>
-            &#10094;
-          </ArrowStyles>
+          <ArrowStyles onClick={handleItemDecrease}>&#10094;</ArrowStyles>
           <QuantityStyles>{quantity}</QuantityStyles>
-          <ArrowStyles onClick={handleItemIncrease}>
-            &#10095;
-          </ArrowStyles>
+          <ArrowStyles onClick={handleItemIncrease}>&#10095;</ArrowStyles>
         </QuantityWrapperStyles>
       ) : (
         <QuantityStyles>{quantity}</QuantityStyles>

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const SearchStyles = styled.div`
   display: flex;
@@ -29,14 +29,13 @@ export const SearchStyles = styled.div`
     padding-left: 0.66em;
     padding-right: 0.66em;
     box-shadow: -0.0625em 0 0.125em rgb(10 10 10 / 25%);
-    transition: opacity .25s linear;
+    transition: opacity 0.25s linear;
 
     &[disabled] {
       opacity: 0;
       pointer-events: none;
     }
   }
-
 
   @media (max-width: 24em) {
     width: 32px;

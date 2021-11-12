@@ -9,5 +9,5 @@ export default function GlobalStyles() {
       <Global styles={CssModernReset} />
       <Global styles={CssScaffolding} />
     </>
-  )
+  );
 }

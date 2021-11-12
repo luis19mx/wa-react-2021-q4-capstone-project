@@ -6,7 +6,7 @@ export const CartDropdownStyles = styled.div`
   top: calc(var(--header-height) + 1em);
   background-color: #fff;
   border: 1px solid hsl(0, 0%, 80%);
-  box-shadow: 0 .4em 0.6em rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.4em 0.6em rgba(0, 0, 0, 0.08);
   border-radius: 0.8em;
   width: 300px;
   display: flex;

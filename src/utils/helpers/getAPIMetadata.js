@@ -8,4 +8,4 @@ export default async function getAPIMetadata() {
   } catch (err) {
     console.error(err);
   }
-};
+}

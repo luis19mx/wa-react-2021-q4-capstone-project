@@ -1,7 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectCartTotal } from 'store/cart';
-import { useCartEmptyRedirect, useDocumentTitle, useHideCartDropdownOnPageLoad } from 'utils/hooks';
+import {
+  useCartEmptyRedirect,
+  useDocumentTitle,
+  useHideCartDropdownOnPageLoad,
+} from 'utils/hooks';
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { CTA } from 'components/styles';
@@ -48,7 +52,8 @@ export default function CartPage() {
         <CartItem
           key={id}
           enableEdition={true}
-          cartItem={{ id, name, price, img, quantity }} />
+          cartItem={{ id, name, price, img, quantity }}
+        />
       ))}
     </CartPageStyles>
   );

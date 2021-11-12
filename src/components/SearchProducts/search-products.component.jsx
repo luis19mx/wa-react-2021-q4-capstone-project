@@ -16,7 +16,7 @@ export default function SearchProducts() {
       search: `?q=${search}`,
     });
 
-    setSearch('')
+    setSearch('');
   };
 
   const handleChange = ({ target: { value } }) => setSearch(value);
