@@ -1,1 +1,1 @@
-export { default } from './ProductFilters.component'
+export { default } from './ProductFilters.component';

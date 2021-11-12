@@ -1,1 +1,1 @@
-export { default } from './FeaturedBanners.component'
+export { default } from './FeaturedBanners.component';

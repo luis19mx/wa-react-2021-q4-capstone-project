@@ -49,11 +49,7 @@ export default function CartPage() {
         </div>
       </CartHeader>
       {cartItems.map((cartItem) => (
-        <CartItem
-          key={cartItem.id}
-          enableEdition={true}
-          cartItem={cartItem}
-        />
+        <CartItem key={cartItem.id} enableEdition={true} cartItem={cartItem} />
       ))}
     </CartPageStyles>
   );

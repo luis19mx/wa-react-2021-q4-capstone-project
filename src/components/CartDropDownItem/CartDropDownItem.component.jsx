@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  CartItemStyles,
-  CartItemNameStyles,
-} from './CartDropDownItem.styles';
+import { CartItemStyles, CartItemNameStyles } from './CartDropDownItem.styles';
 
 function CartDropDownItem({ cartItem }) {
   const { name, price, img, quantity } = cartItem;
