@@ -33,9 +33,6 @@ export const CartHeader = styled.div`
     }
   }
 `;
-export const Total = styled.div`
-  font-size: 36px;
-`;
 export const TopRow = styled.div`
   display: flex;
   justify-content: space-around;

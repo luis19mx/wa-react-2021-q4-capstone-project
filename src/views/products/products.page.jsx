@@ -1,15 +1,10 @@
 import { useSelector } from 'react-redux';
 import { useDocumentTitle } from 'utils/hooks';
-import ProductFilters from 'components/product-filters/product-filters.component';
-import Products from 'components/products/products.components';
-import Spinner from 'components/spinner/spinner.component';
-import Pagination from 'components/pagination/pagination.component';
+import ProductFilters from 'components/ProductFilters';
+import Products from 'components/Products';
+import Spinner from 'components/Spinner';
+import Pagination from 'components/Pagination';
 import ErrorBoundary from 'components/ErrorBoundary';
-import {
-  ContentStyles,
-  FlexStyles,
-  ProductListPageStyles,
-} from './products.page.styles';
 import {
   useFilteredProducts,
   useUpdateUrlParamsWithActiveFilters,
@@ -17,6 +12,11 @@ import {
   useSetFilters,
   useUpdateFiltersWithSearchParams,
 } from './hooks';
+import {
+  ContentStyles,
+  FlexStyles,
+  ProductListPageStyles,
+} from './Products.styles';
 
 export default function ProductsPage() {
   useDocumentTitle('Products');
@@ -28,6 +28,7 @@ export default function ProductsPage() {
 
   const [filters, setFilters] = useSetFilters();
   const filteredProducts = useFilteredProducts(products, filters);
+
   useUpdateFiltersWithSearchParams(setFilters);
   useUpdateUrlParamsWithActiveFilters(filters);
 

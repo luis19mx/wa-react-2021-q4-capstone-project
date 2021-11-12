@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { Label } from 'components/styles/label.styles';
-import { InputStyles } from './input.styles';
+import { InputStyles } from './Input.styles';
+import { Label, InputContainerStyles } from '../styles';
 
 function Input({ handleChange, value, type, name, label, required = false }) {
   return (
-    <InputStyles>
-      <input
+    <InputContainerStyles>
+      <InputStyles
         onChange={handleChange}
         type={type}
         name={name}
@@ -13,7 +13,7 @@ function Input({ handleChange, value, type, name, label, required = false }) {
         required={required}
       />
       <Label shrink={value.length}>{label}</Label>
-    </InputStyles>
+    </InputContainerStyles>
   );
 }
 

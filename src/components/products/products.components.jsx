@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import ProductsItem from '../products-item/products-item.component';
-import { ProductsGrid, ProductsStyles, ProductsTitle } from './products.styles';
+import ProductsItem from 'components/ProductsItem';
+import { ProductsGrid, ProductsStyles, ProductsTitle } from './Products.styles';
 
 function Products({ products, showTitle, paddingTopStyles }) {
   return (

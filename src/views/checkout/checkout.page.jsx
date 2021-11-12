@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { selectCartTotal } from 'store/cart';
 import {
   useCartEmptyRedirect,
   useDocumentTitle,
@@ -8,11 +9,8 @@ import {
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { Input, Textarea } from 'components/forms';
-import { Button } from 'components/styles/button.styles';
-import { selectCartTotal } from 'store/cart';
-import { Total } from '../cart/cart.styles';
-import { CheckoutPageStyles } from './checkout.styles';
-import { ColumnStyles } from './checkout.styles';
+import { Button, Total } from 'components/styles';
+import { CheckoutPageStyles, ColumnStyles } from './Checkout.styles';
 
 export default function CheckoutPage() {
   useDocumentTitle('Checkout');
@@ -87,8 +85,8 @@ export default function CheckoutPage() {
         <Total>
           <span>TOTAL: {formatMoney(cartTotal)}</span>
         </Total>
-        {cartItems.map(({ id, name, price, img, quantity }) => (
-          <CartItem key={id} cartItem={{ id, name, price, img, quantity }} />
+        {cartItems.map((cartItem) => (
+          <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </ColumnStyles>
     </CheckoutPageStyles>

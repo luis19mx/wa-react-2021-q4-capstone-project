@@ -1,1 +1,1 @@
-export { default } from './cart-dropdown-item.component';
+export { default } from './CartDropDownItem.component';

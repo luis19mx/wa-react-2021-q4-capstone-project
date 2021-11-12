@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import { Label } from 'components/styles/label.styles';
-import { TextareaStyles } from './textarea.styles';
+import { TextareaStyles } from './Textarea.styles';
+import { Label, InputContainerStyles } from '../styles';
 
 function Textarea({ handleChange, value, name, label, required = false }) {
   return (
-    <TextareaStyles>
-      <textarea
+    <InputContainerStyles>
+      <TextareaStyles
         onChange={handleChange}
         name={name}
         value={value}
         required={required}
-      ></textarea>
+      />
       <Label shrink={value.length}>{label}</Label>
-    </TextareaStyles>
+    </InputContainerStyles>
   );
 }
 

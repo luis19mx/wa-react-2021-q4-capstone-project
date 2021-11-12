@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
-import SearchProducts from '../SearchProducts';
-import CartDropdown from '../CartDropdown';
-import CartIcon from '../CartIcon';
-
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-import { FlexStyles, HeaderStyles, LogoStyles } from './header.styles';
+import SearchProducts from 'components/SearchProducts';
+import CartDropdown from 'components/CartDropdown';
+import CartIcon from 'components/CartIcon';
+import { FlexStyles, HeaderStyles, LogoStyles } from './Header.styles';
+import { ReactComponent as Logo } from 'assets/logo.svg';
 
 export default function Header() {
   const { cartIsHidden } = useSelector((state) => state.cart);

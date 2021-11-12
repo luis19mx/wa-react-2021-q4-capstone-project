@@ -8,8 +8,8 @@ import {
 } from 'utils/hooks';
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
-import { CTA } from 'components/styles';
-import { CartPageStyles, Total, CartHeader, TopRow } from './cart.styles';
+import { CTA, Total } from 'components/styles';
+import { CartPageStyles, CartHeader, TopRow } from './Cart.styles';
 
 export default function CartPage() {
   useDocumentTitle('Your cart');
@@ -48,11 +48,11 @@ export default function CartPage() {
           <span>Remove</span>
         </div>
       </CartHeader>
-      {cartItems.map(({ id, name, price, img, quantity }) => (
+      {cartItems.map((cartItem) => (
         <CartItem
-          key={id}
+          key={cartItem.id}
           enableEdition={true}
-          cartItem={{ id, name, price, img, quantity }}
+          cartItem={cartItem}
         />
       ))}
     </CartPageStyles>

@@ -1,6 +1,6 @@
-import Header from '../Header';
-import Footer from '../Footer';
-import { MainContentStyles } from './layout.styles';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import { MainContentStyles } from './Layout.styles';
 
 export default function Layout({ children }) {
   return (

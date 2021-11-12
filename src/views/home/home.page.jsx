@@ -1,46 +1,29 @@
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import FeaturedBanners from 'components/featured-banners/featured-banners.component';
-import ProductCategories from 'components/product-categories/product-categories.component';
-import ProductDetails from 'components/product-details/product-details.component';
-import Spinner from 'components/spinner/spinner.component';
-import { CTA } from 'components/styles/button.styles';
 import {
   useDocumentTitle,
   useFetchFeaturedBanners,
-  useFetchProducts,
+  useFetchFeaturedProduct,
   useIsPageLoading,
 } from 'utils/hooks';
+import FeaturedBanners from 'components/FeaturedBanners';
+import ProductCategories from 'components/ProductCategories';
+import ProductDetails from 'components/ProductDetails';
+import Spinner from 'components/Spinner';
+import { CTA } from 'components/styles';
 
 export default function HomePage() {
   useDocumentTitle();
-
-  const { featuredBanners: banners, isLoading: isFeaturedBannersLoading } =
-    useFetchFeaturedBanners();
 
   const { categories, isLoading: isProductCategoriesLoading } = useSelector(
     (state) => state.categories
   );
 
-  const { products, isLoading: isFeaturedProductsLoading } =
-    useFetchProducts('featured');
+  const { featuredBanners: banners, isLoading: isFeaturedBannersLoading } =
+    useFetchFeaturedBanners();
 
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    const [product] = products.map(({ id, product }) => ({
-      id,
-      ...product,
-      gallery: [
-        ...product.images.map(({ image }) => ({
-          ...image,
-        })),
-      ],
-    }));
-
-    setProduct(product);
-  }, [products]);
+  const { product, isLoading: isFeaturedProductsLoading } =
+    useFetchFeaturedProduct();
 
   const isPageLoading = useIsPageLoading(
     isFeaturedBannersLoading,
