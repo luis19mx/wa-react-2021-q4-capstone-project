@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFetchProducts } from 'utils/hooks';
 
 export function useFetchFeaturedProduct() {
-  const { products, isLoading } = useFetchProducts('featured');
+  const { products, isLoading, error } = useFetchProducts('featured');
 
   const [product, setProduct] = useState(null);
 
@@ -17,8 +17,8 @@ export function useFetchFeaturedProduct() {
       ],
     }));
 
-    setProduct(product);
+    product ? setProduct(product) : setProduct(null);
   }, [products]);
 
-  return { product, isLoading };
+  return { product, isLoading, error };
 }

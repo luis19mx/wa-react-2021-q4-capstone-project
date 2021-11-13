@@ -10,7 +10,7 @@ export default function Header() {
   const { cartIsHidden } = useSelector((state) => state.cart);
 
   return (
-    <HeaderStyles>
+    <HeaderStyles data-testid="header">
       <LogoStyles>
         <Link to="/">
           <Logo />

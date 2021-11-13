@@ -4,7 +4,7 @@ import { ProductCategoriesStyles } from './ProductCategories.styles';
 
 function ProductCategories({ categories }) {
   return (
-    <ProductCategoriesStyles>
+    <ProductCategoriesStyles data-testid="product-categories">
       {categories?.length &&
         categories.map(({ id, category }) => (
           <ProductCategoriesItem key={id} category={category} />

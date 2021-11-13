@@ -16,7 +16,7 @@ const SLIDER_SETTINGS = {
 
 function FeaturedBanners({ banners }) {
   return Array.isArray(banners) && banners.length ? (
-    <FeaturedBannersStyles>
+    <FeaturedBannersStyles data-testid="featured-banners">
       <Slider {...SLIDER_SETTINGS}>
         {banners.map(({ id, banner }) => (
           <FeaturedBannersItem key={id} banner={banner} />

@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -13,12 +14,14 @@ if (process.env.NODE_ENV === 'development') {
   middleware.push(logger);
 }
 
+export const rootReducer = combineReducers({
+  apiMetaData: apiMetaDataReducer,
+  categories: categoriesReducer,
+  cart: cartReducer,
+  products: productsReducer,
+});
+
 export default configureStore({
-  reducer: {
-    apiMetaData: apiMetaDataReducer,
-    categories: categoriesReducer,
-    cart: cartReducer,
-    products: productsReducer,
-  },
+  reducer: rootReducer,
   middleware,
 });

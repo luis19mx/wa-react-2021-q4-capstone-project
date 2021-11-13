@@ -26,14 +26,14 @@
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --runInBand",
     "eject": "react-scripts eject",
     "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build && mv build/index.html build/200.html",
     "deploy": "surge build",
     "postdeploy": "surge --domain https://wizeline-q4-luis-lasso-deliver-4.surge.sh/ build"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "@testing-library/react-hooks": "^7.0.2",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
@@ -44,11 +44,6 @@
       "react-app",
       "react-app/jest"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [

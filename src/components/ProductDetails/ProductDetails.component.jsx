@@ -43,7 +43,7 @@ function ProductDetails({ product, featured = false }) {
         {featured ? (
           <FeaturedTitleStyles>Featured product</FeaturedTitleStyles>
         ) : null}
-        <ColumnLeftStyles>
+        <ColumnLeftStyles data-testid="product-details">
           <h1>{name}</h1>
           <GalleryWrapper>
             <GalleryStyles>

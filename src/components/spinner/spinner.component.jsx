@@ -2,7 +2,7 @@ import { SpinnerContainer, SpinnerOverlay } from './Spinner.styles';
 
 export default function Spinner() {
   return (
-    <SpinnerOverlay>
+    <SpinnerOverlay data-testid="spinner">
       <SpinnerContainer />
     </SpinnerOverlay>
   );
