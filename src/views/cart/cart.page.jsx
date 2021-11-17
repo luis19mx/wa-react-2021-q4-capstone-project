@@ -28,7 +28,10 @@ export default function CartPage() {
           </CTA>
         ) : null}
         <Total>
-          <span>TOTAL: {formatMoney(cartTotal)}</span>
+          <span>
+            TOTAL:{' '}
+            <span data-testid="cart-total">{formatMoney(cartTotal)}</span>
+          </span>
         </Total>
       </TopRow>
       <CartHeader>

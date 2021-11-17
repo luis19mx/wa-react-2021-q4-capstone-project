@@ -23,6 +23,7 @@ function CartItem({ cartItem, enableEdition = false }) {
 
   const handleItemDecrease = () => dispatch(decreaseItemQuantity(cartItem));
   const handleItemIncrease = () => dispatch(increaseItemQuantity(cartItem));
+  const handleRemoveItem = () => dispatch(removeItem(cartItem));
 
   return cartItem ? (
     <CartItemStyles>
@@ -34,16 +35,20 @@ function CartItem({ cartItem, enableEdition = false }) {
       </NameStyles>
       {enableEdition ? (
         <QuantityWrapperStyles>
-          <ArrowStyles onClick={handleItemDecrease}>&#10094;</ArrowStyles>
+          <ArrowStyles data-testid="decrease-item" onClick={handleItemDecrease}>
+            &#10094;
+          </ArrowStyles>
           <QuantityStyles>{quantity}</QuantityStyles>
-          <ArrowStyles onClick={handleItemIncrease}>&#10095;</ArrowStyles>
+          <ArrowStyles data-testid="increase-item" onClick={handleItemIncrease}>
+            &#10095;
+          </ArrowStyles>
         </QuantityWrapperStyles>
       ) : (
         <QuantityStyles>{quantity}</QuantityStyles>
       )}
       <PriceStyles>{formatMoney(price)}</PriceStyles>
       {enableEdition ? (
-        <RemoveStyles onClick={() => dispatch(removeItem(cartItem))}>
+        <RemoveStyles data-testid="remove-item" onClick={handleRemoveItem}>
           &#10005;
         </RemoveStyles>
       ) : null}
