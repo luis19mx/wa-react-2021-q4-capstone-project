@@ -10,7 +10,7 @@ describe('<CartDropdown />', () => {
       preloadedState: cartItemsStore,
     });
 
-    const cartItemEl = screen.getByText(/Grayton Armchair/);
+    const cartItemEl = screen.getByText(/Chesterfield Sofa Dark Brown/);
     expect(cartItemEl).toBeInTheDocument();
   });
   it('shows the empty message', async () => {
