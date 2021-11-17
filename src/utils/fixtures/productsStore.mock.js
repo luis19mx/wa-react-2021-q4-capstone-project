@@ -1,4 +1,4 @@
-const withProductsStore = {
+const productsStore = {
   apiMetaData: {
     ref: 'YXc6vhIAACsAyYIc',
     isLoading: false,
@@ -1493,4 +1493,4 @@ const withProductsStore = {
   },
 };
 
-export default withProductsStore;
+export default productsStore;

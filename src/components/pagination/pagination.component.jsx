@@ -20,7 +20,7 @@ function Pagination({ pagination }) {
           &lsaquo;
         </PaginationArrowStyles>
       ) : null}
-      Page {activePage} of {totalPages}
+      Page <span data-testid="active-page">{activePage}</span> of {totalPages}
       {nextPage ? (
         <PaginationArrowStyles
           as={Link}
