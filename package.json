@@ -26,7 +26,7 @@
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --runInBand",
+    "test": "react-scripts test --runInBand --watchAll",
     "eject": "react-scripts eject",
     "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build && mv build/index.html build/200.html",
     "deploy": "surge build"
