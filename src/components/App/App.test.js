@@ -1,14 +1,14 @@
 import React from 'react';
-import renderWithProviders from 'utils/test-utils/renderWithProviders';
+import { render, screen } from 'utils/test-utils/render';
 import App from 'components/App';
 
 describe('<App />', () => {
   it('renders the layout and spinner state', async () => {
-    const { getByTestId, getByText } = renderWithProviders(<App />);
+    render(<App />);
 
-    const spinnerEl = getByTestId('spinner');
-    const headerEl = getByTestId('header');
-    const footerEl = getByText(
+    const spinnerEl = screen.getByTestId('spinner');
+    const headerEl = screen.getByTestId('header');
+    const footerEl = screen.getByText(
       /Ecommerce created during Wizeline’s Academy React Bootcamp./
     );
 

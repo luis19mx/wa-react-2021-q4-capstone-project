@@ -1,0 +1,414 @@
+{
+    "products": [
+        {
+            "id": "YWJDNRIAAC0Ay6dJ",
+            "product": {
+                "name": "Studded Armchair Irving",
+                "sku": "1083862733",
+                "category": {
+                    "id": "YWHviRIAACsAyjP3",
+                    "type": "category",
+                    "tags": [],
+                    "slug": "furniture",
+                    "lang": "en-us",
+                    "first_publication_date": "2021-10-09T23:34:39+0000",
+                    "last_publication_date": "2021-10-12T23:30:58+0000",
+                    "link_type": "Document",
+                    "isBroken": false
+                },
+                "mainimage": {
+                    "dimensions": {
+                        "width": 940,
+                        "height": 1215
+                    },
+                    "alt": "Studded Armchair Irving ",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/wizeline-academy/9b1b6200-11d6-4172-8272-f66d58aaad8d_1.webp?auto=compress,format"
+                },
+                "short_description": "Our compact version of the classic club chair offers all the comforts of the original, but in a small swivel silhouette that is suitable for a library, study or small room.",
+                "description": [
+                    {
+                        "type": "paragraph",
+                        "text": "Our compact version of the classic club chair offers all the comforts of the original, but in a small swivel silhouette that is suitable for a library, study or small room. The cushions are wrapped in flame retardant free polyester, which gives it a firmer feel. Steel anti-sag springs provide cushioned support. Features attractive nail head accents. The swivel mechanism allows the chair to rotate 360 degrees; does not tilt or turn. Premium quality leather, dyed with aniline. The skin will soften and clear with use and the passage of time, developing an elegant patina. Leather is a natural product. Each skin has inherent variations in color and texture. No two pieces are alike.",
+                        "spans": []
+                    }
+                ],
+                "specs": [
+                    {
+                        "spec_name": "Dimensions",
+                        "spec_value": "81 cm wide x 90 cm deep; 82.50 cm high. \""
+                    },
+                    {
+                        "spec_name": "Care and Cleaning Instructions",
+                        "spec_value": "Although leather is one of the most durable upholstery materials"
+                    },
+                    {
+                        "spec_name": "Material",
+                        "spec_value": "Leather"
+                    }
+                ],
+                "images": [
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/9b1b6200-11d6-4172-8272-f66d58aaad8d_1.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/46fc41b2-1552-4718-9ebb-9101cadf7202_2.jpeg?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/07313f4b-1b48-4ec3-9290-1f046015bc41_3.jpeg?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/3e43009d-b5fd-4dfc-aeb8-5134a842eea1_4.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/daff07dd-a969-4d08-b406-f0498b7121a0_5.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/6cdda5a0-5c3d-4cb9-8e47-f4eaeb49edc7_6.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/ed4fdf26-f8bd-47a9-9406-ca67e8ad2412_7.webp?auto=compress,format"
+                        }
+                    }
+                ],
+                "stock": 3,
+                "price": 1593.18
+            }
+        },
+        {
+            "id": "YWL-9xIAACwAzu-s",
+            "product": {
+                "name": "Brown Turner Right Arm Armchair",
+                "sku": "1051376575",
+                "category": {
+                    "id": "YWHviRIAACsAyjP3",
+                    "type": "category",
+                    "tags": [],
+                    "slug": "furniture",
+                    "lang": "en-us",
+                    "first_publication_date": "2021-10-09T23:34:39+0000",
+                    "last_publication_date": "2021-10-12T23:30:58+0000",
+                    "link_type": "Document",
+                    "isBroken": false
+                },
+                "mainimage": {
+                    "dimensions": {
+                        "width": 940,
+                        "height": 1215
+                    },
+                    "alt": "Brown Turner Right Arm Armchair",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/wizeline-academy/cd98a680-c834-43bd-86e4-478697e4eb7d_1.webp?auto=compress,format"
+                },
+                "short_description": "Comfort meets quality. With his high back, thick arms, and stuffed cushions, Turner is one of our most comfortable collections. It has soft cushions with 100% polyester, the wooden frame is kiln dried.",
+                "description": [
+                    {
+                        "type": "paragraph",
+                        "text": "Comfort meets quality. With his high back, thick arms, and stuffed cushions, Turner is one of our most comfortable collections. It has soft cushions with 100% polyester, the wooden frame is kiln dried, and has hand-tied steel springs for shock-absorbing support. It has adjustable levelers that provide stability on uneven floors. The skin will clarify and soften with use and time, it is also a natural product. Variation in color and texture are inherent to each skin; No two pieces are exactly the same. This room does not have the decorative tacks. All pieces in this modular room are sold separately.",
+                        "spans": []
+                    }
+                ],
+                "specs": [
+                    {
+                        "spec_name": "Color",
+                        "spec_value": "Brown"
+                    }
+                ],
+                "images": [
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/cd98a680-c834-43bd-86e4-478697e4eb7d_1.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/7bb20e36-0cae-4a9d-acb2-e097b011bb02_2.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/87b3e260-7a20-467a-97d2-e18215df04fd_3.webp?auto=compress,format"
+                        }
+                    }
+                ],
+                "stock": 9,
+                "price": 1110.38
+            }
+        },
+        {
+            "id": "YWJG9xIAAC8Ay7f6",
+            "product": {
+                "name": "Roscoe Armchair Gray",
+                "sku": "1086706985",
+                "category": {
+                    "id": "YWHviRIAACsAyjP3",
+                    "type": "category",
+                    "tags": [],
+                    "slug": "furniture",
+                    "lang": "en-us",
+                    "first_publication_date": "2021-10-09T23:34:39+0000",
+                    "last_publication_date": "2021-10-12T23:30:58+0000",
+                    "link_type": "Document",
+                    "isBroken": false
+                },
+                "mainimage": {
+                    "dimensions": {
+                        "width": 696,
+                        "height": 900
+                    },
+                    "alt": "Roscoe Armchair Gray",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/wizeline-academy/5776d3aa-05fe-472e-8971-f7c4ecba17f1_1.webp?auto=compress,format"
+                },
+                "short_description": "A contemporary profile with great style and an excellent value. The Roscoe Chair is thickly upholstered in a Basketweave Ash fabric and accented with nail trim along the square back, subtly rolled arms and base.",
+                "description": [
+                    {
+                        "type": "paragraph",
+                        "text": "A contemporary profile with great style and an excellent value. The Roscoe Chair is thickly upholstered in a Basketweave Ash fabric and accented with nail trim along the square back, subtly rolled arms and base. Down blend wrapped cushion adds seating comfort. Lightweight swivel arm. Loose seat cushion. Polyester wrapped cushions for a firmer feel. Sinuous, non-sag steel springs provide shock absorbing support. Features attractive antique brass nail accents. The removable legs have an Espresso finish. Adjustable levelers provide stability on uneven surfaces.",
+                        "spans": []
+                    }
+                ],
+                "specs": [
+                    {
+                        "spec_name": "Product Height",
+                        "spec_value": "83.82 cm"
+                    },
+                    {
+                        "spec_name": "Product width",
+                        "spec_value": "83.82"
+                    },
+                    {
+                        "spec_name": "Material",
+                        "spec_value": "Poliester"
+                    },
+                    {
+                        "spec_name": "Care and Cleaning Instructions",
+                        "spec_value": "Rotate the cushions and vacuum under them regularly. To avoid discoloration"
+                    }
+                ],
+                "images": [
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 696,
+                                "height": 900
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/5776d3aa-05fe-472e-8971-f7c4ecba17f1_1.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 940,
+                                "height": 1215
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/aa3743e9-fab0-41ac-af94-2d7589a6193e_2.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 696,
+                                "height": 900
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/4f58f6ae-7caa-4f90-a8e8-a640d4bfd977_3.webp?auto=compress,format"
+                        }
+                    }
+                ],
+                "stock": 6,
+                "price": 531.03
+            }
+        },
+        {
+            "id": "YWMHuxIAAC8Azxdw",
+            "product": {
+                "name": "Grayton Armchair",
+                "sku": "1105659063",
+                "category": {
+                    "id": "YWHviRIAACsAyjP3",
+                    "type": "category",
+                    "tags": [],
+                    "slug": "furniture",
+                    "lang": "en-us",
+                    "first_publication_date": "2021-10-09T23:34:39+0000",
+                    "last_publication_date": "2021-10-12T23:30:58+0000",
+                    "link_type": "Document",
+                    "isBroken": false
+                },
+                "mainimage": {
+                    "dimensions": {
+                        "width": 696,
+                        "height": 900
+                    },
+                    "alt": "Grayton Armchair",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/wizeline-academy/2a136772-dcee-4eba-9da4-ad3468504bdb_1.webp?auto=compress,format"
+                },
+                "short_description": "Inclined arm. The cushions are not removable. The kiln-dried, corner-locked rubber wood frame provides exceptional structural integrity.",
+                "description": [
+                    {
+                        "type": "paragraph",
+                        "text": "Inclined arm. The cushions are not removable. The kiln-dried, corner-locked rubber wood frame provides exceptional structural integrity. Kiln-dried wood helps prevent warping, splitting, cracking, and the development of mold. Premium quality, aniline dyed. The skin will soften and clear with use and the passage of time, developing an elegant patina. Leather is a natural product. Variations in color and texture are inherent to each skin; no two pieces are exactly alike. The cushion is supported by steel springs that do not sag. Fixed legs have a natural distressed finish. Polyester wrapped cushions for a firmer feel.",
+                        "spans": []
+                    }
+                ],
+                "specs": [
+                    {
+                        "spec_name": "Style",
+                        "spec_value": "Contemporary"
+                    },
+                    {
+                        "spec_name": "Leg shape",
+                        "spec_value": "Conical"
+                    },
+                    {
+                        "spec_name": "Color",
+                        "spec_value": "Brown"
+                    },
+                    {
+                        "spec_name": "Collection",
+                        "spec_value": "Grayton"
+                    },
+                    {
+                        "spec_name": "Product width",
+                        "spec_value": "77.47 cm"
+                    },
+                    {
+                        "spec_name": "Product height",
+                        "spec_value": "77.47 cm"
+                    },
+                    {
+                        "spec_name": "Product depth",
+                        "spec_value": "71.12 cm"
+                    },
+                    {
+                        "spec_name": "Care and cleaning instructions",
+                        "spec_value": "Never use detergents"
+                    },
+                    {
+                        "spec_name": "Material",
+                        "spec_value": "Leather"
+                    },
+                    {
+                        "spec_name": "Structure Material",
+                        "spec_value": "Wood"
+                    }
+                ],
+                "images": [
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 696,
+                                "height": 900
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/2a136772-dcee-4eba-9da4-ad3468504bdb_1.webp?auto=compress,format"
+                        }
+                    },
+                    {
+                        "image": {
+                            "dimensions": {
+                                "width": 696,
+                                "height": 900
+                            },
+                            "alt": null,
+                            "copyright": null,
+                            "url": "https://images.prismic.io/wizeline-academy/577b9bc0-122a-44bb-b8a4-dd75d8689566_2.webp?auto=compress,format"
+                        }
+                    }
+                ],
+                "stock": 8,
+                "price": 1689.74
+            }
+        }
+    ],
+    "pagination": {
+        "activePage": 2,
+        "totalPages": 3,
+        "nextPage": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YXc6vhIAACsAyYIc&q=%5B%5Bat%28document.type%2C+%22product%22%29%5D%5D&q=%5B%5Bfulltext%28document%2C+%22armchair%22%29%5D%5D&page=3&pageSize=4",
+        "prevPage": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YXc6vhIAACsAyYIc&q=%5B%5Bat%28document.type%2C+%22product%22%29%5D%5D&q=%5B%5Bfulltext%28document%2C+%22armchair%22%29%5D%5D&page=1&pageSize=4",
+        "totalResults": 10
+    },
+    "isLoading": true,
+    "error": null
+}

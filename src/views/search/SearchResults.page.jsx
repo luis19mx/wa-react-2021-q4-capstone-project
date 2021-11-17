@@ -37,7 +37,7 @@ function SearchResultsPage() {
           Search results for <span>{queryValue}</span>
         </h1>
         <p>
-          {pagination.totalResults} item{products?.length > 1 ? 's' : ''}{' '}
+          <span>{pagination.totalResults}</span> item{products?.length > 1 ? 's' : ''}{' '}
           founded.
         </p>
       </SearchTop>

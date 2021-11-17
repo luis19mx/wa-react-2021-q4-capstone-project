@@ -3,18 +3,20 @@ import { Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
-import { createTestStore } from 'utils/test-utils/createTestStore';
 
-export default function renderWithProviders(
+import { createTestStore } from 'utils/test-utils/createTestStore';
+import initialStore from 'utils/fixtures/initialStore.mock';
+
+function renderWithProviders(
   ui,
   {
     route = '/',
+    preloadedState = initialStore,
     history = createMemoryHistory({ initialEntries: [route] }),
-    initialState = {},
+    store = createTestStore(preloadedState),
+    ...renderOptions
   } = {}
 ) {
-  const store = createTestStore(initialState);
-
   const Wrapper = ({ children }) => (
     <Provider store={store}>
       <Router history={history}>{children}</Router>
@@ -22,9 +24,15 @@ export default function renderWithProviders(
   );
 
   return {
-    ...render(ui, { wrapper: Wrapper }),
+    ...render(ui, { wrapper: Wrapper, ...renderOptions }),
     history,
     store,
     Wrapper,
   };
 }
+
+// re-export everything
+export * from '@testing-library/react';
+
+// override render method
+export { renderWithProviders as render };

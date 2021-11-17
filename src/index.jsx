@@ -5,8 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import store from 'store';
 import App from 'components/App';
 
-console.log('store',store)
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
