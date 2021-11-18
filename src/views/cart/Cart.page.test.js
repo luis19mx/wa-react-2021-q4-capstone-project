@@ -1,7 +1,20 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from 'utils/test-utils/render';
+import { server } from 'utils/test-utils/server';
+import { render, screen, fireEvent } from 'utils/test-utils/render';
 import App from 'components/App';
-import cartItemsStore from 'utils/fixtures/cartItemsStore.mock';
+import cartItemsStore from 'utils/fixtures/store/cartItemsStore.mock';
+
+beforeAll(() => {
+  server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  server.close();
+});
 
 describe('/cart', () => {
   it('renders the cart items', async () => {

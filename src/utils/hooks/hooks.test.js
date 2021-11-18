@@ -58,7 +58,7 @@ describe('useFetchSingleProduct', () => {
 
     await waitForNextUpdate();
 
-    expect(result.current.product.id).toBe('YWJI7hIAACkAy8Cv');
+    expect(result.current.product.id).toBe(productId);
     expect(result.current.isLoading).toBe(false);
     expect(result.current.error).toBe(null);
   });

@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 
 import { createTestStore } from 'utils/test-utils/createTestStore';
-import initialStore from 'utils/fixtures/initialStore.mock';
+import initialStore from 'utils/fixtures/store/initialStore.mock';
 
 function renderWithProviders(
   ui,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import initialStore from 'utils/fixtures/initialStore.mock';
+import initialStore from 'utils/fixtures/store/initialStore.mock';
 import { createTestStore } from 'utils/test-utils/createTestStore';
 
 const store = createTestStore(initialStore);

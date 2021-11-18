@@ -1,8 +1,21 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
+import { server } from 'utils/test-utils/server';
 import { render, screen } from 'utils/test-utils/render';
 import { useFetchSingleProduct } from 'utils/hooks';
 import App from 'components/App';
+
+beforeAll(() => {
+  server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  server.close();
+});
 
 const productId = 'YWL6YBIAAC0AztrR';
 
@@ -12,7 +25,7 @@ describe('/product/:productId', () => {
       route: `/product/${productId}`,
     });
 
-    const { result, waitFor } = renderHook(
+    const { result, waitFor, waitForNextUpdate } = renderHook(
       () => useFetchSingleProduct(productId),
       { wrapper: Wrapper }
     );
@@ -23,5 +36,7 @@ describe('/product/:productId', () => {
       expect(result.current.product.id).toBe(productId);
       expect(productEl).toBeInTheDocument();
     });
+
+    await waitForNextUpdate();
   });
 });

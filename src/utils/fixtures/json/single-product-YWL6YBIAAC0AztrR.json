@@ -1,0 +1,113 @@
+{
+  "page": 1,
+  "results_per_page": 20,
+  "results_size": 1,
+  "total_results_size": 1,
+  "total_pages": 1,
+  "next_page": null,
+  "prev_page": null,
+  "results": [
+    {
+      "id": "YWL6YBIAAC0AztrR",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YWL6YBIAAC0AztrR%22%29+%5D%5D",
+      "tags": ["Living Room", "Sofa"],
+      "first_publication_date": "2021-10-10T14:36:19+0000",
+      "last_publication_date": "2021-10-10T14:36:19+0000",
+      "slugs": ["pb-comfort-roll-arm-sofa", "sofa-pb-comfort-roll-arm"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YWL55BIAAC0AztiS",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "PB Comfort Roll Arm Sofa",
+        "sku": "1074278902",
+        "category": {
+          "id": "YWHviRIAACsAyjP3",
+          "type": "category",
+          "tags": [],
+          "slug": "furniture",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:34:39+0000",
+          "last_publication_date": "2021-10-12T23:30:58+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "PB Comfort Roll Arm Sofa",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/e2a81c09-19b9-42d0-b724-cf0120a7af62_1.webp?auto=compress,format"
+        },
+        "short_description": "Settle into this sofa just once and you'll know where it got its name from. Designed with extra deep seats and three layers of thick padding in the arms and backrest, it invites the whole family to relax together.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Settle into this sofa just once and you'll know where it got its name from. Designed with extra deep seats and three layers of thick padding in the arms and backrest, it invites the whole family to relax together. This successful collection offers customizable options from fabric to padding to cushion style.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Product Width",
+            "spec_value": "2.10 m"
+          },
+          {
+            "spec_name": "Product Height",
+            "spec_value": "93.98 cm"
+          },
+          {
+            "spec_name": "Product Depth",
+            "spec_value": "99.06 cm"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Sand"
+          },
+          {
+            "spec_name": "Care and Cleaning Instructions",
+            "spec_value": "Clean with a soft, dry cloth"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/e2a81c09-19b9-42d0-b724-cf0120a7af62_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/bfe276e5-98f6-40bf-aa07-8810ca69d265_2.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 10,
+        "price": 2703.61
+      }
+    }
+  ],
+  "version": "31acd9d",
+  "license": "This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/."
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
+import { server } from 'utils/test-utils/server';
 import { render, screen } from 'utils/test-utils/render';
 import App from 'components/App';
 import {
@@ -7,6 +8,18 @@ import {
   useFetchFeaturedProduct,
   useIsPageLoading,
 } from 'utils/hooks';
+
+beforeAll(() => {
+  server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  server.close();
+});
 
 describe('/home', () => {
   it('renders the home page', async () => {
@@ -19,12 +32,13 @@ describe('/home', () => {
       { wrapper: Wrapper }
     );
 
+    await waitForBannerNextUpdate();
+
     const { waitForNextUpdate: waitForFeaturedNextUpdate } = renderHook(
       () => useFetchFeaturedProduct(),
       { wrapper: Wrapper }
     );
 
-    await waitForBannerNextUpdate();
     await waitForFeaturedNextUpdate();
 
     const { waitFor } = renderHook(() => useIsPageLoading(false, false, false));

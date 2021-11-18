@@ -1,0 +1,1287 @@
+{
+  "page": 1,
+  "results_per_page": 12,
+  "results_size": 12,
+  "total_results_size": 75,
+  "total_pages": 7,
+  "next_page": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5Bat%28document.type%2C+%22product%22%29%5D%5D&page=2&pageSize=12&languageCode=en-us",
+  "prev_page": null,
+  "results": [
+    {
+      "id": "YZWTvxIAACkAujoz",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWTvxIAACkAujoz%22%29+%5D%5D",
+      "tags": ["Featured", "Bathrobe"],
+      "first_publication_date": "2021-11-17T23:44:02+0000",
+      "last_publication_date": "2021-11-17T23:44:02+0000",
+      "slugs": ["bathrobe-disney-mickey-mouse", "bata-disney-mickey-mouse"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWTYRIAAC4Aujh-",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Bathrobe Disney Mickey Mouse",
+        "sku": "1107982422",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Bathrobe Disney Mickey Mouse",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/7cbed35a-d943-44c9-956c-a59cbb81e2ba_1.jpeg?auto=compress,format"
+        },
+        "short_description": "Brighten up your space with the all-magic mascot: Disney's Mickey Mouse. And we don't just mean decoration. Why not pay tribute to one of the world's most famous people with this hooded robe complete with Mickey ears.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Brighten up your space with the all-magic mascot: Disney's Mickey Mouse. And we don't just mean decoration. Why not pay tribute to one of the world's most famous people with this hooded robe complete with Mickey's ears.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Material",
+            "spec_value": "Polyester"
+          },
+          {
+            "spec_name": "Collection",
+            "spec_value": "Disney Mickey Mouse"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Multicolor"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/7cbed35a-d943-44c9-956c-a59cbb81e2ba_1.jpeg?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/21745ea3-f277-499c-956d-3da04cab40f4_2.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 14,
+        "price": 82
+      }
+    },
+    {
+      "id": "YZWYWhIAACgAuk6v",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWYWhIAACgAuk6v%22%29+%5D%5D",
+      "tags": ["Bathroom"],
+      "first_publication_date": "2021-11-18T00:03:43+0000",
+      "last_publication_date": "2021-11-18T00:03:43+0000",
+      "slugs": ["silas-dispensers", "dispensadores-silas"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWX_xIAACgAuk0Z",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Silas Dispensers",
+        "sku": "1105593348",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Silas Dispensers",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/b9f31a8b-9d56-4a01-a02a-065ad89f1b27_1.webp?auto=compress,format"
+        },
+        "short_description": "Handcrafted to display the beautiful veining of natural cream marble, these Silas marble dispensers give your bathroom the luxurious look of a spa.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Handcrafted to display the beautiful veining of natural cream marble, these Silas marble dispensers give your bathroom the luxurious look of a spa.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Color",
+            "spec_value": "White"
+          },
+          {
+            "spec_name": "Details",
+            "spec_value": "Made of 100% natural marble. The different shades of color and texture make the product unique"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/b9f31a8b-9d56-4a01-a02a-065ad89f1b27_1.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 0,
+        "price": 28
+      }
+    },
+    {
+      "id": "YZW95hIAACoAuvgu",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZW95hIAACoAuvgu%22%29+%5D%5D",
+      "tags": ["Bedspreads"],
+      "first_publication_date": "2021-11-18T02:43:53+0000",
+      "last_publication_date": "2021-11-18T02:43:53+0000",
+      "slugs": [
+        "linen-jersey-queen-size-bedspread",
+        "colcha-linen-jersey-queen-size"
+      ],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZW9aRIAACsAuvXt",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Linen Jersey Queen Size Bedspread",
+        "sku": "1105573983",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Linen Jersey Queen Size Bedspread",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/2bf7addd-86ba-4b42-940b-0ca7f6156261_1.webp?auto=compress,format"
+        },
+        "short_description": "With all the softness of a well-loved t-shirt, our Belgian linen bedspread dresses the bed in a relaxed and carefree look. Breathable bedding combines two of our most beloved fabrics: iconic Belgian linen and ultra-soft cotton jersey. Proudly manufactured in a Fair Trade Certified ™ factory, the fabric regulates heat by adjusting to hot or cold environments for year-round layered comfort. 100% jersey linen fabric. Reverse 75% cotton and 25% vegetable-woven linen. Breathable Belgian linen is great for warm or cool temperatures, and its durability allows you to love it for years. Soft and cool to the touch. STANDARD 100 certified by OEKO-TEX®. Independent laboratory tested and verified safe against over 350 harmful substances. Fair Trade Certified ™. Purchasing this product helps ensure fair and safe work practices, improve livelihoods, and empower workers to invest in their communities.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "With all the softness of a well-loved t-shirt, our Belgian linen bedspread dresses the bed in a relaxed and carefree look. Breathable bedding combines two of our most beloved fabrics: iconic Belgian linen and ultra-soft cotton jersey. Proudly manufactured in a Fair Trade Certified ™ factory, the fabric regulates heat by adjusting to hot or cold environments for year-round layered comfort. 100% jersey linen fabric. Reverse 75% cotton and 25% vegetable-woven linen. Breathable Belgian linen is great for warm or cool temperatures, and its durability allows you to love it for years. Soft and cool to the touch. STANDARD 100 certified by OEKO-TEX®. Independent laboratory tested and verified safe against over 350 harmful substances. Fair Trade Certified ™. Purchasing this product helps ensure fair and safe work practices, improve livelihoods, and empower workers to invest in their communities.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Color",
+            "spec_value": "Gray"
+          },
+          {
+            "spec_name": "Care and cleaning instructions",
+            "spec_value": "Clothes become softer with each wash. Machine wash cold separately on gentle cycle. Use only non-chlorine bleach, if necessary. Line or tumble dry on low temperature"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/2bf7addd-86ba-4b42-940b-0ca7f6156261_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/cf5f69f1-70f0-4fc2-b601-491d2599dcaa_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/d4c33dcb-9bb0-472f-9030-90eea4478eb8_3.jpeg?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/2e465c97-f78c-4e81-8118-04f0ae776426_4.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 11,
+        "price": 247
+      }
+    },
+    {
+      "id": "YZWSZBIAACkAujQV",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWSZBIAACkAujQV%22%29+%5D%5D",
+      "tags": ["Towels"],
+      "first_publication_date": "2021-11-17T23:38:32+0000",
+      "last_publication_date": "2021-11-17T23:38:32+0000",
+      "slugs": [
+        "classic-organic-cream-hand-towel",
+        "toalla-para-manos-classic-organic-crema"
+      ],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWSCBIAACkAujJ5",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Classic Organic Cream Hand Towel",
+        "sku": "1084025361",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 940,
+            "height": 1215
+          },
+          "alt": "Classic Organic Cream Hand Towel",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/b36ef90c-9765-4292-bd38-de69fd1b0d3f_1.webp?auto=compress,format"
+        },
+        "short_description": "Pure organic Turkish cotton is densely woven to create our luxuriously soft and absorbent PB Classic Towels. GOTS certified.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Pure organic Turkish cotton is densely woven to create our luxuriously soft and absorbent PB Classic Towels. GOTS certified.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Composition",
+            "spec_value": "100% organic cotton"
+          },
+          {
+            "spec_name": "Dimensions",
+            "spec_value": "50.80 cm wide x 76.2 cm long"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Cream"
+          },
+          {
+            "spec_name": "Care and Cleaning Instructions",
+            "spec_value": "Wash before first use. Machine wash warm on gentle cycle. Use only non-chlorine bleach, if necessary. Dry on low heat. To ensure the vibrant color of the towel, do not use harsh chemicals or facial products."
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/b36ef90c-9765-4292-bd38-de69fd1b0d3f_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/14bf7143-734f-4723-985a-aca32186c067_2.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 76,
+        "price": 28
+      }
+    },
+    {
+      "id": "YZWg8xIAAC0AunVK",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWg8xIAAC0AunVK%22%29+%5D%5D",
+      "tags": ["Bathroom"],
+      "first_publication_date": "2021-11-18T00:40:22+0000",
+      "last_publication_date": "2021-11-18T00:40:22+0000",
+      "slugs": ["classic-organic-loop-mat", "tapete-classic-organic-loop"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWgjBIAACkAunN8",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Classic Organic Loop Mat",
+        "sku": "1105592554",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Classic Organic Loop Mat",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/f36336ef-7cfa-470f-951e-118e92f38b05_1.jpeg?auto=compress,format"
+        },
+        "short_description": "There's nothing like stepping on a bath mat that looks like a cloud after a shower, and ours is the softest and fluffiest you'll find. It is made of pure organic fleece-type cotton for extra softness. Pottery Barn is a proud member of the Better Cotton Initiative. Our cotton products support the most sustainable cotton farming. This product meets the strict requirements of the Global Organic Textile Standard (GOTS), the world's leading processing standard for organic textiles to ensure a healthier home for you and a better planet for everyone.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "There's nothing like stepping on a bath mat that looks like a cloud after a shower, and ours is the softest and fluffiest you'll find. It is made of pure organic fleece-type cotton for extra softness. Pottery Barn is a proud member of the Better Cotton Initiative. Our cotton products support the most sustainable cotton farming. This product meets the strict requirements of the Global Organic Textile Standard (GOTS), the world's leading processing standard for organic textiles to ensure a healthier home for you and a better planet for everyone.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Product width",
+            "spec_value": "86.36 cm"
+          },
+          {
+            "spec_name": "Product length",
+            "spec_value": "53.34 cm"
+          },
+          {
+            "spec_name": "Collection",
+            "spec_value": "Classic Organic Loop"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Gray"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/f36336ef-7cfa-470f-951e-118e92f38b05_1.jpeg?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/813a3ba7-bf7b-4951-86fd-60822f45f3c4_2.jpeg?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/d79bf3f9-8152-45fd-9aab-6441fc38fee3_3.jpeg?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/4a51a3f4-65d6-423f-926a-7524326db11d_4.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 0,
+        "price": 29
+      }
+    },
+    {
+      "id": "YZWyMhIAACsAusNZ",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWyMhIAACsAusNZ%22%29+%5D%5D",
+      "tags": ["Pillowcases"],
+      "first_publication_date": "2021-11-18T01:53:58+0000",
+      "last_publication_date": "2021-11-18T01:53:58+0000",
+      "slugs": [
+        "forest-gnome-king-size-pillowcase",
+        "funda-para-almohada-forest-gnome-king-size"
+      ],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWx1RIAACkAusG1",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Forest Gnome King Size Pillowcase",
+        "sku": "1107901821",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Forest Gnome King Size Pillowcase",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/37d40906-24d3-43a6-8741-fc4902636082_1.jpeg?auto=compress,format"
+        },
+        "short_description": "There is no gnome place home. Illustrating a fairytale forest scene, this artwork was originally hand painted by our in-house design team to add a touch of Christmas magic to your bed. More respectful with the environment and healthier for your home, we make this bedding with organically grown cotton. OEKO-TEX® STANDARD 100 Certified - Tested against over 350 harmful substances to keep you and your family safe from common textile chemicals.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "There is no gnome place home. Illustrating a fairytale forest scene, this artwork was originally hand painted by our in-house design team to add a touch of Christmas magic to your bed. More respectful with the environment and healthier for your home, we make this bedding with organically grown cotton. OEKO-TEX® STANDARD 100 Certified - Tested against over 350 harmful substances to keep you and your family safe from common textile chemicals.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Collection",
+            "spec_value": "Forest Gnome"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Multicolor"
+          },
+          {
+            "spec_name": "Product length",
+            "spec_value": "91.4 cm"
+          },
+          {
+            "spec_name": "Product width",
+            "spec_value": "50.8 cm"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/37d40906-24d3-43a6-8741-fc4902636082_1.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 4,
+        "price": 177
+      }
+    },
+    {
+      "id": "YZWjyhIAAC4AuoI2",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWjyhIAAC4AuoI2%22%29+%5D%5D",
+      "tags": ["Bathroom"],
+      "first_publication_date": "2021-11-18T00:52:29+0000",
+      "last_publication_date": "2021-11-18T00:52:29+0000",
+      "slugs": ["kleenera-silas"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWjXBIAACgAuoBI",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Kleenera Silas",
+        "sku": "1105592911",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Kleenera Silas",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/776da4fa-5e31-4b4a-b8a9-936a5b1b0605_1.webp?auto=compress,format"
+        },
+        "short_description": "Handcrafted to showcase the beautiful veining of cream-colored natural marble, these Silas Marble Kleenex give your bathroom the luxurious look of a spa. Made of 100% natural marble. The different shades of color and texture make the product unique.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Handcrafted to showcase the beautiful veining of cream-colored natural marble, these Silas Marble Kleenex give your bathroom the luxurious look of a spa. Made of 100% natural marble. The different shades of color and texture make the product unique.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Dimensions",
+            "spec_value": "37.10 cm x 37.10 cm x 15.24 approximate"
+          },
+          {
+            "spec_name": "Collection",
+            "spec_value": "Silas"
+          },
+          {
+            "spec_name": "Material",
+            "spec_value": "Marble"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/776da4fa-5e31-4b4a-b8a9-936a5b1b0605_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/c6f8c40f-cb2e-43a0-949b-b03090bd7142_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/e7d75c9d-4bc2-4b66-8b40-62d8f8503922_3.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 28,
+        "price": 41
+      }
+    },
+    {
+      "id": "YZW2BBIAACgAutST",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZW2BBIAACgAutST%22%29+%5D%5D",
+      "tags": ["Duvet", "Featured"],
+      "first_publication_date": "2021-11-18T02:10:17+0000",
+      "last_publication_date": "2021-11-18T02:10:17+0000",
+      "slugs": ["duvet-willow"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZW1ZRIAAC8AutHM",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Duvet Willow",
+        "sku": "1099506308",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Duvet Willow",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/770e6ae1-df13-4339-b260-c10f17ea7dd9_1.webp?auto=compress,format"
+        },
+        "short_description": "Oeko-Tex Certified, the definitive mark of excellence for products that are healthy for you and the environment. The duvet features a concealed button closure with internal ties that keep the padding in place. Pre-washed for a super soft touch feeling.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Oeko-Tex Certified, the definitive mark of excellence for products that are healthy for you and the environment. The duvet features a concealed button closure with internal ties that keep the padding in place. Pre-washed for a super soft touch feeling.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Composition",
+            "spec_value": "70% linen and 30% cotton twill fabric"
+          },
+          {
+            "spec_name": "Details",
+            "spec_value": "Yarn dyed for long-lasting vibrant color"
+          },
+          {
+            "spec_name": "Material",
+            "spec_value": "Linen"
+          },
+          {
+            "spec_name": "Washing instructions",
+            "spec_value": "Machine wash cold; smooth cycle with similar colors. Use only non-chlorine bleach if necessary. Dry at low temperature; extract on time. Hot iron as needed"
+          },
+          {
+            "spec_name": "Dimensions",
+            "spec_value": "Double-Queen size: 2.33 m long x 2.74 m wide. King size: 2.33 m long x 2.74 m wide approximate"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/770e6ae1-df13-4339-b260-c10f17ea7dd9_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/b0a0f398-c3d4-4c86-9654-4da57fcb28d7_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/1d80265d-52c9-4209-bc72-63e0c2f4c176_3.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 12,
+        "price": 296
+      }
+    },
+    {
+      "id": "YZWiZxIAACkAunvw",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWiZxIAACkAunvw%22%29+%5D%5D",
+      "tags": ["Bathroom"],
+      "first_publication_date": "2021-11-18T00:46:35+0000",
+      "last_publication_date": "2021-11-18T00:46:35+0000",
+      "slugs": [
+        "classic-glass-bathroom-container",
+        "contenedor-para-bano-classic-glass"
+      ],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWiDhIAAC4AunpS",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Classic Glass Bathroom Container",
+        "sku": "1083863098",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 940,
+            "height": 1215
+          },
+          "alt": "Classic Glass Bathroom Container",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/b6fbe7fe-4f0c-4175-b922-35b635a90c0e_1.webp?auto=compress,format"
+        },
+        "short_description": "Our PB Classic glass jars come in a variety of shapes and sizes to hold your everyday essentials, they are perfect for storing cottons, salts, cotton swabs and more. Hand blown glass. Available in 4 sizes. Each bottle is sold separately.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Our PB Classic glass jars come in a variety of shapes and sizes to hold your everyday essentials, they are perfect for storing cottons, salts, cotton swabs and more. Hand blown glass. Available in 4 sizes. Each bottle is sold separately.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Dimensions",
+            "spec_value": "Boy: 10.16 cm diameter; 17.78 cm high, Medium: 19.05 cm diameter; 16.51 cm high.Large: 15.24 cm diameter; 10 '' high - Extra Large: 8.5 '' diameter; 33.02 cm high."
+          },
+          {
+            "spec_name": "Care and Cleaning Instructions",
+            "spec_value": "Shake off with a soft, dry cloth"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/b6fbe7fe-4f0c-4175-b922-35b635a90c0e_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/72bb1be1-d24c-40e4-a6a3-ef43adef664d_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/f73355ab-3718-4ba0-8010-25836eeaae38_3.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/b90affba-0ee6-48e7-aa08-a3c10a0b8500_4.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/71bd5cfd-6c72-4e1a-9cf5-06e519b5063f_5.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/5f117301-647c-40b9-bc7c-0f9a98e97a76_6.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 19,
+        "price": 37
+      }
+    },
+    {
+      "id": "YZWPUhIAAC8AuiZQ",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWPUhIAAC8AuiZQ%22%29+%5D%5D",
+      "tags": ["Towels"],
+      "first_publication_date": "2021-11-17T23:25:09+0000",
+      "last_publication_date": "2021-11-17T23:25:09+0000",
+      "slugs": [
+        "classic-organic-dark-gray-hand-towel",
+        "toalla-para-manos-classic-organic-gris-obscuro"
+      ],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWO0RIAACoAuiQA",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Classic Organic Dark Gray Hand Towel",
+        "sku": "1084024798",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 940,
+            "height": 1215
+          },
+          "alt": "Classic Organic Dark Gray Hand Towel",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/e52b7143-9496-4f83-bb63-084d8d2b0f74_1.webp?auto=compress,format"
+        },
+        "short_description": "Pure organic Turkish cotton is densely woven to create our luxuriously soft and absorbent PB Classic Towels. GOTS certified.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Pure organic Turkish cotton is densely woven to create our luxuriously soft and absorbent PB Classic Towels. GOTS certified.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Composition",
+            "spec_value": "100% organic cotton"
+          },
+          {
+            "spec_name": "Dimensions",
+            "spec_value": "50.80 cm wide x 76.2 cm long"
+          },
+          {
+            "spec_name": "Color",
+            "spec_value": "Dark gray"
+          },
+          {
+            "spec_name": "Details",
+            "spec_value": "Monogravure service available for an additional charge"
+          },
+          {
+            "spec_name": "Care and Cleaning Instructions",
+            "spec_value": "Wash before first use. Machine wash warm on gentle cycle. Use only non-chlorine bleach, if necessary. Dry on low heat. To ensure the vibrant color of the towel, do not use harsh chemicals or facial products."
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/e52b7143-9496-4f83-bb63-084d8d2b0f74_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/e65a265c-26f2-4fc4-9919-2ebe4c89561e_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/cc494bf9-80e4-4498-80eb-bdbf1c6c4ac9_3.webp?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 281,
+        "price": 16
+      }
+    },
+    {
+      "id": "YZW8DhIAAC8Auu_N",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZW8DhIAAC8Auu_N%22%29+%5D%5D",
+      "tags": ["Bedspreads"],
+      "first_publication_date": "2021-11-18T02:36:19+0000",
+      "last_publication_date": "2021-11-18T02:36:19+0000",
+      "slugs": ["belgian-flax-bedspread", "colcha-belgian-flax"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZW7iRIAAC0Auu1t",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Belgian Flax Bedspread",
+        "sku": "1083863357",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 940,
+            "height": 1215
+          },
+          "alt": "Belgian Flax Bedspread",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/00ada06e-6fca-430f-b065-c9c6a0ed2f12_1.webp?auto=compress,format"
+        },
+        "short_description": "Our bedspread is woven from Belgian linen which gives the quilted bedding a cool and serene feel with a silky texture.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Our bedspread is woven from Belgian linen which gives the quilted bedding a cool and serene feel with a silky texture.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Material",
+            "spec_value": "Linen"
+          },
+          {
+            "spec_name": "Details",
+            "spec_value": "100% Belgian linen. 150 grams polyester wadding. Quilts have a smooth reverse"
+          },
+          {
+            "spec_name": "Care and Cleaning Instructions",
+            "spec_value": "Machine wash cold, gentle cycle, with like colors. Use non-chlorine bleach, when required. Use the dryer on low temperature; withdraw immediately. Use warm iron as required"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/00ada06e-6fca-430f-b065-c9c6a0ed2f12_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/5807946f-63b7-462e-83ed-959122a36af1_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 940,
+                "height": 1215
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/2108f863-0288-4a10-8de3-3a0c573e4650_3.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 18,
+        "price": 267
+      }
+    },
+    {
+      "id": "YZWV5xIAACoAukPl",
+      "uid": null,
+      "url": null,
+      "type": "product",
+      "href": "https://wizeline-academy.cdn.prismic.io/api/v2/documents/search?ref=YZW96RIAACkAuvhC&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22YZWV5xIAACoAukPl%22%29+%5D%5D",
+      "tags": ["Bathroom"],
+      "first_publication_date": "2021-11-17T23:53:15+0000",
+      "last_publication_date": "2021-11-17T23:53:15+0000",
+      "slugs": ["silas-brush", "cepillero-silas"],
+      "linked_documents": [],
+      "lang": "en-us",
+      "alternate_languages": [
+        {
+          "id": "YZWVEhIAACkAukAs",
+          "type": "product",
+          "lang": "es-mx"
+        }
+      ],
+      "data": {
+        "name": "Silas brush",
+        "sku": "1105593330",
+        "category": {
+          "id": "YWHx-xIAAC0Ayj7i",
+          "type": "category",
+          "tags": [],
+          "slug": "bed--bath",
+          "lang": "en-us",
+          "first_publication_date": "2021-10-09T23:33:05+0000",
+          "last_publication_date": "2021-10-12T23:45:23+0000",
+          "link_type": "Document",
+          "isBroken": false
+        },
+        "mainimage": {
+          "dimensions": {
+            "width": 696,
+            "height": 900
+          },
+          "alt": "Silas brush",
+          "copyright": null,
+          "url": "https://images.prismic.io/wizeline-academy/7d77a22c-7920-40dc-b040-5f46cd0553aa_1.webp?auto=compress,format"
+        },
+        "short_description": "Handcrafted to showcase the beautiful veining of natural cream marble, these Silas marble brushes give your bathroom the luxurious look of a spa. Made of 100% natural marble.",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Handcrafted to showcase the beautiful veining of natural cream marble, these Silas marble brushes give your bathroom the luxurious look of a spa. Made of 100% natural marble.",
+            "spans": []
+          }
+        ],
+        "specs": [
+          {
+            "spec_name": "Collection",
+            "spec_value": "Silas"
+          },
+          {
+            "spec_name": "Details",
+            "spec_value": "The different shades of color and texture make the product unique"
+          }
+        ],
+        "images": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/7d77a22c-7920-40dc-b040-5f46cd0553aa_1.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/604dfb17-9320-43bc-a4b5-4f31a6598b5a_2.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/24655f1a-584f-4958-964c-b676be13f522_3.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/89d3f8f0-8027-42b3-92dc-807ed375371a_4.webp?auto=compress,format"
+            }
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 696,
+                "height": 900
+              },
+              "alt": null,
+              "copyright": null,
+              "url": "https://images.prismic.io/wizeline-academy/998f4437-9fa1-426b-acb4-c53295807d5d_5.jpeg?auto=compress,format"
+            }
+          }
+        ],
+        "stock": 76,
+        "price": 29
+      }
+    }
+  ],
+  "version": "31acd9d",
+  "license": "This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/."
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from 'utils/test-utils/render';
 import CartDropdown from './CartDropdown.component';
-import cartItemsStore from 'utils/fixtures/cartItemsStore.mock';
+import cartItemsStore from 'utils/fixtures/store/cartItemsStore.mock';
 
 describe('<CartDropdown />', () => {
   it('shows the cart item', async () => {
@@ -13,6 +13,7 @@ describe('<CartDropdown />', () => {
     const cartItemEl = screen.getByText(/Chesterfield Sofa Dark Brown/);
     expect(cartItemEl).toBeInTheDocument();
   });
+
   it('shows the empty message', async () => {
     render(<CartDropdown />, {
       route: '/test',

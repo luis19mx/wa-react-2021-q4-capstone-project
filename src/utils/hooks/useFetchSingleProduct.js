@@ -25,6 +25,7 @@ export function useFetchSingleProduct(productId) {
         const response = await fetch(url, {
           signal: controller.signal,
         });
+
         const data = await response.json();
 
         const [product] = data.results?.map(({ id, data, tags }) => {
