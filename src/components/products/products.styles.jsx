@@ -16,8 +16,9 @@ export const ProductsStyles = styled.section`
     --padding: 2vh;
   }
 `;
-export const ProductsTitle = styled.h1`
-  font-size: 3rem;
+export const FeaturedTitleStyles = styled.h1`
+  font-size: 2rem;
+  opacity: 0.5;
 
   @media (max-width: 50em) {
     font-size: 7vw;

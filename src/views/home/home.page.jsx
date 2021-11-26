@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import {
   useDocumentTitle,
   useFetchFeaturedBanners,
-  useFetchFeaturedProduct,
+  useFetchProducts,
   useIsPageLoading,
 } from 'utils/hooks';
 import FeaturedBanners from 'components/FeaturedBanners';
 import ProductCategories from 'components/ProductCategories';
-import ProductDetails from 'components/ProductDetails';
+import Products from 'components/Products';
 import Spinner from 'components/Spinner';
 import { CTA } from 'components/styles';
 
@@ -22,8 +22,8 @@ export default function HomePage() {
   const { featuredBanners: banners, isLoading: isFeaturedBannersLoading } =
     useFetchFeaturedBanners();
 
-  const { product, isLoading: isFeaturedProductsLoading } =
-    useFetchFeaturedProduct();
+  const { products, isLoading: isFeaturedProductsLoading } =
+    useFetchProducts('featured');
 
   const isPageLoading = useIsPageLoading(
     isFeaturedBannersLoading,
@@ -40,7 +40,7 @@ export default function HomePage() {
       <CTA as={Link} to="/products">
         View all products
       </CTA>
-      <ProductDetails product={product} featured={true} />
+      <Products products={products} featured={true} />
     </>
   );
 }

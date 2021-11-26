@@ -13,20 +13,28 @@ export const cartSlice = createSlice({
       state.cartIsHidden = !state.cartIsHidden;
     },
     addItemToCart: (state, action) => {
-      const cartItemToAdd = action.payload;
+      const cartItem = action.payload;
 
       const existingCartItem = state.cartItems.find(
-        (cartItem) => cartItem.id === cartItemToAdd.id
+        (item) => item.id === cartItem.id
       );
 
       if (existingCartItem) {
-        state.cartItems = state.cartItems.map((cartItem) =>
-          cartItem.id === cartItemToAdd.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+        state.cartItems = state.cartItems.map((item) =>
+          item.id === cartItem.id
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+                stock: item.stock - 1,
+              }
+            : item
         );
       } else {
-        state.cartItems.push({ ...cartItemToAdd, quantity: 1 });
+        state.cartItems.push({
+          ...cartItem,
+          quantity: 1,
+          stock: cartItem.stock - 1,
+        });
       }
     },
     decreaseItemQuantity: (state, action) => {
@@ -39,7 +47,7 @@ export const cartSlice = createSlice({
       } else {
         state.cartItems = state.cartItems.map((item) =>
           item.id === cartItem.id
-            ? { ...item, quantity: item.quantity - 1 }
+            ? { ...item, quantity: item.quantity - 1, stock: item.stock + 1 }
             : item
         );
       }
@@ -47,9 +55,11 @@ export const cartSlice = createSlice({
     increaseItemQuantity: (state, action) => {
       const cartItem = action.payload;
 
+      if (!cartItem.stock) return;
+
       state.cartItems = state.cartItems.map((item) =>
         item.id === cartItem.id
-          ? { ...item, quantity: item.quantity + 1 }
+          ? { ...item, quantity: item.quantity + 1, stock: item.stock - 1 }
           : item
       );
     },

@@ -78,3 +78,13 @@ export const AddToCartWrapper = styled.div`
     opacity: 0.6;
   }
 `;
+export const StockStyles = styled.p`
+  position: absolute;
+  left: 0.66em;
+  top: 0.66em;
+  background-color: #fff;
+  border-radius: 0.3em;
+  padding: 0.1em 0.66em;
+  background-color: var(--l_grey);
+  color: var(--d_grey);
+`;

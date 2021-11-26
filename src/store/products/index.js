@@ -7,10 +7,26 @@ const initialState = {
   isLoading: true,
 };
 
-export const categoriesSlice = createSlice({
+export const productSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    updateProductStock: (state, action) => {
+      const productId = action.payload;
+      const index = state.products.findIndex(({ id }) => id === productId);
+
+      if (index > -1) {
+        const product = state.products[index];
+        state.products[index] = {
+          ...product.id,
+          product: {
+            ...product.product,
+            stock: product.product.stock - 1,
+          },
+        };
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -38,9 +54,15 @@ export const categoriesSlice = createSlice({
           return { id, product };
         });
 
-        // out of stock functionality
-        products[1].product.stock = 0;
-        products[4].product.stock = 0;
+        // state.products.map((product) => {});
+
+        // if (state.products.length) {
+        //   products.forEach((product) => {
+        //     const isInStore = state.products.find(
+        //       (storeProduct) => storeProduct.id === product.id
+        //     );
+        //   });
+        // } else {}
 
         state.products = products;
         state.pagination = pagination;
@@ -52,6 +74,8 @@ export const categoriesSlice = createSlice({
   },
 });
 
+export const { updateProductStock } = productSlice.actions;
+
 export { default as fetchProducts } from './fetch';
 
-export default categoriesSlice.reducer;
+export default productSlice.reducer;

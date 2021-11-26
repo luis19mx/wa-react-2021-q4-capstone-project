@@ -18,7 +18,7 @@ import {
 } from './CartItem.styles';
 
 function CartItem({ cartItem, enableEdition = false }) {
-  const { name, price, img, quantity } = cartItem;
+  const { name, price, img, quantity, stock } = cartItem;
   const dispatch = useDispatch();
 
   const handleItemDecrease = () => dispatch(decreaseItemQuantity(cartItem));
@@ -39,9 +39,14 @@ function CartItem({ cartItem, enableEdition = false }) {
             &#10094;
           </ArrowStyles>
           <QuantityStyles>{quantity}</QuantityStyles>
-          <ArrowStyles data-testid="increase-item" onClick={handleItemIncrease}>
-            &#10095;
-          </ArrowStyles>
+          {stock ? (
+            <ArrowStyles
+              data-testid="increase-item"
+              onClick={handleItemIncrease}
+            >
+              &#10095;
+            </ArrowStyles>
+          ) : null}
         </QuantityWrapperStyles>
       ) : (
         <QuantityStyles>{quantity}</QuantityStyles>
@@ -64,6 +69,7 @@ CartItem.propTypes = {
     alt: PropTypes.string,
   }).isRequired,
   quantity: PropTypes.number.isRequired,
+  stock: PropTypes.number.isRequired,
 };
 
 CartItem.defaultProps = {

@@ -12,6 +12,7 @@ import {
   AddToCartWrapper,
   addToCartStyles,
 } from './ProductsItem.styles';
+import { StockStyles } from 'components/ProductsItem/ProductsItem.styles';
 
 function ProductsItem({ product }) {
   const history = useHistory();
@@ -38,11 +39,12 @@ function ProductsItem({ product }) {
         <TitleStyles>{name}</TitleStyles>
         <PriceStyles>{formatMoney(price)}</PriceStyles>
         <CategoryStyles>{category}</CategoryStyles>
+        {stock ? <StockStyles>{stock}</StockStyles> : null}
         <AddToCartWrapper data-cart>
           {stock ? (
             <AddToCart
               ctaStyles={addToCartStyles}
-              product={{ id, name, price, img }}
+              product={{ id, name, price, img, stock }}
               bubbles={false}
             />
           ) : (

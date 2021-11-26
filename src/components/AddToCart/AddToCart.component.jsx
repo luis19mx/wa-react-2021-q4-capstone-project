@@ -2,6 +2,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addItemToCart } from 'store/cart';
+import { updateProductStock } from 'store/products';
 import { CTA } from 'components/styles';
 
 function AddToCart({ product, bubbles = true, ctaStyles = null }) {
@@ -9,10 +10,14 @@ function AddToCart({ product, bubbles = true, ctaStyles = null }) {
 
   const handleAddToCart = (() => {
     return bubbles
-      ? () => dispatch(addItemToCart(product))
+      ? () => {
+          dispatch(addItemToCart(product));
+          // dispatch(updateProductStock(product.id));
+        }
       : (evt) => {
           evt.stopPropagation();
-          return dispatch(addItemToCart(product));
+          dispatch(addItemToCart(product));
+          // dispatch(updateProductStock(product.id));
         };
   })();
 
@@ -32,6 +37,7 @@ AddToCart.propTypes = {
       url: PropTypes.string.isRequired,
       alt: PropTypes.string,
     }).isRequired,
+    stock: PropTypes.number.isRequired,
   }).isRequired,
   bubbles: PropTypes.bool,
   ctaStyles: PropTypes.object,

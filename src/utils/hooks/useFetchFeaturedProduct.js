@@ -4,21 +4,23 @@ import { useFetchProducts } from 'utils/hooks';
 export function useFetchFeaturedProduct() {
   const { products, isLoading, error } = useFetchProducts('featured');
 
-  const [product, setProduct] = useState(null);
+  const [productsWithGallery, setProductsWithGallery] = useState(null);
 
   useEffect(() => {
-    const [product] = products.map(({ id, product }) => ({
-      id,
-      ...product,
-      gallery: [
-        ...product.images.map(({ image }) => ({
-          ...image,
-        })),
-      ],
-    }));
-
-    product ? setProduct(product) : setProduct(null);
+    products
+      ? setProductsWithGallery(
+          products.map(({ id, product }) => ({
+            id,
+            ...product,
+            gallery: [
+              ...product.images.map(({ image }) => ({
+                ...image,
+              })),
+            ],
+          }))
+        )
+      : setProductsWithGallery(null);
   }, [products]);
 
-  return { product, isLoading, error };
+  return { productsWithGallery, isLoading, error };
 }
