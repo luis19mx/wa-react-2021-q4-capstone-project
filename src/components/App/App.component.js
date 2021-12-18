@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -5,15 +6,16 @@ import { fetchMetaData } from 'store/apiMetaData';
 import { fetchCategories } from 'store/categories';
 
 import GlobalStyles from 'components/GlobalStyles';
+import Spinner from 'components/Spinner';
 import Layout from 'components/Layout';
 
-import HomePage from 'views/home';
-import ProductListPage from 'views/products';
-import ProductDetailsPage from 'views/product';
-import CartPage from 'views/cart';
-import CheckoutPage from 'views/checkout';
-import SearchResultsPage from 'views/search';
-import NotFoundPage from 'views/404';
+const HomePage = lazy(() => import('views/home'));
+const ProductListPage = lazy(() => import('views/products'));
+const ProductDetailsPage = lazy(() => import('views/product'));
+const CartPage = lazy(() => import('views/cart'));
+const CheckoutPage = lazy(() => import('views/checkout'));
+const SearchResultsPage = lazy(() => import('views/search'));
+const NotFoundPage = lazy(() => import('views/404'));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -22,7 +24,7 @@ export default function App() {
   dispatch(fetchCategories());
 
   return (
-    <>
+    <Suspense fallback={<Spinner />}>
       <GlobalStyles />
       <Layout>
         <Switch>
@@ -52,6 +54,6 @@ export default function App() {
           </Route>
         </Switch>
       </Layout>
-    </>
+    </Suspense>
   );
 }

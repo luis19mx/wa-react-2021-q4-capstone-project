@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { API_BASE_URL } from '../constants';
@@ -18,13 +19,15 @@ export function useLatestAPI() {
           return setApiMetadata(apiRef);
         }
 
-        const response = await fetch(API_BASE_URL, {
+        const response = await axios.get(API_BASE_URL, {
           signal: controller.signal,
         });
-        const { refs: [{ ref } = {}] = [] } = await response.json();
+
+        const { refs: [{ ref } = {}] = [] } = response;
 
         setApiMetadata(ref);
       } catch (error) {
+        if (error.message === 'canceled') return;
         setError(error);
         console.error(error);
       } finally {
