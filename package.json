@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
     "gsap": "^3.8.0",
+    "license-checker": "^25.0.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -22,7 +23,8 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yui-lint": "^0.2.0"
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
@@ -30,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "NODE_ENV=production yarn build && cp ./CNAME build && mv build/index.html build/200.html",
-    "deploy": "surge build"
+    "deploy": "surge build",
+    "scla": "license-checker --json --out assestment.json"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^7.0.2",
