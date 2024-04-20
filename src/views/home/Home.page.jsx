@@ -9,7 +9,7 @@ import {
 import FeaturedBanners from 'components/FeaturedBanners';
 import ProductCategories from 'components/ProductCategories';
 import ProductDetails from 'components/ProductDetails';
-import Spinner from 'components/spinner';
+import Spinner from 'components/Spinner';
 import { CTA } from 'components/styles';
 
 export default function HomePage() {

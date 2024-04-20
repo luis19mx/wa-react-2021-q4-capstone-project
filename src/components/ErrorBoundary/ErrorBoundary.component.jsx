@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import FallbackComponent from './_fallback.component';
+import FallbackComponent from './Fallback.component';
 
 export default class ErrorBoundary extends Component {
   state = { error: null };

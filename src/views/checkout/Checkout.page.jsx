@@ -10,7 +10,7 @@ import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { Input, Textarea } from 'components/forms';
 import { Button, Total } from 'components/styles';
-import { CheckoutPageStyles, ColumnStyles } from './_checkout.styles';
+import { CheckoutPageStyles, ColumnStyles } from './Checkout.styles';
 
 export default function CheckoutPage() {
   useDocumentTitle('Checkout');

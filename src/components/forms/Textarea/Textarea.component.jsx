@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { TextareaStyles } from './_textarea.styles';
+import { TextareaStyles } from './Textarea.styles';
 import { Label, InputContainerStyles } from '../styles';
 
 function Textarea({ handleChange, value, name, label, required = false }) {
