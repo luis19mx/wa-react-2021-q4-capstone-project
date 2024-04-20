@@ -1,4 +1,4 @@
-import { SpinnerContainer, SpinnerOverlay } from './Spinner.styles';
+import { SpinnerContainer, SpinnerOverlay } from './_spinner.styles';
 
 export default function Spinner() {
   return (

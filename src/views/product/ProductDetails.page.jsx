@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDocumentTitle, useFetchSingleProduct } from 'utils/hooks';
-import Spinner from 'components/Spinner';
+import Spinner from 'components/spinner';
 import ProductDetails from 'components/ProductDetails';
 
 export default function ProductDetailsPage() {

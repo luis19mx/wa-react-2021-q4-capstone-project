@@ -1,2 +1,2 @@
-export { default as Input } from './Input/Input.component';
-export { default as Textarea } from './Textarea/Textarea.component';
+export { default as Input } from './Input/_input.component';
+export { default as Textarea } from './Textarea/_textarea.component';

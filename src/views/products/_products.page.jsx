@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useDocumentTitle } from 'utils/hooks';
 import ProductFilters from 'components/ProductFilters';
-import Products from 'components/Products';
-import Spinner from 'components/Spinner';
-import Pagination from 'components/Pagination';
+import Products from 'components/_products';
+import Spinner from 'components/_spinner';
+import Pagination from 'components/_pagination';
 import ErrorBoundary from 'components/ErrorBoundary';
 import {
   useFilteredProducts,

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-import { PaginationArrowStyles, PaginationStyles } from './Pagination.styles';
+import { PaginationArrowStyles, PaginationStyles } from './_pagination.styles';
 
 function Pagination({ pagination }) {
   const { activePage, totalPages, nextPage, prevPage } = pagination;

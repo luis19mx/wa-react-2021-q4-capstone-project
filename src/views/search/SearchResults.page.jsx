@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Global } from '@emotion/react';
 import { useFetchProducts } from 'utils/hooks';
-import Products from 'components/Products';
-import Spinner from 'components/Spinner';
-import Pagination from 'components/Pagination';
+import Products from 'components/_products';
+import Spinner from 'components/spinner';
+import Pagination from 'components/_pagination';
 import noProductFoundGif from 'assets/pulp-fiction-john-travolta.gif';
 import {
   SearchTop,

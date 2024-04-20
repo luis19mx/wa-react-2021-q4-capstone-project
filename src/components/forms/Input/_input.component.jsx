@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { InputStyles } from './Input.styles';
+import { InputStyles } from './_input.styles';
 import { Label, InputContainerStyles } from '../styles';
 
 function Input({ handleChange, value, type, name, label, required = false }) {

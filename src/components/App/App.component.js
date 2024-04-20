@@ -6,8 +6,8 @@ import { fetchMetaData } from 'store/apiMetaData';
 import { fetchCategories } from 'store/categories';
 
 import GlobalStyles from 'components/GlobalStyles';
-import Spinner from 'components/Spinner';
-import Layout from 'components/Layout';
+import Spinner from 'components/_spinner';
+import Layout from 'components/_layout';
 
 const HomePage = lazy(() => import('views/home'));
 const ProductListPage = lazy(() => import('views/products'));

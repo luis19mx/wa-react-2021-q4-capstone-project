@@ -9,7 +9,7 @@ import {
 import { formatMoney } from 'utils/helpers';
 import CartItem from 'components/CartItem';
 import { CTA, Total } from 'components/styles';
-import { CartPageStyles, CartHeader, TopRow } from './Cart.styles';
+import { CartPageStyles, CartHeader, TopRow } from './_cart.styles';
 
 export default function CartPage() {
   useDocumentTitle('Your cart');
